@@ -22,7 +22,7 @@ jobs:
       - name: 📂 Sync files via sftp
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
-          local-dir: ./site/
+          local-dir: ./_site/
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
