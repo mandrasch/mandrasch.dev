@@ -1,0 +1,31 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Build for SFTP transfer 🔧
+        run: |
+          npm ci
+          npm run build
+        env:
+          PATHS_BASE: "" # deploy to (sub)domain root
+          # important: if deploy to subdirectory, relative links must be different -> set --pathPrefix
+          # TODO: implement example
+
+      - name: 📂 Sync files via sftp
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          local-dir: ./site/
+          server: ${{ secrets.ftp_host }}
+          username: ${{ secrets.ftp_user }}
+          password: ${{ secrets.ftp_password }}
+          server-dir: /web/matthias-andrasch.eu/landingpage/
+          protocol: ftps
+          # use server-dir here if there is no standard folder for the ftp user
