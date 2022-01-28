@@ -1,19 +1,23 @@
-#img-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*width: 32rem;*/
-    width: 100%;
-    height: 24rem;
-    background-size: cover;
-    background-position: center;
-    /* generated with sqip cli */
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgMzg0Ij48ZmlsdGVyIGlkPSJjIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI1NSIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjN2M4MTZlIiBkPSJNMCAwaDUxMnYzODRIMHoiLz48ZyBmaWx0ZXI9J3VybCgjYyknIGZpbGwtb3BhY2l0eT0nLjUnPjxlbGxpcHNlIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoNDgyLjU3NTE0IC0xNy42OTUyMyAyLjE1OTAyIDU4Ljg3OTc1IDIxNC4xIDQyKSIvPjxlbGxpcHNlIGZpbGw9IiMyMDI3MjQiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoMi44NDE0IC0xMDEuNzIzODUgNDAzLjUxMzgyIDExLjI3MTE2IDM4NS4zIDIwMy4yKSIvPjxlbGxpcHNlIGZpbGw9IiNmNWZmZmYiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoLTI5OS44OTM4OCAtMy4xNDA2IC40NzcyNyAtNDUuNTc0NDcgMjEwLjQgMzQuMykiLz48ZWxsaXBzZSBmaWxsPSIjODc3YjExIiBmaWxsLW9wYWNpdHk9Ii41IiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0icm90YXRlKDk4IC02OS42IDI1Ni44KSBzY2FsZSgxNDAuNDkyNzQgMzk2LjI4ODM4KSIvPjxlbGxpcHNlIGZpbGw9IiNiMjdjNmEiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoMy4xNTk5NSAtNjAuNjM5NyAyOS4wNjI2NiAxLjUxNDQ2IDMzNS41IDEyOC4yKSIvPjxwYXRoIGZpbGw9IiNkZGViZmYiIGZpbGwtb3BhY2l0eT0iLjUiIGQ9Ik01LTMxbDc0IDE3NEwzNTktMzF6Ii8+PHBhdGggZmlsbD0iIzAwMDgwNyIgZmlsbC1vcGFjaXR5PSIuNSIgZD0iTTU0OC45IDMzNi4zbC0xNDYuMi0zMy44IDEwLjQtNDQuOCAxNDYuMiAzMy44eiIvPjxlbGxpcHNlIGZpbGw9IiMxODJmNDciIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoOTUuMTM2MSAuMTQ1NCAtLjEwMDY1IDY1Ljg1NjcgNDY2LjggMTU5LjcpIi8+PC9nPjwvc3ZnPg==);
-    max-width: 100%;
+.section {
+  scroll-margin-top: 75px;
 }
 
-.card-footer{
-    background-color:white; 
+#img-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*width: 32rem;*/
+  width: 100%;
+  height: 24rem;
+  background-size: cover;
+  background-position: center;
+  /* generated with sqip cli */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgMzg0Ij48ZmlsdGVyIGlkPSJjIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI1NSIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjN2M4MTZlIiBkPSJNMCAwaDUxMnYzODRIMHoiLz48ZyBmaWx0ZXI9J3VybCgjYyknIGZpbGwtb3BhY2l0eT0nLjUnPjxlbGxpcHNlIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoNDgyLjU3NTE0IC0xNy42OTUyMyAyLjE1OTAyIDU4Ljg3OTc1IDIxNC4xIDQyKSIvPjxlbGxpcHNlIGZpbGw9IiMyMDI3MjQiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoMi44NDE0IC0xMDEuNzIzODUgNDAzLjUxMzgyIDExLjI3MTE2IDM4NS4zIDIwMy4yKSIvPjxlbGxpcHNlIGZpbGw9IiNmNWZmZmYiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoLTI5OS44OTM4OCAtMy4xNDA2IC40NzcyNyAtNDUuNTc0NDcgMjEwLjQgMzQuMykiLz48ZWxsaXBzZSBmaWxsPSIjODc3YjExIiBmaWxsLW9wYWNpdHk9Ii41IiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0icm90YXRlKDk4IC02OS42IDI1Ni44KSBzY2FsZSgxNDAuNDkyNzQgMzk2LjI4ODM4KSIvPjxlbGxpcHNlIGZpbGw9IiNiMjdjNmEiIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoMy4xNTk5NSAtNjAuNjM5NyAyOS4wNjI2NiAxLjUxNDQ2IDMzNS41IDEyOC4yKSIvPjxwYXRoIGZpbGw9IiNkZGViZmYiIGZpbGwtb3BhY2l0eT0iLjUiIGQ9Ik01LTMxbDc0IDE3NEwzNTktMzF6Ii8+PHBhdGggZmlsbD0iIzAwMDgwNyIgZmlsbC1vcGFjaXR5PSIuNSIgZD0iTTU0OC45IDMzNi4zbC0xNDYuMi0zMy44IDEwLjQtNDQuOCAxNDYuMiAzMy44eiIvPjxlbGxpcHNlIGZpbGw9IiMxODJmNDciIGZpbGwtb3BhY2l0eT0iLjUiIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoOTUuMTM2MSAuMTQ1NCAtLjEwMDY1IDY1Ljg1NjcgNDY2LjggMTU5LjcpIi8+PC9nPjwvc3ZnPg==);
+  max-width: 100%;
+}
+
+.card-footer {
+  background-color: white;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -21,7 +25,46 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }*/
 
-.section-likes .card{
-    border-color:rgb(0,184,148,0.2);
-    border-radius:0;
+.section-likes .card {
+  border-color: rgb(0, 184, 148, 0.2);
+  border-radius: 0;
+}
+
+/**
+* Timeline snippet by https://bootsnipp.com/snippets/xrKXW, thanks!
+*/
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline {
+  a {
+    text-decoration: none;
+  }
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid orange;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
 }
