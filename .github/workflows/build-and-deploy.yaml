@@ -26,6 +26,6 @@ jobs:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /web/matthias-andrasch.eu/landingpage/
+          # server-dir: /web/matthias-andrasch.eu/landingpage/
+          # use server-dir here if there is no standard entry folder for the ftp user
           protocol: ftps
-          # use server-dir here if there is no standard folder for the ftp user
