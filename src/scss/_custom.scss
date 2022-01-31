@@ -1,3 +1,23 @@
+header a {
+  &:focus {
+    outline: 2px dotted orange;
+  }
+}
+
+main a {
+  color: var(--bs-body-color);
+  text-decoration-color: orange;
+  &:hover {
+    color: orange;
+    text-decoration: none;
+  }
+  &:focus {
+    color: orange;
+    outline: 2px dotted black;
+    text-decoration: none;
+  }
+}
+
 .section {
   scroll-margin-top: 75px;
 }
@@ -38,9 +58,9 @@ ul.timeline {
   position: relative;
 }
 ul.timeline {
-  a {
+  /*a {
     text-decoration: none;
-  }
+  }*/
 }
 ul.timeline:before {
   content: " ";
