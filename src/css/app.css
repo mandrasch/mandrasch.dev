@@ -1,0 +1,7 @@
+@import '_fonts.css';
+
+/* https://tailwindcss.com/docs/guides/sveltekit */
+/* TODO: Use sass? https://github.com/Sensei85/sveltekit-tailwind-sass-starterkit*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

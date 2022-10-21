@@ -14,8 +14,7 @@ module.exports = {
         'sans': ['Karla', 'Arial', 'sans-serif'],
         // overwrite typography plugin settings
         'headings': ['Vollkorn', 'serif']
-      },
-
+      }
     }
   },
   plugins: [require('@tailwindcss/typography')]
