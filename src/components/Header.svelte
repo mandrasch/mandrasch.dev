@@ -10,10 +10,10 @@
 	// TODO: Add focustrap
 </script>
 
-<nav class="w-full fixed top-0 bg-red-400">
+<nav class="w-full fixed top-0 bg-green-800 text-white">
 	<div class="container mx-auto py-5 flex items-center justify-between">
 		<h1>Matthias Andrasch</h1>
-		<ul class="hidden md:flex space-x-10 text-gray-700  font-bold text-sm up5ercase">
+		<ul class="hidden md:flex space-x-10 font-bold text-sm">
 			<li class="hover:text-gray-500" class:active={$page.url.pathname === '/'}>
 				<a href="/">Home</a>
 			</li>
@@ -24,7 +24,8 @@
 				<a href="/blog">Contact</a>
 			</li>
 		</ul>
-		<div class="hidden md:block">
+		<div class="hidden md:block align-right">
+			<!-- TODO use button for a11y-compliance! -->
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -42,9 +43,9 @@
 				/>
 			</svg>
 		</div>
-		<div>
+		<div class="space-y-1 md:hidden">
 			<!-- Mobile menu icon and menu list-->
-			<div class="space-y-1 md:hidden cursor-pointer">
+			<div>
 				<button on:click={handleMobileIconClick}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
