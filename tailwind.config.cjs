@@ -8,8 +8,8 @@ module.exports = {
       },
       fontFamily: {
         // register gfonts
-        vollkorn: ['Vollkorn'],
-        karla: ['Karla'],
+        vollkorn: ['Vollkorn', 'serif'],
+        karla: ['Karla', 'sans-serif'],
         // overwrite settings 
         'sans': ['Karla', 'Arial', 'sans-serif'],
         // overwrite typography plugin settings
