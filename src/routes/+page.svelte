@@ -6,6 +6,8 @@
 	import { Confetti } from 'svelte-confetti';
 	import ToggleConfetti from '../lib/ToggleConfetti.svelte';
 	import SocialMediaIcons from '../components/SocialMediaIcons.svelte';
+
+	import NotebookImage from '../images/openmoji_1F4D2.svg';
 </script>
 
 <!-- TODO: Improve this https://www.kindacode.com/snippet/tailwind-css-make-a-child-element-fill-the-remaining-space/-->
@@ -21,7 +23,8 @@
 				it simple" approach.
 			</p>
 			<p>
-				My personal interests are climate and social justice. I'm also a huge fan of
+				My personal interests are climate and social justice. I'm also a huge fan of green mobility
+				via
 				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
 					>Klimaticket Austria</a
 				>! 🥰
@@ -50,7 +53,20 @@
 
 <div class="container p-10 mx-auto text-center space-y-10 prose ">
 	<section class="w-full" id="more">
-		<h3 class="font-headings">My DDEV lab</h3>
+		<div class="flex align-top">
+			<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">
+				<img src={NotebookImage} alt="" />My DDEV lab
+			</h3>
+			<p class="flex-grow text-left">
+				Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23
+			</p>
+		</div>
+		<div class="flex align-top">
+			<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">Sustainable Web Design</h3>
+			<p class="flex-grow text-left">
+				Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23
+			</p>
+		</div>
 	</section>
 
 	<section
