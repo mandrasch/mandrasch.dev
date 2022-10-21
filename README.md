@@ -1,5 +1,28 @@
 # create-svelte
 
+Install with `pnpm install` and run:
+
+```bash
+pnpm run dev
+
+# or start the server and open the app in a new browser tab
+pnpm run dev -- --open
+```
+
+## How was this created?
+
+```bash
+npm create svelte@latest
+# switched to pnpm:
+pnpm install
+# tailwind:
+# (https://tailwindcss.com/docs/guides/sveltekit)
+pnpm install -D tailwindcss postcss autoprefixer svelte-preprocess
+npx tailwindcss init tailwind.config.cjs -p
+```
+
+<hr>
+
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
 ## Creating a project
