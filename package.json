@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.45",
-		"sass": "^1.55.0"
+		"sass": "^1.55.0",
+		"svelte-confetti": "^1.2.0"
 	}
 }

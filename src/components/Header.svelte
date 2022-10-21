@@ -8,9 +8,10 @@
 
 	// TODO: Add ESC key action
 	// TODO: Add focustrap
+	// TODO: Add click on the outside closes menu
 </script>
 
-<nav class="w-full fixed top-0 bg-green-800 text-white">
+<nav class="w-full fixed top-0 bg-green-800 text-white px-5 sm:px-0">
 	<div class="container mx-auto py-5 flex items-center justify-between">
 		<h1>Matthias Andrasch</h1>
 		<ul class="hidden md:flex space-x-10 font-bold text-sm">
@@ -45,23 +46,21 @@
 		</div>
 		<div class="space-y-1 md:hidden">
 			<!-- Mobile menu icon and menu list-->
-			<div>
-				<button on:click={handleMobileIconClick}>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="100%"
-						height="100%"
-						fill="currentColor"
-						class="h-6 w-6"
-						viewBox="0 0 16 16"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-						/>
-					</svg>
-				</button>
-			</div>
+			<button on:click={handleMobileIconClick} class="mt-1">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="100%"
+					height="100%"
+					fill="currentColor"
+					class="h-8 w-8"
+					viewBox="0 0 16 16"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+					/>
+				</svg>
+			</button>
 			<!-- TODO: items are double coded, use variables and render them dynamically -->
 			<div
 				class:hidden={!showMobileMenu}
@@ -78,7 +77,9 @@
 						<a href="/blog">Contact</a>
 					</li>
 				</ul>
-				<button class="bg-white w-full py-2 mt-3" on:click={handleMobileIconClick}>Close</button>
+				<button class="bg-white text-blue-800 w-full py-2 mt-3" on:click={handleMobileIconClick}
+					>Close</button
+				>
 			</div>
 			<!-- eo mobile menu-->
 		</div>

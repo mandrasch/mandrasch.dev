@@ -5,7 +5,7 @@
 
 <Header />
 
-<!-- TODO: Improve this, no custom margin should be needed -->
-<main style="margin-top:64px;">
+<!-- TODO: Improve this, no custom margin should be needed? Automatic way of doing this? Fill up space with flex or something? -->
+<main class="mt-[64px] lg:mt-0">
 	<slot />
 </main>

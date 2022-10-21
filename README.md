@@ -32,7 +32,11 @@ pnpm install -D @tailwindcss/typography
 # via:https://kit.svelte.dev/docs/assets#transforming
 pnpm install --save-dev vite-imagetools
 
+# Static deployment (https://kit.svelte.dev/docs/adapters#supported-environments-static-sites)
 pnpm i @sveltejs/adapter-static
+
+# https://github.com/Mitcheljager/svelte-confetti
+pnpm install --save svelte-confetti
 ```
 
 <hr>
