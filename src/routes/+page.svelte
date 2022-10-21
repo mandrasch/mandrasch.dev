@@ -16,35 +16,25 @@
 			<h2>Hey there!</h2>
 			<p>I'm a Web Developer, currently living in Austria. 🇦🇹</p>
 			<p>
-				As a developer I try to build minimalistic, accessible and robust web experiences. I'm
-				keenly interested in
-				<a href="https://sustainablewebdesign.org/" target="_blank" rel="noreferrer"
-					>Sustainable Web Design</a
-				>
-				and climate justice in general.
+				As a developer I try to build accessible and robust web experiences by following the "keep
+				it simple" approach.
 			</p>
 			<p>
-				Big fan of Open Source and
+				My personal interests are climate and social justice. I'm also a huge fan of
 				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
 					>Klimaticket Austria</a
-				>. 🥰
+				>! 🥰
 			</p>
+
+			<p>Connect with me here:</p>
 
 			<SocialMediaIcons />
 
-			<div class="mt-20">
-				<ToggleConfetti>
-					<button
-						class="bg-gradient-to-br from-orange-400 to-rose-400 p-3 rounded text-white"
-						slot="label">Alaaf!</button
-					>
-					<Confetti />
-				</ToggleConfetti>
-			</div>
+			<p>or <a href="#more">discover more below.</a></p>
 		</div>
 	</div>
 	<div class="basis-full lg:basis-6/12 lg:max-h-screen">
-		<picture class="block max-h-full h-ful">
+		<picture class="block max-h-full h-full">
 			<source srcset={HeroImage} type="image/webp" />
 			<img
 				src={HeroImage_fallback}
@@ -55,6 +45,28 @@
 	</div>
 </section>
 
-<section class="prose">
-	<h3>My DDEV lab</h3>
-</section>
+<!-- TODO: Boxes with Icon(?) and short statements of what i do there, maybe use https://openmoji.org/ ?-->
+
+<div class="container p-10 mx-auto text-center space-y-10 prose ">
+	<section class="w-full" id="more">
+		<h3>My DDEV lab</h3>
+	</section>
+
+	<section class="w-full">
+		<a href="https://sustainablewebdesign.org/" target="_blank" rel="noreferrer"
+			>Sustainable Web Design</a
+		>
+	</section>
+
+	<section class="w-full">Open Source</section>
+
+	<section class="w-full">
+		<ToggleConfetti>
+			<button
+				class="bg-gradient-to-br from-orange-400 to-rose-400 p-3 rounded text-white"
+				slot="label">Alaaf!</button
+			>
+			<Confetti />
+		</ToggleConfetti>
+	</section>
+</div>

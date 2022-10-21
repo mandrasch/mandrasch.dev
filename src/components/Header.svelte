@@ -11,7 +11,11 @@
 	// TODO: Add click on the outside closes menu
 </script>
 
-<nav class="w-full fixed top-0 bg-green-800 text-white px-5 sm:px-0">
+<!-- Thanks to https://cssgradient.io/gradient-backgrounds/ -->
+<nav
+	class="hidden w-full fixed bottom-0 text-white px-5 sm:px-0"
+	style="background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);"
+>
 	<div class="container mx-auto py-5 flex items-center justify-between">
 		<h1>Matthias Andrasch</h1>
 		<ul class="hidden md:flex space-x-10 font-bold text-sm">
