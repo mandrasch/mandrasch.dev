@@ -13,7 +13,8 @@
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
-			<h2>Hey there!</h2>
+			<!-- TODO: font should be defined in co-->
+			<h2 class="font-headings">Hey there!</h2>
 			<p>I'm a Web Developer, currently living in Austria. 🇦🇹</p>
 			<p>
 				As a developer I try to build accessible and robust web experiences by following the "keep
@@ -49,13 +50,16 @@
 
 <div class="container p-10 mx-auto text-center space-y-10 prose ">
 	<section class="w-full" id="more">
-		<h3>My DDEV lab</h3>
+		<h3 class="font-headings">My DDEV lab</h3>
 	</section>
 
-	<section class="w-full">
+	<section
+		class="w-full rounded-xl py-5"
+		style="background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);"
+	>
 		<a href="https://sustainablewebdesign.org/" target="_blank" rel="noreferrer"
 			>Sustainable Web Design</a
-		>
+		> is a principle I found really important
 	</section>
 
 	<section class="w-full">Open Source</section>
