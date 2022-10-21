@@ -20,6 +20,7 @@ pnpm install
 pnpm install -D tailwindcss postcss autoprefixer svelte-preprocess
 npx tailwindcss init tailwind.config.cjs -p
 pnpm i sass
+pnpm install -D @tailwindcss/typography
 ```
 
 <hr>

@@ -9,3 +9,13 @@
 
 	<div class="text-4xl text-amber-500 bg-violet-200">Second div</div>
 </div>
+
+<div class="prose">
+	<h1>What I wanted to share</h1>
+	<p />
+
+	<h1 class="">Matthias Andrasch</h1>
+	<p>
+		Web Developer, grown up in the mountainless parts of Germany , currently living in Austria. 🇦🇹
+	</p>
+</div>
