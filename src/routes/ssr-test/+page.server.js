@@ -7,15 +7,17 @@ import { error } from '@sveltejs/kit';
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await response.json();
+    const responseUsers = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await responseUsers.json();
     console.log('Retrieved users server side, client won\'t see this', { users })
 
-    // TODO: better error handling
-    // TODO: Is this returned as data or users?
-    if (users) {
-        console.log('Returning users...');
-        return { users }
+    const responseWorldTime = await fetch('https://worldtimeapi.org/api/timezone/Europe/Vienna');
+    const currentTime = await responseWorldTime.json();
+
+    // TODO: error handling if one of them fails
+    return {
+        users,
+        currentTime
     }
 
     throw error(404, 'Not found');

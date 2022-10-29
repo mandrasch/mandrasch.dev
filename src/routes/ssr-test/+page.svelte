@@ -23,5 +23,10 @@
 				<li>{user.name}</li>
 			{/each}
 		</ul>
+
+		<h2>Current time in Vienna (SSR test)</h2>
+		<p>This data is fetched server side from https://worldtimeapi.org/api/timezone/Europe/Vienna</p>
+
+		<pre>{JSON.stringify(data.currentTime.datetime)}</pre>
 	</div>
 </div>
