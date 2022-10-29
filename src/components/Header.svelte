@@ -23,10 +23,10 @@
 				<a href="/">Home</a>
 			</li>
 			<li class="hover:text-gray-500">
-				<a href="/blog">Blog</a>
+				<a href="/">Blog</a>
 			</li>
 			<li class="hover:text-gray-500">
-				<a href="/blog">Contact</a>
+				<a href="/">Contact</a>
 			</li>
 		</ul>
 		<div class="hidden md:block align-right">
@@ -75,10 +75,10 @@
 						<a href="/">Home</a>
 					</li>
 					<li>
-						<a href="/blog">Blog</a>
+						<a href="/">Blog</a>
 					</li>
 					<li>
-						<a href="/blog">Contact</a>
+						<a href="/">Contact</a>
 					</li>
 				</ul>
 				<button class="bg-white text-blue-800 w-full py-2 mt-3" on:click={handleMobileIconClick}
