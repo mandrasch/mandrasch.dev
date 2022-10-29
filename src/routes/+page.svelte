@@ -12,6 +12,10 @@
 
 <!-- TODO: Improve this https://www.kindacode.com/snippet/tailwind-css-make-a-child-element-fill-the-remaining-space/-->
 
+<section class="bg-sky-200 text-black w-full py-5 text-center">
+	🚧 This site is work in progress. 🚧
+</section>
+
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
@@ -90,12 +94,12 @@
 
 		<section class="w-full">
 			<div class="flex align-top">
-				<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">
-					<img src={NotebookImage} alt="" />My DDEV lab
-				</h3>
+				<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">My DDEV lab</h3>
 				<p class="flex-grow text-left">
 					DDEV is an open source swiss army knife for PHP development and runs on all operating
-					systems. "My DDEV lab" is my personal notebook.
+					systems. "My DDEV lab" is my personal notebook:
+					<br />
+					<a href="https://my-ddev-lab.mandrasch.eu/" class="underline">my-ddev-lab.mandrasch.eu</a>
 				</p>
 			</div>
 			<div class="flex align-top">

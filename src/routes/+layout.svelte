@@ -1,6 +1,7 @@
 <script>
 	import '../css/app.css';
 	import Header from './../components/Header.svelte';
+	import Footer from './../components/Footer.svelte';
 </script>
 
 <Header />
@@ -9,3 +10,5 @@
 <main class="mt-[64px] lg:mt-0">
 	<slot />
 </main>
+
+<Footer />
