@@ -2,6 +2,7 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
+    // overwrite and extend values
     extend: {
       screens: {
         "sm": "480px" // adjusted in video to be smaller, default: 640px
