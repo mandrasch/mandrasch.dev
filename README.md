@@ -1,46 +1,46 @@
 # create-svelte
 
-Install with `pnpm install` and run:
+Install with `npm install` and run:
 
 ```bash
-pnpm run dev
+npm run dev
 
 # or start the server and open the app in a new browser tab
-pnpm run dev -- --open
+npm run dev -- --open
 ```
 
 ** Preview build: **
 
-`pnpm run preview`
+`npm run preview`
 
 ## How was this created?
 
 ```bash
 npm create svelte@latest
 # switched to pnpm:
-pnpm install
+npm install
 # tailwind:
 # (https://tailwindcss.com/docs/guides/sveltekit)
-pnpm install -D tailwindcss postcss autoprefixer svelte-preprocess
+npm install -D tailwindcss postcss autoprefixer svelte-preprocess
 npx tailwindcss init tailwind.config.cjs -p
-pnpm i sass
-pnpm install -D @tailwindcss/typography
+npm i sass
+npm install -D @tailwindcss/typography
 # POSTPONED: https://tailwindcss.com/docs/using-with-preprocessors
 # pnpm install -D postcss-import
 
 # vite-imagetools
 # via:https://kit.svelte.dev/docs/assets#transforming
-pnpm install --save-dev vite-imagetools
+npm install --save-dev vite-imagetools
 
 # Static deployment (https://kit.svelte.dev/docs/adapters#supported-environments-static-sites)
-pnpm i @sveltejs/adapter-static
+npm i @sveltejs/adapter-static
 
 # https://github.com/Mitcheljager/svelte-confetti
-pnpm install --save svelte-confetti
+npm install --save svelte-confetti
 
 # Adapter-Node for SSR deployment
 # https://kit.svelte.dev/docs/adapters#supported-environments-node-js
-pnpm i -D @sveltejs/adapter-node
+npm i -D @sveltejs/adapter-node
 ```
 
 <hr>
