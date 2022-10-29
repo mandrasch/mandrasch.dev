@@ -13,7 +13,7 @@
 <!-- TODO: Improve this https://www.kindacode.com/snippet/tailwind-css-make-a-child-element-fill-the-remaining-space/-->
 
 <section class="bg-sky-200 text-black w-full py-5 text-center">
-	🚧 This site is work in progress. 🚧
+	🚧 This site is work in progress. <a href="/ssr-test" class="underline">Test SSR</a> 🚧
 </section>
 
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">

@@ -1,4 +1,4 @@
-<div class="w-full p-2 text-center">
+<div class="w-full p-2 text-center mt-10 bg-slate-100">
 	<p>
 		Made with SvelteKit (<a
 			class="text-underline"
