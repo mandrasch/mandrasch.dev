@@ -37,6 +37,10 @@ pnpm i @sveltejs/adapter-static
 
 # https://github.com/Mitcheljager/svelte-confetti
 pnpm install --save svelte-confetti
+
+# Adapter-Node for SSR deployment
+# https://kit.svelte.dev/docs/adapters#supported-environments-node-js
+pnpm i -D @sveltejs/adapter-node
 ```
 
 <hr>
