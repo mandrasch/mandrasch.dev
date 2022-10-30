@@ -14,10 +14,6 @@
 	<title>Matthias Andrasch - web developer</title>
 </svelte:head>
 
-<section class="bg-sky-200 text-black w-full py-5 text-center">
-	🚧 This site is work in progress. <a href="/ssr-test" class="underline">Test SSR</a> 🚧
-</section>
-
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
@@ -246,3 +242,7 @@
 		</section>
 	</div>
 </div>
+
+<section class="bg-sky-200 text-black w-full py-5 text-center">
+	🚧 This site is work in progress. <a href="/ssr-test" class="underline">Test SvelteKit SSR</a> 🚧
+</section>
