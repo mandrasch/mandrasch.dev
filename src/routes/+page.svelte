@@ -20,15 +20,21 @@
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
 			<!-- TODO: font should be defined in co-->
-			<h2 class="font-headings text-2xl">Hey there!</h2>
-			<p>I'm a Web Developer, currently living in Austria. 🇦🇹</p>
+			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
+			<p>Hey, there! My name is Matthias and I work as a Web Developer.</p>
 			<p>
 				As a developer I try to build accessible and robust web experiences by following the "keep
-				it simple" approach.
+				it simple"-approach.
 			</p>
 			<p>
-				My personal interests are climate and social justice. I'm also a huge fan of green mobility
-				via
+				My personal interests are climate and social justice. I am devastated about the current
+				state of the climate emergency and the <a
+					href="https://www.theguardian.com/environment/2022/oct/27/world-close-to-irreversible-climate-breakdown-warn-major-studies"
+					>insufficient responses</a
+				> to it - threatening the well-being of future generations.
+			</p>
+			<p>
+				I'm a huge fan of green mobility via
 				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
 					>Klimaticket Austria</a
 				>! 🥰
@@ -57,92 +63,137 @@
 <div class=" bg-slate-100">
 	<div class="container p-10 mx-auto space-y-10 prose">
 		<section class="w-full" id="more">
-			<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">Currently</h3>
-			<p class="text-justify">
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block"
+			>
+				Currently:
+			</h3>
+			<p>
 				Working at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a> in St.
-				Pölten, Lower Austria. The team of MarkenSinn commited itself to build accessible and
-				sustainable web sites for everyone.<br />
-				The parent company gugler* is a cradle to cradle printing company and takes part in the
+				Pölten, capital of Lower Austria. The team of MarkenSinn commited itself to build accessible
+				and sustainable web site experiences. <br />MarkenSinn is a member of
+				<a href="https://waca.at/">WACA Austria</a> and integrates
+				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a> principles.
+			</p>
+			<p>
+				The parent company <a href="https://gugler.at">gugler*</a> is a cradle to cradle printing
+				company and takes part in the
 				<a href="https://ecogood.org">economy for the common good</a> movement.
 			</p>
-
-			<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">The journey so far</h3>
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+			>
+				Experiences so far:
+			</h3>
 			<ul>
-				<li>
-					Scientific employee in the field of Open Educational Resources (OER) and media education
-					at University Cologne and TH Köln.
-				</li>
-				<li>
-					Master of Arts in the field of Media Pedagogy, Social Work and Management (MAPAM), TH
-					Köln. <ToggleConfetti>
-						<button class="underline" slot="label">Alaaf!</button>
-						<Confetti />
-					</ToggleConfetti>
-				</li>
-				<li>Bachelor of Arts Media Education, University Magdeburg</li>
+				<li>Grown up in the mountainless parts of Eastern Germany</li>
 				<li>
 					Apprenticeship as IT-Specialist in software development (Fachinformatiker/in für
 					Anwendungsentwicklung), Berlin
 				</li>
+				<li>Bachelor of Arts Media Education, University Magdeburg</li>
+				<li>
+					Moved to Cologne - <ToggleConfetti>
+						<button class="underline" slot="label">Alaaf!</button>
+						<Confetti />
+					</ToggleConfetti>
+				</li>
+				<ul>
+					<li>
+						Master of Arts in the field of Media Pedagogy, Social Work and Management (MAPAM), TH
+						Köln.
+					</li>
+					<li>
+						Scientific employee in the field of Open Educational Resources (OER) and media education
+						at University Cologne and TH Köln.
+					</li>
+				</ul>
+
+				<li>Moved to Vienna, Austria</li>
 			</ul>
 
-			<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">Open Source activities</h3>
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+			>
+				Open Source activities:
+			</h3>
 			<p>
-				I enjoy blogging, learning and sharing demo projects out in the open. Sharing is caring.
+				I enjoy blogging, learning and discussing demo projects out in the open with others. Follow
+				me on <a href="https://github.com/mandrasch">Github</a> and
+				<a href="https://dev.to/mandrasch/">dev.to</a> for latest updates.
 			</p>
-		</section>
-
-		<section class="w-full">
-			<div class="flex align-top">
-				<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">My DDEV lab</h3>
-				<p class="flex-grow text-left">
-					DDEV is an open source swiss army knife for PHP development and runs on all operating
-					systems. "My DDEV lab" is my personal notebook:
-					<br />
+			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
+				<div>
+					<h4 class="font-headings text-gray-800 font-semibold">My DDEV lab</h4>
+					<p class="mt-2 text-gray-600">
+						DDEV is an open source swiss army knife for PHP development and runs on all operating
+						systems. This is my personal notebook for working with DDEV:
+					</p>
+				</div>
+				<div class="flex justify-end mt-4">
 					<a href="https://my-ddev-lab.mandrasch.eu/" class="underline">my-ddev-lab.mandrasch.eu</a>
-				</p>
+				</div>
 			</div>
-			<div class="flex align-top">
-				<h3 class="text-left font-headings mt-0 pr-4 basis-5/12">Sustainable Web Design</h3>
-				<p class="flex-grow text-left">
-					Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23 Test Test 1 23
-				</p>
+
+			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
+				<div>
+					<h4 class="font-headings text-gray-800 font-semibold">DDEV pull WordPress generator</h4>
+					<p class="mt-2 text-gray-600">
+						Online generator to help with the creation of DDEV pull scripts for WordPress, developed
+						with SvelteKit.
+					</p>
+				</div>
+				<div class="flex justify-end mt-4">
+					<a href="https://ddev-pull-wp.mandrasch.eu/" class="underline"
+						>ddev-pull-wp.mandrasch.eu</a
+					>
+				</div>
+			</div>
+
+			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
+				<div>
+					<h4 class="font-headings text-gray-800 font-semibold">
+						Eleventy plain Bootstrap5 starter
+					</h4>
+					<p class="mt-2 text-gray-600">
+						Bootstrap starter theme for static site generator Eleventy/11ty.
+					</p>
+				</div>
+				<div class="flex justify-end mt-4">
+					<a href="https://github.com/mandrasch/11ty-plain-bootstrap5" class="underline"
+						>github.com/mandrasch/11ty-plain-bootstrap5</a
+					>
+				</div>
+			</div>
+
+			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
+				<div>
+					<h4 class="font-headings text-gray-800 font-semibold">Klimakrise Schnelldurchlauf</h4>
+					<p class="mt-2 text-gray-600">Educational one pager about the climate emergency.</p>
+				</div>
+				<div class="flex justify-end mt-4">
+					<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/" class="underline"
+						>klimakrise-schnelldurchlauf.mandrasch.eu</a
+					>
+				</div>
+			</div>
+
+			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
+				<div>
+					<h4 class="font-headings text-gray-800 font-semibold">OERhörnchen</h4>
+					<p class="mt-2 text-gray-600">
+						Tiny web project to help with the discovery of Open Educational Resources (OER),
+						developed with Eleventy/11ty.
+					</p>
+				</div>
+				<div class="flex justify-end mt-4">
+					<a href="https://oerhoernchen.de/" class="underline">oerhoernchen.de</a>
+				</div>
 			</div>
 		</section>
 
-		<div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
-			<div>
-				<h4 class="font-headings text-gray-800 font-semibold">My DDEV lab</h4>
-				<p class="mt-2 text-gray-600">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores deserunt ea
-					doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a
-					veritatis pariatur minus consequuntur!
-				</p>
-			</div>
-			<div class="flex justify-end mt-4">
-				<a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
-			</div>
-		</div>
-
-		<section
-			class="w-full rounded-xl py-5"
-			style="background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);"
-		>
-			<a href="https://sustainablewebdesign.org/" target="_blank" rel="noreferrer"
-				>Sustainable Web Design</a
-			> is a principle I found really important
-		</section>
-
-		<section class="w-full">Open Source</section>
-
-		<section class="w-full">
-			<ToggleConfetti>
-				<button
-					class="bg-gradient-to-br from-orange-400 to-rose-400 p-3 rounded text-white"
-					slot="label">Alaaf!</button
-				>
-				<Confetti />
-			</ToggleConfetti>
+		<section>
+			<h2>Likes</h2>
 		</section>
 	</div>
 </div>
