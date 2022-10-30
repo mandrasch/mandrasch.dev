@@ -8,6 +8,8 @@
 	import SocialMediaIcons from '../components/SocialMediaIcons.svelte';
 
 	import NotebookImage from '../images/openmoji_1F4D2.svg';
+
+	import MasonryLikes from '../components/MasonryLikes.svelte';
 </script>
 
 <!-- TODO: Improve this https://www.kindacode.com/snippet/tailwind-css-make-a-child-element-fill-the-remaining-space/-->
@@ -119,7 +121,9 @@
 			</h3>
 			<p>
 				I enjoy blogging, learning and discussing demo projects out in the open with others. Follow
-				me on <a href="https://github.com/mandrasch">Github</a> and
+				me on <a href="https://github.com/mandrasch">Github</a>,
+				<a href="https://twitter.com/m_andrasch">Twitter</a>
+				and
 				<a href="https://dev.to/mandrasch/">dev.to</a> for latest updates.
 			</p>
 			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
@@ -193,7 +197,12 @@
 		</section>
 
 		<section>
-			<h2>Likes</h2>
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+			>
+				Likes:
+			</h3>
+			<MasonryLikes />
 		</section>
 	</div>
 </div>
