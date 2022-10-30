@@ -7,8 +7,6 @@
 	import ToggleConfetti from '../lib/ToggleConfetti.svelte';
 	import SocialMediaIcons from '../components/SocialMediaIcons.svelte';
 
-	import NotebookImage from '../images/openmoji_1F4D2.svg';
-
 	import MasonryLikes from '../components/MasonryLikes.svelte';
 </script>
 
@@ -71,21 +69,31 @@
 				Currently:
 			</h3>
 			<p>
-				Working at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a> in St.
-				Pölten, capital of Lower Austria. The team of MarkenSinn commited itself to build accessible
-				and sustainable web site experiences. <br />MarkenSinn is a member of
-				<a href="https://waca.at/">WACA Austria</a> and integrates
-				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a> principles.
+				In my personal time I enjoy blogging, learning and discussing demo projects out in the open
+				with others (Open Source). Sports-wise I like to go for a run, recently discovered trail
+				running as well.
 			</p>
 			<p>
-				The parent company <a href="https://gugler.at">gugler*</a> is a cradle to cradle printing
-				company and takes part in the
-				<a href="https://ecogood.org">economy for the common good</a> movement.
+				I work at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a> in St.
+				Pölten. The team of MarkenSinn commited itself to build accessible and sustainable web
+				experiences. The company takes part in
+				<a href="https://ecogood.org">economy for the common good</a>.
+			</p>
+
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+			>
+				Development topics:
+			</h3>
+			<p class="text-justify">
+				SvelteKit • VanillaJS • CSS3 • WordPress • typo3 • Laravel • CraftCMS • WCAG • Bootstrap •
+				TailwindCSS • Eleventy • HeadlessCMS • Accessibility (a11y) • Sustainable Web Design •
+				Gitpod • Ionic • Vite • DDEV • NodeJS
 			</p>
 			<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
 			>
-				Experiences so far:
+				Stations of life:
 			</h3>
 			<ul>
 				<li>Grown up in the mountainless parts of Eastern Germany</li>
@@ -126,77 +134,107 @@
 				and
 				<a href="https://dev.to/mandrasch/">dev.to</a> for latest updates.
 			</p>
-			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
-				<div>
-					<h4 class="font-headings text-gray-800 font-semibold">My DDEV lab</h4>
-					<p class="mt-2 text-gray-600">
-						DDEV is an open source swiss army knife for PHP development and runs on all operating
-						systems. This is my personal notebook for working with DDEV:
-					</p>
+			<a
+				href="https://my-ddev-lab.mandrasch.eu/"
+				class="no-underline"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<div
+					class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5 hover:bg-gradient-to-r from-teal-200 to-lime-200"
+				>
+					<div>
+						<h4 class="font-headings text-gray-800 font-semibold">My DDEV lab</h4>
+						<p class="mt-2 text-gray-600">
+							DDEV is an open source swiss army knife for PHP development and runs on all operating
+							systems. This is my personal notebook for working with DDEV.
+						</p>
+					</div>
+					<div class="flex justify-end mt-4">my-ddev-lab.mandrasch.eu</div>
 				</div>
-				<div class="flex justify-end mt-4">
-					<a href="https://my-ddev-lab.mandrasch.eu/" class="underline">my-ddev-lab.mandrasch.eu</a>
+			</a>
+			<a
+				href="https://ddev-pull-wp.mandrasch.eu/"
+				class="no-underline"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<div
+					class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5 hover:bg-gradient-to-r from-teal-200 to-lime-200"
+				>
+					<div>
+						<h4 class="font-headings text-gray-800 font-semibold">DDEV pull WordPress generator</h4>
+						<p class="mt-2 text-gray-600">
+							Online generator to help with the creation of DDEV pull scripts for WordPress,
+							developed with SvelteKit.
+						</p>
+					</div>
+					<div class="flex justify-end mt-4">ddev-pull-wp.mandrasch.eu</div>
 				</div>
-			</div>
-
-			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
-				<div>
-					<h4 class="font-headings text-gray-800 font-semibold">DDEV pull WordPress generator</h4>
-					<p class="mt-2 text-gray-600">
-						Online generator to help with the creation of DDEV pull scripts for WordPress, developed
-						with SvelteKit.
-					</p>
+			</a>
+			<a
+				href="https://github.com/mandrasch/11ty-plain-bootstrap5"
+				class="no-underline"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<div
+					class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5 hover:bg-gradient-to-r from-teal-200 to-lime-200"
+				>
+					<div>
+						<h4 class="font-headings text-gray-800 font-semibold">
+							Eleventy plain Bootstrap5 starter
+						</h4>
+						<p class="mt-2 text-gray-600">
+							Bootstrap starter theme for static site generator Eleventy/11ty.
+						</p>
+					</div>
+					<div class="flex justify-end mt-4">github.com/mandrasch/11ty-plain-bootstrap5</div>
+				</div></a
+			>
+			<a
+				href="https://klimakrise-schnelldurchlauf.mandrasch.eu/"
+				class="no-underline"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<div
+					class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5 hover:bg-gradient-to-r from-teal-200 to-lime-200"
+				>
+					<div>
+						<h4 class="font-headings text-gray-800 font-semibold">Klimakrise Schnelldurchlauf</h4>
+						<p class="mt-2 text-gray-600">Educational one pager about the climate emergency.</p>
+					</div>
+					<div class="flex justify-end mt-4">klimakrise-schnelldurchlauf.mandrasch.eu</div>
+				</div></a
+			>
+			<a href="https://oerhoernchen.de/" class="no-underline" target="_blank" rel="noreferrer">
+				<div
+					class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5 hover:bg-gradient-to-r from-teal-200 to-lime-200"
+				>
+					<div>
+						<h4 class="font-headings text-gray-800 font-semibold">OERhörnchen</h4>
+						<p class="mt-2 text-gray-600">
+							Tiny web project to help with the discovery of Open Educational Resources (OER),
+							developed with Eleventy/11ty.
+						</p>
+					</div>
+					<div class="flex justify-end mt-4">oerhoernchen.de</div>
 				</div>
-				<div class="flex justify-end mt-4">
-					<a href="https://ddev-pull-wp.mandrasch.eu/" class="underline"
-						>ddev-pull-wp.mandrasch.eu</a
-					>
-				</div>
-			</div>
-
-			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
-				<div>
-					<h4 class="font-headings text-gray-800 font-semibold">
-						Eleventy plain Bootstrap5 starter
-					</h4>
-					<p class="mt-2 text-gray-600">
-						Bootstrap starter theme for static site generator Eleventy/11ty.
-					</p>
-				</div>
-				<div class="flex justify-end mt-4">
-					<a href="https://github.com/mandrasch/11ty-plain-bootstrap5" class="underline"
-						>github.com/mandrasch/11ty-plain-bootstrap5</a
-					>
-				</div>
-			</div>
-
-			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
-				<div>
-					<h4 class="font-headings text-gray-800 font-semibold">Klimakrise Schnelldurchlauf</h4>
-					<p class="mt-2 text-gray-600">Educational one pager about the climate emergency.</p>
-				</div>
-				<div class="flex justify-end mt-4">
-					<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/" class="underline"
-						>klimakrise-schnelldurchlauf.mandrasch.eu</a
-					>
-				</div>
-			</div>
-
-			<div class="py-4 px-8 bg-white shadow-lg rounded-lg mb-5">
-				<div>
-					<h4 class="font-headings text-gray-800 font-semibold">OERhörnchen</h4>
-					<p class="mt-2 text-gray-600">
-						Tiny web project to help with the discovery of Open Educational Resources (OER),
-						developed with Eleventy/11ty.
-					</p>
-				</div>
-				<div class="flex justify-end mt-4">
-					<a href="https://oerhoernchen.de/" class="underline">oerhoernchen.de</a>
-				</div>
-			</div>
+			</a>
 		</section>
 
 		<section>
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+			>
+				Inspirational:
+			</h3>
+			<blockquote>
+				“The one who plants trees, knowing that he will never sit in their shade, has at least
+				started to understand the meaning of life.” ― Rabindranath Tagore
+			</blockquote>
+
 			<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
 			>

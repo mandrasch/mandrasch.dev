@@ -46,9 +46,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
 	{#each likes as like}
 		<a href={like.url} class="no-underline h-full ">
-			<div
-				class="h-full py-4 px-8 bg-white shadow-lg rounded-lg mb-5  text-center hover:bg-green-200"
-			>
+			<div class="h-full py-4 px-8 bg-white shadow-lg rounded-lg  text-center hover:bg-green-200">
 				<div>
 					{like.emoji} <br />
 
