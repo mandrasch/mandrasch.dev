@@ -1,3 +1,4 @@
+<!-- Nav is currently not used -->
 <script>
 	import { page } from '$app/stores';
 

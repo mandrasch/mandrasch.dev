@@ -10,7 +10,9 @@
 	import MasonryLikes from '../components/MasonryLikes.svelte';
 </script>
 
-<!-- TODO: Improve this https://www.kindacode.com/snippet/tailwind-css-make-a-child-element-fill-the-remaining-space/-->
+<svelte:head>
+	<title>Matthias Andrasch - web developer</title>
+</svelte:head>
 
 <section class="bg-sky-200 text-black w-full py-5 text-center">
 	🚧 This site is work in progress. <a href="/ssr-test" class="underline">Test SSR</a> 🚧
@@ -64,7 +66,7 @@
 	<div class="container p-10 mx-auto space-y-10 prose">
 		<section class="w-full" id="more">
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Currently:
 			</h3>
@@ -81,17 +83,17 @@
 			</p>
 
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Development topics:
 			</h3>
 			<p class="text-justify">
-				SvelteKit • VanillaJS • CSS3 • WordPress • typo3 • Laravel • CraftCMS • WCAG • Bootstrap •
-				TailwindCSS • Eleventy • HeadlessCMS • Accessibility (a11y) • Sustainable Web Design •
-				Gitpod • Ionic • Vite • DDEV • NodeJS
+				SvelteKit • VanillaJS • CSS3 • WordPress • typo3 • Laravel • CraftCMS • Bootstrap •
+				TailwindCSS • Eleventy • HeadlessCMS • JamStack • Accessibility (a11y) • Sustainable Web
+				Design • Gitpod • Ionic • Vite • DDEV • NodeJS • WCAG
 			</p>
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2  px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Stations of life:
 			</h3>
@@ -123,7 +125,7 @@
 			</ul>
 
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Open Source activities:
 			</h3>
@@ -226,7 +228,7 @@
 
 		<section>
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Inspirational:
 			</h3>
@@ -236,7 +238,7 @@
 			</blockquote>
 
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 bg-green-200 px-2 py-2 shadow-sm inline-block mt-5"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Likes:
 			</h3>
