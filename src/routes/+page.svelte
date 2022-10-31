@@ -19,23 +19,18 @@
 		<div class="prose p-10">
 			<!-- TODO: font should be defined in co-->
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
-			<p>Hey, there! My name is Matthias and I work as a Web Developer.</p>
+			<p>Hey, there!</p>
 			<p>
-				As a developer I try to build accessible and robust web experiences by following the "keep
-				it simple"-approach.
+				<!--As a developer--> I'm a Web Developer and I try to build accessible and robust web experiences
+				by following the "keep it simple"-approach.
 			</p>
 			<p>
-				My personal interests are climate and social justice. I am devastated about the current
-				state of the climate emergency and the <a
+				My interests are climate and social justice. Personally I am devastated about the current
+				state of the climate emergency - which is massively threatening the well being of future
+				generations. <!-- and the <a
 					href="https://www.theguardian.com/environment/2022/oct/27/world-close-to-irreversible-climate-breakdown-warn-major-studies"
 					>insufficient responses</a
-				> to it - threatening the well-being of future generations.
-			</p>
-			<p>
-				I'm a huge fan of green mobility via
-				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
-					>Klimaticket Austria</a
-				>! 🥰
+				> to it - threatening the well-being of future generations.-->
 			</p>
 
 			<p>Connect with me here:</p>
@@ -88,6 +83,22 @@
 				TailwindCSS • Eleventy • HeadlessCMS • JamStack • Accessibility (a11y) • Sustainable Web
 				Design • Gitpod • Ionic • Vite • DDEV • NodeJS • WCAG
 			</p>
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2  px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
+			>
+				Green Mobility:
+			</h3>
+			<p>
+				<!-- I'm a --> Huge fan of green mobility via
+				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
+					>Klimaticket Austria</a
+				>! 🥰
+			</p>
+			<p>
+				Want to go for trip? Check <a href="https://www.zuugle.at/">Zuugle</a>,
+				<a href="https://bahnzumberg.at">Bahn zum Berg</a> & more.
+			</p>
+
 			<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2  px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
