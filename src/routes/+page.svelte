@@ -21,9 +21,14 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 			<p>Hey, there!</p>
 			<p>
-				<!--As a developer--> I'm a Web Developer. My main goal is to build accessible and robust web
-				experiences by following the "keep it simple"-approach.
+				<!--As a developer--> My name is Matthias and I'm a Web Developer living in Austria.
 			</p>
+
+			<p>
+				My main goal as a developer is to build accessible and robust web experiences by following
+				the "keep it simple"-approach.
+			</p>
+
 			<p>
 				My personal interests are climate and social justice. I am devastated about the current
 				state of the climate emergency - which is massively threatening the well being of future
@@ -55,21 +60,37 @@
 <!-- TODO: Boxes with Icon(?) and short statements of what i do there, maybe use https://openmoji.org/ ?-->
 <div class=" bg-slate-100">
 	<div class="container p-10 mx-auto space-y-10 prose">
-		<section class="w-full" id="more">
+		<section class="w-full scroll-mt-10" id="more">
 			<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block bg-gradient-to-r from-teal-200 to-lime-200"
 			>
-				Currently:
+				Passionate about:
 			</h3>
 			<p>
-				In my personal time I enjoy blogging, learning and discussing web development approaches in
-				the field of Open Source. Sports-wise I like to go jogging, recently discovered trail
-				running as well.
+				In my personal time I enjoy blogging, learning and discussing web development approaches
+				with others in the field of Open Source. I'm interested in bridging the gap between a good
+				developer experience (DX) and good editor and user experiences (UX).
 			</p>
 			<p>
+				I'm a Huge fan of green mobility via
+				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
+					>Klimaticket Austria</a
+				>! 🥰 Want to go for trip without a car? Check out
+				<a href="https://www.zuugle.at/" target="_blank" rel="noreferrer">Zuugle</a>,
+				<a href="https://bahnzumberg.at" target="_blank" rel="noreferrer">Bahn zum Berg</a> & more.
+			</p>
+			<!-- <p>Jogging is a, recently discovered trail running as well.</p> -->
+
+			<h3
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block bg-gradient-to-r from-teal-200 to-lime-200"
+			>
+				Current job:
+			</h3>
+
+			<p>
 				My current job is at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a>
-				in St. Pölten. The team of MarkenSinn commited itself to build accessible and sustainable
-				web experiences. The company takes part in
+				in St. Pölten. The team of MarkenSinn commited itself to build accessible and sustainable web
+				experiences. The company participates in the movement
 				<a href="https://ecogood.org">economy for the common good</a>.
 			</p>
 
@@ -82,21 +103,6 @@
 				SvelteKit • VanillaJS • CSS3 • WordPress • typo3 • Laravel • CraftCMS • Bootstrap •
 				TailwindCSS • Eleventy • HeadlessCMS • JamStack • Accessibility (a11y) • Sustainable Web
 				Design • Gitpod • Ionic • Vite • DDEV • NodeJS • WCAG
-			</p>
-			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2  px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
-			>
-				Green Mobility:
-			</h3>
-			<p>
-				<!-- I'm a --> Huge fan of green mobility via
-				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
-					>Klimaticket Austria</a
-				>! 🥰
-			</p>
-			<p>
-				Want to go for trip? Check <a href="https://www.zuugle.at/">Zuugle</a>,
-				<a href="https://bahnzumberg.at">Bahn zum Berg</a> & more.
 			</p>
 
 			<h3
