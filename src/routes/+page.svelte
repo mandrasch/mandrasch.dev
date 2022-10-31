@@ -21,11 +21,11 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 			<p>Hey, there!</p>
 			<p>
-				<!--As a developer--> I'm a Web Developer and I try to build accessible and robust web experiences
-				by following the "keep it simple"-approach.
+				<!--As a developer--> I'm a Web Developer. My main goal is to build accessible and robust web
+				experiences by following the "keep it simple"-approach.
 			</p>
 			<p>
-				My interests are climate and social justice. Personally I am devastated about the current
+				My personal interests are climate and social justice. I am devastated about the current
 				state of the climate emergency - which is massively threatening the well being of future
 				generations. <!-- and the <a
 					href="https://www.theguardian.com/environment/2022/oct/27/world-close-to-irreversible-climate-breakdown-warn-major-studies"
@@ -62,14 +62,14 @@
 				Currently:
 			</h3>
 			<p>
-				In my personal time I enjoy blogging, learning and discussing demo projects out in the open
-				with others (Open Source). Sports-wise I like to go for a run, recently discovered trail
+				In my personal time I enjoy blogging, learning and discussing web development approaches in
+				the field of Open Source. Sports-wise I like to go jogging, recently discovered trail
 				running as well.
 			</p>
 			<p>
-				I work at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a> in St.
-				Pölten. The team of MarkenSinn commited itself to build accessible and sustainable web
-				experiences. The company takes part in
+				My current job is at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a>
+				in St. Pölten. The team of MarkenSinn commited itself to build accessible and sustainable
+				web experiences. The company takes part in
 				<a href="https://ecogood.org">economy for the common good</a>.
 			</p>
 
