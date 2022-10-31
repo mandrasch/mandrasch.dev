@@ -7,3 +7,7 @@
 @tailwind utilities;
 
 /* TODO: Add focus styles by default? */
+
+html {
+	scroll-behavior: smooth;
+}
