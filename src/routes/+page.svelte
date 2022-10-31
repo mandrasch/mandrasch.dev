@@ -72,7 +72,7 @@
 				developer experience (DX) and good editor and user experiences (UX).
 			</p>
 			<p>
-				I'm a Huge fan of green mobility via
+				I'm a huge fan of green mobility via
 				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
 					>Klimaticket Austria</a
 				>! 🥰 Want to go for trip without a car? Check out
