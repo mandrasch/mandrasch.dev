@@ -8,11 +8,15 @@
 	import SocialMediaIcons from '../components/SocialMediaIcons.svelte';
 
 	import MasonryLikes from '../components/MasonryLikes.svelte';
+
+	// import iconGermanyFlag from '../images/icon_flag_germany_openmoji_1F1E9-1F1EA.svg';
 </script>
 
 <svelte:head>
 	<title>Matthias Andrasch - web developer</title>
 </svelte:head>
+
+<!-- svelte-ignore no-target-blank -->
 
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
@@ -25,24 +29,23 @@
 			</p>
 
 			<p>
-				My main goal as a developer is to build accessible and robust web experiences by following
+				As a developer my main goal is to build accessible and robust web experiences by following
 				the "keep it simple"-approach.
 			</p>
 
-			<p>
-				My personal interests are climate and social justice. I am devastated about the current
-				state of the climate emergency - which is massively threatening the well being of future
-				generations. <!-- and the <a
-					href="https://www.theguardian.com/environment/2022/oct/27/world-close-to-irreversible-climate-breakdown-warn-major-studies"
-					>insufficient responses</a
-				> to it - threatening the well-being of future generations.-->
-			</p>
+			<p>My personal interests are climate and social justice.</p>
 
 			<p>Connect with me here:</p>
 
 			<SocialMediaIcons />
 
-			<p>or <a href="#more">discover more below.</a></p>
+			<p>
+				or <a
+					href="#more"
+					class="hover:bg-gradient-to-r from-teal-200 to-lime-200 hover:no-underline"
+					>discover more below.</a
+				>
+			</p>
 		</div>
 	</div>
 	<div class="basis-full lg:basis-6/12 lg:max-h-screen">
@@ -69,15 +72,20 @@
 			<p>
 				In my personal time I enjoy blogging, learning and discussing web development approaches
 				with others in the field of Open Source. I'm interested in bridging the gap between a good
-				developer experience (DX) and good editor and user experiences (UX).
+				developer experience (DX) and a good editor and user experience (UX).
+			</p>
+			<p>
+				My general interests are climate and social justice. I am devastated about the current state
+				of the climate emergency - which is massively threatening the well-being of future
+				generations.
 			</p>
 			<p>
 				I'm a huge fan of green mobility via
 				<a href="https://www.klimaticket.at/en/" target="_blank" rel="noreferrer"
 					>Klimaticket Austria</a
 				>! 🥰 Want to go for trip without a car? Check out
-				<a href="https://www.zuugle.at/" target="_blank" rel="noreferrer">Zuugle</a>,
-				<a href="https://bahnzumberg.at" target="_blank" rel="noreferrer">Bahn zum Berg</a> & more.
+				<a href="https://www.zuugle.at/" target="_blank">Zuugle</a>,
+				<a href="https://bahnzumberg.at" target="_blank">Bahn zum Berg</a> & more.
 			</p>
 			<!-- <p>Jogging is a, recently discovered trail running as well.</p> -->
 
@@ -102,7 +110,7 @@
 			<p class="text-justify">
 				SvelteKit • VanillaJS • CSS3 • WordPress • typo3 • Laravel • CraftCMS • Bootstrap •
 				TailwindCSS • Eleventy • HeadlessCMS • JamStack • Accessibility (a11y) • Sustainable Web
-				Design • Gitpod • Ionic • Vite • DDEV • NodeJS • WCAG
+				Design • Gitpod • Ionic • Vite • DDEV • NodeJS • WCAG • DevOps
 			</p>
 
 			<h3
@@ -111,7 +119,13 @@
 				Stations of life:
 			</h3>
 			<ul>
-				<li>Grown up in the mountainless parts of Eastern Germany</li>
+				<li>
+					Grown up in the mountainless parts of Eastern Germany 🇩🇪 <!-- <img
+						alt=""
+						src={iconGermanyFlag}
+						class="inline-block w-auto heigth-auto"
+					/> -->
+				</li>
 				<li>
 					Apprenticeship as IT-Specialist in software development (Fachinformatiker/in für
 					Anwendungsentwicklung), Berlin
@@ -119,7 +133,7 @@
 				<li>Bachelor of Arts Media Education, University Magdeburg</li>
 				<li>
 					Moved to Cologne - <ToggleConfetti>
-						<button class="underline" slot="label">Alaaf!</button>
+						<button class="underline" slot="label">Alaaf! 🎉</button>
 						<Confetti />
 					</ToggleConfetti>
 				</li>
@@ -134,7 +148,7 @@
 					</li>
 				</ul>
 
-				<li>Moved to Vienna, Austria</li>
+				<li>Moved to Vienna, Austria 🇦🇹</li>
 			</ul>
 
 			<h3

@@ -11,3 +11,8 @@
 html {
 	scroll-behavior: smooth;
 }
+
+/* Mark external links, rule found on https://lowwwcarbon.com/ */
+/*main a[target='_blank']:after {
+	content: '↗';
+}*/
