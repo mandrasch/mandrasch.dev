@@ -136,17 +136,18 @@
 						<button class="underline" slot="label">Alaaf! 🎉</button>
 						<Confetti />
 					</ToggleConfetti>
+
+					<ul>
+						<li>
+							Master of Arts in the field of Media Pedagogy, Social Work and Management (MAPAM), TH
+							Köln.
+						</li>
+						<li>
+							Scientific employee in the field of Open Educational Resources (OER) and media
+							education at University Cologne and TH Köln.
+						</li>
+					</ul>
 				</li>
-				<ul>
-					<li>
-						Master of Arts in the field of Media Pedagogy, Social Work and Management (MAPAM), TH
-						Köln.
-					</li>
-					<li>
-						Scientific employee in the field of Open Educational Resources (OER) and media education
-						at University Cologne and TH Köln.
-					</li>
-				</ul>
 
 				<li>Moved to Vienna, Austria 🇦🇹</li>
 			</ul>
