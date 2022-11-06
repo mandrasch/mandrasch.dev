@@ -13,7 +13,12 @@
 </script>
 
 <svelte:head>
-	<title>Matthias Andrasch - web developer</title>
+	<title>Matthias Andrasch - Web Developer</title>
+	<meta
+		name="desc"
+		content="My name is Matthias and I'm a Web Developer living in Vienna, Austria. My personal interests are climate and social justice."
+	/>
+	<meta name="google-site-verification" content="TfqMffmUE8pukIujAWw3pw7fLxoZs9gphmsZ2CAs2FA" />
 </svelte:head>
 
 <!-- svelte-ignore no-target-blank -->
