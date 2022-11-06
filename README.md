@@ -1,4 +1,10 @@
-# create-svelte
+# LandingPage
+
+https://mandrasch.dev/
+
+- SvelteKit
+- TailwindCSS
+- svelte-confetti
 
 Install with `npm install` and run:
 
