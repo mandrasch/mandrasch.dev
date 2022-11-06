@@ -25,12 +25,12 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 			<p>Hey, there!</p>
 			<p>
-				<!--As a developer--> My name is Matthias and I'm a Web Developer living in Austria.
+				<!--As a developer--> My name is Matthias and I'm a Web Developer living in Vienna, Austria.
 			</p>
 
 			<p>
-				As a developer my main goal is to build accessible and robust web experiences by following
-				the "keep it simple"-approach.
+				As a developer my goal is to build accessible and robust web experiences by following the
+				"keep it simple"-approach.
 			</p>
 
 			<p>My personal interests are climate and social justice.</p>
