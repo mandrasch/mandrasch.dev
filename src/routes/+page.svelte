@@ -21,12 +21,9 @@
 <section class="lg:h-screen flex flex-column flex-wrap lg:flex-row">
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
-			<!-- TODO: font should be defined in co-->
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 			<p>Hey, there!</p>
-			<p>
-				<!--As a developer--> My name is Matthias and I'm a Web Developer living in Vienna, Austria.
-			</p>
+			<p>My name is Matthias and I'm a Web Developer living in Vienna, Austria.</p>
 
 			<p>
 				As a developer my goal is to build accessible and robust web experiences by following the
@@ -96,10 +93,27 @@
 			</h3>
 
 			<p>
-				My current job is at the web agency <a href="https://markensinn.at/">gugler* MarkenSinn</a>
-				in St. Pölten. The team of MarkenSinn commited itself to build accessible and sustainable web
-				experiences. The company participates in the movement
-				<a href="https://ecogood.org">economy for the common good</a>.
+				My current job is being a Web Developer at <a href="https://markensinn.at/"
+					>gugler* MarkenSinn</a
+				>
+				- a web agency located in St. Pölten, Lower Austria.
+			</p>
+			<p>
+				The team of MarkenSinn commited itself to build accessible and sustainable web experiences.
+				MarkenSinn is advisory board member of Web Accessibility Certificate Austria (WACA).
+			</p>
+			<p>
+				The head organization gugler* participates in the movement
+				<a href="https://ecogood.org">economy for the common good</a> and publishes common good
+				reports openly. Other companies taking part in the movement are
+				<a href="https://csr-report.vaude.com/gri-en/csr-standards/economy-for-the-common-good.php"
+					>VAUDE</a
+				>
+				and
+				<a
+					href="https://www.sonnentor.com/en-gb/about-us/sustainability/community-economy-what-is-that"
+					>Sonnentor.</a
+				>
 			</p>
 
 			<h3
