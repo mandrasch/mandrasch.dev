@@ -49,6 +49,10 @@ npm install --save svelte-confetti
 npm i -D @sveltejs/adapter-node
 ```
 
+## TODOs
+
+- [ ] https://github.com/sveltejs/kit/issues/241#issuecomment-1274046866
+
 <hr>
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
