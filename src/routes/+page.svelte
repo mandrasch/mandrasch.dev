@@ -27,17 +27,31 @@
 	<div class="basis-full lg:basis-6/12 flex justify-center content-center items-center">
 		<div class="prose p-10">
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
-			<p>Hey, there!</p>
-			<p>My name is Matthias and I'm a Web Developer living in Vienna, Austria.</p>
 
-			<p>
-				As a developer my goal is to build accessible and robust web experiences by following the
-				"keep it simple"-approach.
+			<p>Hey, I’m Matthias from Vienna! 🇦🇹🇪🇺</p>
+			<p class="leading-relaxed">
+				I’m a Web Developer with passion for Svelte and SvelteKit, Open Source, DDEV and
+				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a>🌱. In my daily work I
+				constantly try to get better in all aspects of
+				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
 			</p>
 
-			<p>My personal interests are climate and social justice.</p>
+			<p class="leading-relaxed">
+				I also studied media pedagogy in Magdeburg and Cologne after finishing an apprenticeship
+				of "specialist in the field of application development" in Berlin. (Ausbildung
+				Fachinformatiker/in für Anwendungsentwicklung)
+			</p>
 
-			<p>Connect with me here:</p>
+			<p>
+				As so many other people I'm troubled by the climate emergency. Tried to wrap my mind around
+				it with some tiny side projects: <a href="https://aktuelle-erderhitzung.de/"
+					>aktuelle-erderhitzung.de</a
+				>,
+				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">Klimakrise Schnelldurchlauf</a>.
+				Recently I found reading about "climate feelings" (<a
+					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
+				>) to be extremly helpful.
+			</p>
 
 			<SocialMediaIcons />
 
