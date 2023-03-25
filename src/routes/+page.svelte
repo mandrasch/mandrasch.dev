@@ -28,28 +28,29 @@
 		<div class="prose p-10">
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
-			<p class="leading-relaxed">
-				Hi! I’m a Web Developer with passion for Svelte and SvelteKit, Open Source, DDEV and
-				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a>🌱. In my daily work I
-				constantly try to get better in all aspects of
+			<p class="leading-loose">
+				Hi! I’m a Web Developer with passion for SvelteKit, DDEV and Open Source. I care a lot about
+				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a> 🌱 and
 				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
 			</p>
 
-			<p class="leading-relaxed">
-				I studied media pedagogy in Magdeburg and Cologne after finishing an apprenticeship
-				of "specialist in the field of application development" in Berlin. (Ausbildung
-				Fachinformatiker/in für Anwendungsentwicklung)
+			<p class="leading-loose">
+				I enjoy coding since my teenager days and completed an apprenticeship of "specialist in the
+				field of application development" (Ausbildung Fachinformatiker/in für Anwendungsentwicklung)
+				in Berlin. To broaden my perspective I studied media pedagogy in Magdeburg (Bachelor of
+				Arts), Cologne (Master of Arts) and worked in Higher Education projects.
 			</p>
 
-			<p>
-				As so many other people I'm troubled by the climate emergency. Tried to wrap my mind around
-				it with some tiny side projects: <a href="https://aktuelle-erderhitzung.de/"
+			<p class="leading-loose">
+				Like many other people I'm troubled by the climate emergency. I tried to wrap my mind around
+				it by creating the tiny side projects <a href="https://aktuelle-erderhitzung.de/"
 					>aktuelle-erderhitzung.de</a
-				>,
+				>
+				and
 				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">Klimakrise Schnelldurchlauf</a>.
-				Recently I found reading about "climate feelings" (<a
+				I also discovered that reading about "climate feelings" (<a
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
-				>) to be extremly helpful.
+				>) is extremly helpful.
 			</p>
 
 			<p>Currently happy inhabitant of Vienna, Austria. Follow me here</p>
