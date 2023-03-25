@@ -28,16 +28,15 @@
 		<div class="prose p-10">
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
-			<p>Hey, I’m Matthias from Vienna! 🇦🇹🇪🇺</p>
 			<p class="leading-relaxed">
-				I’m a Web Developer with passion for Svelte and SvelteKit, Open Source, DDEV and
+				Hi! I’m a Web Developer with passion for Svelte and SvelteKit, Open Source, DDEV and
 				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a>🌱. In my daily work I
 				constantly try to get better in all aspects of
 				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
 			</p>
 
 			<p class="leading-relaxed">
-				I also studied media pedagogy in Magdeburg and Cologne after finishing an apprenticeship
+				I studied media pedagogy in Magdeburg and Cologne after finishing an apprenticeship
 				of "specialist in the field of application development" in Berlin. (Ausbildung
 				Fachinformatiker/in für Anwendungsentwicklung)
 			</p>
@@ -52,6 +51,8 @@
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
 				>) to be extremly helpful.
 			</p>
+
+			<p>Currently happy inhabitant of Vienna, Austria. Follow me here</p>
 
 			<SocialMediaIcons />
 
