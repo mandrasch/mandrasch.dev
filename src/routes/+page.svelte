@@ -34,12 +34,12 @@
 				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
 			</p>
 
-			<p class="leading-loose">
+			<!--<p class="leading-loose">
 				I enjoy coding since my teenager days and completed an apprenticeship of "specialist in the
 				field of application development" (Ausbildung Fachinformatiker/in für Anwendungsentwicklung)
 				in Berlin. To broaden my perspective I studied media pedagogy in Magdeburg (Bachelor of
 				Arts), Cologne (Master of Arts) and worked in Higher Education projects.
-			</p>
+			</p>-->
 
 			<p class="leading-loose">
 				Like many other people I'm troubled by the climate emergency. I tried to wrap my mind around
