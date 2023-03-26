@@ -29,8 +29,11 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
 			<p class="leading-loose">
-				Hi! I’m a Web Developer with passion for SvelteKit, DDEV and Open Source. I care a lot about
-				<a href="https://sustainablewebdesign.org/">Sustainable Web Design</a> 🌱 and
+				Hi! I’m a Web Developer with passion for Svelte(Kit), DDEV & Open Source. I care a lot about
+				the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
+					>Green Web movement</a
+				>
+				🌱 and
 				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
 			</p>
 
@@ -48,7 +51,7 @@
 				>
 				and
 				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">Klimakrise Schnelldurchlauf</a>.
-				I also discovered that reading about "climate feelings" (<a
+				I also discovered that dealing with "climate emotions" (<a
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
 				>) is extremly helpful.
 			</p>
