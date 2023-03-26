@@ -29,12 +29,12 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
 			<p class="leading-loose">
-				Hi! I’m a Web Developer with passion for Svelte(Kit), DDEV & Open Source. I care a lot about
-				the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
+				Hi! I’m a Web Developer with passion for Svelte, SvelteKit, DDEV and Open Source. I care a
+				lot about the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
 					>Green Web movement</a
 				>
-				🌱 and
-				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a>.
+				🌱 <!-- and
+				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a> -->.
 			</p>
 
 			<!--<p class="leading-loose">
@@ -46,7 +46,7 @@
 
 			<p class="leading-loose">
 				Like many other people I'm troubled by the climate emergency. I tried to wrap my mind around
-				it by creating the tiny side projects <a href="https://aktuelle-erderhitzung.de/"
+				it by creating tiny side projects like <a href="https://aktuelle-erderhitzung.de/"
 					>aktuelle-erderhitzung.de</a
 				>
 				and
