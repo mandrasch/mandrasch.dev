@@ -6,19 +6,29 @@ import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
+    let users = [];
+    try {
+        const responseUsers = await fetch('https://jsonplaceholder.typicode.com/users');
+        users = await responseUsers.json();
+        console.log('Retrieved users server side, client won\'t see this', { users })
 
-    const responseUsers = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await responseUsers.json();
-    console.log('Retrieved users server side, client won\'t see this', { users })
+    } catch (error) {
+        console.error(`Error in load function for /: ${error}`);
+    }
 
-    const responseWorldTime = await fetch('https://worldtimeapi.org/api/timezone/Europe/Vienna');
-    const currentTime = await responseWorldTime.json();
+    let currentTime = 'Server-Fehler';
+    try {
+        const responseWorldTime = await fetch('https://worldtimeapi.org/api/timezone/Europe/Vienna');
+        currentTime = await responseWorldTime.json();
+    } catch (error) {
+        console.error(`Error in load function for /: ${error}`);
+    }
 
-    // TODO: error handling if one of them fails
+    // TODO: better error handling if one of them fails
     return {
         users,
         currentTime
     }
 
-    throw error(404, 'Not found');
+    // throw error(404, 'Not found');
 }
