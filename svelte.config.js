@@ -1,7 +1,7 @@
-// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-auto';
 // import adapter from '@sveltejs/adapter-static';
 // https://kit.svelte.dev/docs/adapters#supported-environments-node-js
-import adapter from '@sveltejs/adapter-node';
+// import adapter from '@sveltejs/adapter-node';
 import preprocess from "svelte-preprocess";
 
 
