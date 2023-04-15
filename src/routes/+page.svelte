@@ -29,8 +29,8 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
 			<p class="leading-loose">
-				Hi! I’m a Web Developer with passion for Svelte, SvelteKit, DDEV and Open Source. I care a
-				lot about the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
+				Hi! I’m a Web Developer with passion for Svelte, SvelteKit, DDEV and Open Source. I care
+				about the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
 					>Green Web movement</a
 				>
 				🌱 <!-- and
