@@ -46,24 +46,27 @@
 
 			<p class="leading-loose">
 				Like many other people I'm troubled by the climate emergency. I tried to wrap my mind around
-				it by creating tiny side projects like <a href="https://aktuelle-erderhitzung.de/"
-					>aktuelle-erderhitzung.de</a
-				>
-				and
-				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">Klimakrise Schnelldurchlauf</a>.
-				I also discovered that dealing with "climate emotions" (<a
+				by creating tiny side projects like <a href="https://crunchtime2030.de/">crunchtime2030</a>
+				(WIP), <a href="https://aktuelle-erderhitzung.de/">Aktuelle Erderhitzung</a> and
+				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">KK Schnelldurchlauf</a>.
+				Discovered that the concept of "climate emotions" (<a
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
 				>) is extremly helpful.
 			</p>
 
-			<p>Currently happy inhabitant of Vienna, Austria. Follow me here</p>
+			<p>Currently happy inhabitant of Vienna, Austria. 🇪🇺</p>
+			<p>Follow me here</p>
 
 			<SocialMediaIcons />
 
 			<p>
-				or <a
-					href="#more"
+				<a
+					href="https://matthias-andrasch.eu/"
 					class="hover:bg-gradient-to-r from-teal-200 to-lime-200 hover:no-underline"
+					>read my blog</a
+				>
+				or
+				<a href="#more" class="hover:bg-gradient-to-r from-teal-200 to-lime-200 hover:no-underline"
 					>discover more below.</a
 				>
 			</p>
@@ -110,13 +113,13 @@
 			</p>
 			<!-- <p>Jogging is a, recently discovered trail running as well.</p> -->
 
-			<h3
+			<!--<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Current job:
 			</h3>
 
-			<p>
+		 <p>
 				My current job is being a Web Developer at <a href="https://markensinn.at/"
 					>gugler* MarkenSinn</a
 				>
@@ -138,7 +141,7 @@
 					href="https://www.sonnentor.com/en-gb/about-us/sustainability/community-economy-what-is-that"
 					>Sonnentor.</a
 				>
-			</p>
+			</p>-->
 
 			<h3
 				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
@@ -152,7 +155,7 @@
 			</p>
 
 			<h3
-				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2  px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
+				class="text-left font-headings mt-0 pr-4 -ml-5 -skew-y-2 px-2 py-2 shadow-sm inline-block mt-5 bg-gradient-to-r from-teal-200 to-lime-200"
 			>
 				Stations of life:
 			</h3>
