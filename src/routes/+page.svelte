@@ -45,10 +45,10 @@
 
 			<p class="leading-loose">
 				Like many others I'm troubled by the climate emergency - I try to wrap my mind around it by
-				creating tiny side projects like <a href="https://crunchtime2030.de/">crunchtime2030</a>.
-				And I also discovered that the concept of "climate emotions" (<a
+				reading about "climate emotions" (<a
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
-				>) can be extremly helpful.
+				>) and by creating tiny side projects like
+				<a href="https://crunchtime2030.de/">crunchtime2030</a>.
 			</p>
 
 			<p>Currently happy inhabitant of Vienna, Austria. 🇪🇺</p>
