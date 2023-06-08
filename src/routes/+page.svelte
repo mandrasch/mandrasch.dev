@@ -29,9 +29,8 @@
 			<h2 class="font-headings text-2xl">Matthias Andrasch</h2>
 
 			<p class="leading-loose">
-				Hi! I’m a Web Developer with passion for Svelte, SvelteKit, DDEV and Open Source. I care
-				about the <a href="https://climateaction.tech/blog/letsgreentheweb-together/"
-					>Green Web movement</a
+				Hi! I’m a Web Developer with passion for Svelte(Kit), DDEV and Open Source. I care about the <a
+					href="https://climateaction.tech/blog/letsgreentheweb-together/">Green Web movement</a
 				>
 				🌱 <!-- and
 				<a href="https://www.edx.org/course/web-accessibility-introduction">Web Accessibility</a> -->.
@@ -45,13 +44,11 @@
 			</p>-->
 
 			<p class="leading-loose">
-				Like many other people I'm troubled by the climate emergency. I tried to wrap my mind around
-				by creating tiny side projects like <a href="https://crunchtime2030.de/">crunchtime2030</a>
-				(WIP), <a href="https://aktuelle-erderhitzung.de/">Aktuelle Erderhitzung</a> and
-				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/">KK Schnelldurchlauf</a>.
-				Discovered that the concept of "climate emotions" (<a
+				Like many others I'm troubled by the climate emergency - I try to wrap my mind around it by
+				creating tiny side projects like <a href="https://crunchtime2030.de/">crunchtime2030</a>.
+				And I also discovered that the concept of "climate emotions" (<a
 					href="https://matthias-andrasch.eu/blog/2023/klimagefuehle-zitate-teil-1/">Klimagefühle</a
-				>) is extremly helpful.
+				>) can be extremly helpful.
 			</p>
 
 			<p>Currently happy inhabitant of Vienna, Austria. 🇪🇺</p>
@@ -315,7 +312,3 @@
 		</section>
 	</div>
 </div>
-
-<section class="bg-sky-200 text-black w-full py-5 text-center">
-	🚧 This site is work in progress. <a href="/ssr-test" class="underline">Test SvelteKit SSR</a> 🚧
-</section>
