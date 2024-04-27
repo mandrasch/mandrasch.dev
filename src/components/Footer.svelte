@@ -7,6 +7,5 @@
 		<a href="https://matthias-andrasch.eu/blog/impressum-datenschutz/" class="underline"
 			>Imprint & Privacy (Datenschutz &amp; Impressum)</a
 		>
-		| Hosted on Hetzner Cloud via ploi.io
 	</p>
 </div>
