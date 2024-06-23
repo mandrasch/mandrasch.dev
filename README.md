@@ -7,8 +7,6 @@ Personal landing page, built with
 - [@inlang/paraglide-js-adapter-sveltekit](https://www.npmjs.com/package/@inlang/paraglide-js-adapter-sveltekit)
 - mdsvex
 
-Deployment via SvelteKits [adapater-node on Coolify](https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5).
-
 Live site: [mandrasch.dev](https://mandrasch.dev)
 
 ## Local development
@@ -26,6 +24,18 @@ Simulate production build via
 npm run build
 npm run preview
 ```
+
+## Deployment
+
+On server it runs via adapter-node with
+
+```
+npm ci --omit dev
+npm run build
+ORIGIN=https://mandrasch.dev node build
+```
+
+See [Deploy SvelteKit with SSR on Coolify (Hetzner VPS)](https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5).
 
 ## Credits and acknowledgements
 
