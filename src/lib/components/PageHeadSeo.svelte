@@ -4,7 +4,7 @@
 
 	// export let titleKey: keyof typeof m;
 	export let titleKey;
-	export let descriptionKey;
+	export let descriptionKey = '';
 
 	// Type guard to check if the key exists in m
 	function isValidKey(key: string, obj: object): key is keyof typeof m {
@@ -21,7 +21,7 @@
 	}
 
 	let pageDescription: string = '';
-	if (pageDescription != '' && isValidKey(descriptionKey, m)) {
+	if (descriptionKey != '' && isValidKey(descriptionKey, m)) {
 		pageDescription = `${m[descriptionKey]()}`;
 	} else {
 		pageDescription = ''; // or some default value

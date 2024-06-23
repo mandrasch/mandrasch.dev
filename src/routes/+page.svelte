@@ -1,6 +1,5 @@
 <script>
 	import * as m from '$lib/paraglide/messages.js';
-	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
 
 	import profilePic from '$assets/profile_picture_transparent.png?enhanced';
 
@@ -13,7 +12,6 @@
 </script>
 
 <svelte:head>
-	<title>Matthias Andrasch 💻 🌱</title>
 	<meta
 		name="description"
 		content="Web Developer, interested in Green Web and Climate Justice. Working with tools like Craft CMS, Svelte(Kit) and DDEV."
