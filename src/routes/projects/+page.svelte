@@ -13,6 +13,8 @@
 		{@html renderedHtmlFromMarkdown}
 	</div>
 
+	<!-- TODO: translate -->
+
 	<article id="craftcms">
 		<h3>Craft CMS</h3>
 

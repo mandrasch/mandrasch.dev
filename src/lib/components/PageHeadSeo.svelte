@@ -4,6 +4,7 @@
 
 	// export let titleKey: keyof typeof m;
 	export let titleKey;
+	export let descriptionKey;
 
 	// Type guard to check if the key exists in m
 	function isValidKey(key: string, obj: object): key is keyof typeof m {
@@ -12,13 +13,24 @@
 
 	// Compute the page title with a fallback if the key doesn't exist
 	let pageTitle: string;
+
 	if (isValidKey(titleKey, m)) {
 		pageTitle = `${pageTitleBase} - ${m[titleKey]()}`;
 	} else {
 		pageTitle = pageTitleBase; // or some default value
 	}
+
+	let pageDescription: string = '';
+	if (pageDescription != '' && isValidKey(descriptionKey, m)) {
+		pageDescription = `${m[descriptionKey]()}`;
+	} else {
+		pageDescription = ''; // or some default value
+	}
 </script>
 
 <svelte:head>
 	<title>{pageTitle}</title>
+	{#if pageDescription != ''}
+		<meta name="description" content={pageDescription} />
+	{/if}
 </svelte:head>
