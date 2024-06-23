@@ -1,0 +1,19 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"WelcomeMessage": "Welcome to SvelteKit!",
+	"SelectYourLanguage": "Select your language:",
+	"Home": "Home",
+	"About": "About",
+	"MarkdownInfo": "The following content was loaded server-side via via +page.server.js for the selected language:",
+	"currentlySelectedLanguage": "Currently selected language",
+	"Projects": "Projects",
+	"Writing": "Writing",
+	"Reading": "Reading",
+	"ProjectsTeaser": "I enjoy participating in Open Source communities and sharing tutorials.",
+	"WritingTeaser": "I like to write blog articles. I maintain a fe blogs in my leisure time.",
+	"ReadingTeaser": "Some book recommendations which inspired me.",
+	"AbsurdityOfLife": "Absurdity of life",
+	"ClimateJustice": "Climate Justice",
+	"ImprintAndPrivacy": "Imprint & Privacy",
+	"ThisPageWasCreatedOn": "This page was created on"
+}

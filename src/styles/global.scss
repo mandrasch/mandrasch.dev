@@ -1,0 +1,85 @@
+/* https://picocss.com/ */
+/*@use 'pico' with (
+
+);*/
+
+@use '@picocss/pico/scss/pico' with (
+	$theme-color: 'cyan',
+
+	/* Adjustment for sveltekit needed */
+		// Define the root element used to target <header>, <main>, <footer>
+	// with $enable-semantic-container and $enable-responsive-spacings
+	$semantic-root-element: '#root',
+
+	// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
+	$enable-semantic-container: true
+);
+
+.container-boxed {
+	max-width: 850px;
+	margin: 0 auto;
+
+	h1:first-of-type {
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+}
+
+.prose {
+	p {
+		line-height: 1.85rem;
+	}
+	ul {
+		margin-top: 1.5rem;
+	}
+
+	blockquote {
+		padding: 0.5rem var(--pico-spacing);
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/*
+
+
+:root {
+	--main-bg-color: #039991;
+	--grid-gap: 3.75rem;
+
+	--primary-color: white;
+}
+
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	background-color: var(--main-bg-color);
+	width: 100%;
+	color: var(--primary-color);
+}
+
+.container {
+	max-width: 72rem;
+	margin: 0 auto;
+	padding: 2rem 0;
+}
+
+/* simple grid with 3 cols */
+/*.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--grid-gap);
+}*/
+
+/*section.featured {
+	grid-column: span 3; 
+}
+*/
+
+/* TODO: add responsiveness,https://www.youtube.com/watch?v=5cIMvD2ZDo0&list=PL4cUxeGkcC9hk02lFb6EkdXF2DYGl4Gg4  */

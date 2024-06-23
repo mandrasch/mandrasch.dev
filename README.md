@@ -1,93 +1,33 @@
-# LandingPage
+# mandrasch.dev
 
-https://mandrasch.dev/
+Personal landing page, built with
 
 - SvelteKit
-- TailwindCSS
-- svelte-confetti
+- PicoCSS
+- [@inlang/paraglide-js-adapter-sveltekit](https://www.npmjs.com/package/@inlang/paraglide-js-adapter-sveltekit)
+- mdsvex
 
-Install with `npm install` and run:
+Deployment via SvelteKits [adapater-node on Coolify](https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5).
 
-```bash
-npm run dev
+Live site: [mandrasch.dev](https://mandrasch.dev)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Local development
 
-** Preview build: **
-
-`npm run preview`
-
-## How was this created?
+Start local development with
 
 ```bash
-npm create svelte@latest
-# switched to pnpm:
 npm install
-# tailwind:
-# (https://tailwindcss.com/docs/guides/sveltekit)
-npm install -D tailwindcss postcss autoprefixer svelte-preprocess
-npx tailwindcss init tailwind.config.cjs -p
-npm i sass
-npm install -D @tailwindcss/typography
-# POSTPONED: https://tailwindcss.com/docs/using-with-preprocessors
-# pnpm install -D postcss-import
-
-# vite-imagetools
-# via:https://kit.svelte.dev/docs/assets#transforming
-npm install --save-dev vite-imagetools
-
-# Static deployment (https://kit.svelte.dev/docs/adapters#supported-environments-static-sites)
-npm i @sveltejs/adapter-static
-
-# https://github.com/Mitcheljager/svelte-confetti
-npm install --save svelte-confetti
-
-# Adapter-Node for SSR deployment
-# https://kit.svelte.dev/docs/adapters#supported-environments-node-js
-npm i -D @sveltejs/adapter-node
+npm run dev -- -- open
 ```
 
-## TODOs
-
-- [ ] https://github.com/sveltejs/kit/issues/241#issuecomment-1274046866
-
-<hr>
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+Simulate production build via
 
 ```bash
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Credits and acknowledgements
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- Language switcher and path handling - big thanks to [LorisSigrist/paraglide-sveltekit-example](https://github.com/LorisSigrist/paraglide-sveltekit-example)! 👏
+- Markdown integration - thx to https://www.thisdot.co/blog/how-to-quickly-build-and-deploy-a-static-markdown-blog-with-sveltekit
