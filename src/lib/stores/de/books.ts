@@ -3,6 +3,14 @@ import type { Book } from '$lib/types';
 
 const books: Book[] = [
 	{
+		id:'jankovska-anti-work',
+		authors: 'Bianca Jankovska',
+		rating: '⌛',
+		title: 'Potenziell furchtbare Tage. Über Anti-Work, Menstrual Health und das gute Leben.',
+		learning: 'Schon die Einleitung mit Referenz auf Teresa Bücker hat mich abgeholt. Bianca Jankovska will kein nüchtern-objektives Sachbuch schreiben, nicht mit Zahlen- und Studien-Kolonnen überzeugen - sondern die Debatte um Arbeit mit einem lebendigen, schonungslosen Buch ergänzen. Dies ist passend, denn für viele Menschen ist Erwerbsarbeit eben genau das - ein hochemotionales Thema. Und dennoch steckt einige Recherche-Arbeit dahinter, um die Themen wie 4-Tage-Woche, Great Resignation, Menstrual Leave oder Erbe wissenschaftlich fundiert zu hinterlegen.',
+		link: 'https://www.haymonverlag.at/produkt/potenziell-furchtbare-tage/'
+	},
+	{
 		id: 'wozu-das-alles',
 		authors: 'Christian Uhle',
 		title: 'Wo zu das alles? Eine philosophische Reise zum Sinn des Lebens.',
@@ -16,7 +24,6 @@ const books: Book[] = [
 		title: 'Die Welt geht unter, und ich muss trotzdem arbeiten?',
 		rating: '⌛',
 		learning: '',
-
 		link: 'https://www.kiwi-verlag.de/buch/sara-weber-die-welt-geht-unter-und-ich-muss-trotzdem-arbeiten-9783462004151'
 	},
 	{

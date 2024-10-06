@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="col-full timestamp">
-				{m.ThisPageWasCreatedOn()}
+				{m.ThisPageWasRenderedOn()}
 				{currentDateOnServer}.
 			</div>
 		</div>
