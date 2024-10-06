@@ -25,6 +25,9 @@
 
 		<ul>
 			<li>
+				<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS demos in your browser, powered by DDEV.
+			</li>
+			<li>
 				<a href="https://github.com/mandrasch/ddev-craftcms-vite">mandrasch/ddev-craftcms-vite</a> -
 				Demo repository for Vite usage with DDEV
 			</li>
@@ -99,6 +102,9 @@
 			<li>
 				Demos:
 				<ul>
+					<li>
+						<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS demos in your browser, powered by DDEV.
+					</li>
 					<li>
 						<a href="https://github.com/mandrasch/ddev-sveltekit-postgres"
 							>mandrasch/ddev-sveltekit-postgres</a
