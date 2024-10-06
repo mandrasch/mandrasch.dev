@@ -63,11 +63,17 @@
 		<h3>DDEV-related</h3>
 
 		<p>
-			DDEV is a swiss army knife for Docker-based PHP development environments, I maintain some
-			tutorials and demo project in my free time.
+			DDEV is a swiss army knife for Docker-based PHP development environments, I maintain some tutorials and demo project in my free time.
 		</p>
 
 		<ul>
+			<li>Prototype work:
+				<ul>
+					<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
+						DDEV unofficial Web UI - frontend experiment 
+					</a>
+				</ul>
+			</li>
 			<li>
 				Guides:
 				<ul>

@@ -6,7 +6,7 @@ const books: Book[] = [
 		authors: 'Bianca Jankovska',
 		rating: '⌛',
 		title: 'Potenziell furchtbare Tage. Über Anti-Work, Menstrual Health und das gute Leben.',
-		learning: 'The introduction, with its reference to Teresa Bücker, already caught my attention. Bianca Jankovska doesn\'t want to write a sober, objective non-fiction book, nor convince with columns of figures and studies - but rather add to the debate about work with a lively, unsparing book. This is fitting, because for many people, employment is just that - a highly emotional topic. And yet a lot of research work has gone into providing a scientifically sound basis for topics such as the 4-day week, the Great Resignation, menstrual leave and inheritance.',
+		learning: 'The introduction, with its reference to Teresa Bücker, already caught my attention. Bianca Jankovska doesn\'t want to write a sober, objective non-fiction book, nor convince with columns of figures and studies - but rather add to the debate about work with a lively, unsparing book. This is fitting, because for many people, employment is just that - a highly emotional topic. And yet a lot of research work has gone into providing a scientifically sound basis for topics such as the 4-day work week, the Great Resignation, menstrual leave and inheritance.',
 		link: 'https://www.haymonverlag.at/produkt/potenziell-furchtbare-tage/'
 	},
 	{

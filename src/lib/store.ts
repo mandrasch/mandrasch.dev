@@ -1,1 +1,1 @@
-export const pageTitleBase = 'Matthias Andrasch 💻 🌱';
+export const pageTitleBase = 'Matthias Andrasch';

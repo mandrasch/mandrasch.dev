@@ -1,5 +1,5 @@
 # Projects
 
 <p style="text-align:center;margin-bottom:2rem">
-    I like to share tutorials and demo repositories.
+    In meiner Freizeit erstelle ich gerne Tutorials und Demo-Projekte. <br> Sorry, die Seite ist noch nicht komplett übersetzt. Maybe later ;)
 </p>
