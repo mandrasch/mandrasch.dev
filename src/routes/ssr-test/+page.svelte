@@ -6,7 +6,7 @@
 	<h1>SSR test</h1>
 
 	<p>
-		This page is using server side generation, see how the timestamp changes here - while the other pages are statically pre-rendered (see timestamp in footer).
+		This page is <a href="https://kit.svelte.dev/docs/glossary#ssr" target="_blank">server side rendered (SSR)</a>. See how the timestamp changes here - while the other pages are statically pre-rendered (<a href="https://kit.svelte.dev/docs/glossary#ssg" target="_blank">SSG</a>), see timestamp in the footer.
 	</p>
 
 	<!-- See +layout.server.ts -->
