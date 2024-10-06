@@ -69,9 +69,11 @@
 		<ul>
 			<li>Prototype work:
 				<ul>
-					<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
-						DDEV unofficial Web UI - frontend experiment 
-					</a>
+					<li>
+						<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
+							DDEV unofficial Web UI - frontend experiment 
+						</a>
+					</li>
 				</ul>
 			</li>
 			<li>
@@ -140,6 +142,11 @@
 				<a href="https://github.com/mandrasch/sveltekit-inlang-paraglide-demo"
 					>mandrasch/sveltekit-inlang-paraglide-demo</a
 				> - Simple i18n demo with SvelteKit and @inlang/paraglide-js-adapter-sveltekit
+			</li>
+			<li>
+				<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
+					DDEV unofficial Web UI - frontend experiment 
+				</a>
 			</li>
 			<li>
 				<a href="https://tzettel.mandrasch.eu/">tzettel.mandrasch.eu</a> - Daily work sheet (Tageszettel)
