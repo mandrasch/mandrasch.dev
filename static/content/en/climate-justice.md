@@ -23,4 +23,4 @@ The climate emergency (as well the loss of biodiversity) is also a mental health
 - [Luisa Neubauer - Cut the Bullshit](https://www.youtube.com/watch?v=3RRJSx7_sbA)
 - [Maja Göpel - Wer wollen wir gewesen sein?](https://www.youtube.com/watch?v=sV6S3LWhIdA)
 
-I try to blog a bit about these topics as well on [crunchtime2030.de](https://crunchtime2030.de).
+I try to blog a bit about these topics as well on [workwhileclimate.at](https://workwhileclimate.at/).

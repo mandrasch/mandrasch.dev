@@ -35,8 +35,8 @@ Blogging is one of my hobbies. I currently maintain some small private blogs:
 ## Climate Emergency
 
 <article>
-    <a href="https://crunchtime2030.de" target="_blank">
-        <h2>crunchtime2030.de</h2>
+    <a href="https://workwhileclimate.at/" target="_blank">
+        <h2>workwhileclimate.at</h2>
     </a>
     <p>Blog articles about dealing with the climate emergency (german).</p>
 </article>

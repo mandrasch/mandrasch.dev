@@ -35,8 +35,8 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
 ## Klimakrise
 
 <article>
-    <a href="https://crunchtime2030.de" target="_blank">
-        <h2>crunchtime2030.de</h2>
+    <a href="https://workwhileclimate.at/" target="_blank">
+        <h2>workwhileclimate.at</h2>
     </a>
     <p>Kleiner Blog über den persönlichen als auch gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise).</p>
 </article>

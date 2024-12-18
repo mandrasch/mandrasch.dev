@@ -3,11 +3,12 @@ import type { Book } from '$lib/types';
 
 const books: Book[] = [
 	{
-		id:'jankovska-anti-work',
+		id: 'jankovska-anti-work',
 		authors: 'Bianca Jankovska',
-		rating: '⌛',
+		rating: '★★★★☆',
 		title: 'Potenziell furchtbare Tage. Über Anti-Work, Menstrual Health und das gute Leben.',
-		learning: 'Schon die Einleitung mit Referenz auf Teresa Bücker hat mich abgeholt. Bianca Jankovska will kein nüchtern-objektives Sachbuch schreiben, nicht mit Zahlen- und Studien-Kolonnen überzeugen - sondern die Debatte um Arbeit mit einem lebendigen, schonungslosen Buch ergänzen. Dies ist passend, denn für viele Menschen ist Erwerbsarbeit eben genau das - ein hochemotionales Thema. Und dennoch steckt einige Recherche-Arbeit dahinter, um die Themen wie 4-Tage-Woche, Great Resignation, Menstrual Leave oder Erbe wissenschaftlich fundiert zu hinterlegen.',
+		learning:
+			'Schon die Einleitung mit Referenz auf Teresa Bücker hat mich abgeholt. Bianca Jankovska will kein nüchtern-objektives Sachbuch schreiben, nicht mit Zahlen- und Studien-Kolonnen überzeugen - sondern die Debatte um Arbeit mit einem lebendigen, schonungslosen Buch ergänzen. Dies ist passend, denn für viele Menschen ist Erwerbsarbeit eben genau das - ein hochemotionales Thema. Und dennoch steckt einige Recherche-Arbeit dahinter, um die Themen wie 4-Tage-Woche, Great Resignation, Menstrual Leave oder Erbe wissenschaftlich fundiert zu hinterlegen. Eigener Blogbeitrag zum Buch: <a href="https://workwhileclimate.at/anti-work-mindset/">Befreiung durch das Anti-Work-Mindset: „Es gibt gute Arbeit, aber nur für verdammt wenige.“</a>',
 		link: 'https://www.haymonverlag.at/produkt/potenziell-furchtbare-tage/'
 	},
 	{
@@ -44,12 +45,6 @@ const books: Book[] = [
 		link: 'https://www.droemer-knaur.de/buch/lea-dohm-mareike-schulze-klimagefuehle-9783426286159',
 		learning:
 			'Der menschengemachten, fortschreitenden Erderhitzung zusehen zu müssen kann Gefühle wie Angst, Wut, Frust, Hoffnungslosigkeit oder Trauer hervorrufen. Mit ihnen umzugehen ist eine Mammut-Aufgabe, individuell wie gesellschaftlich. Eine großartige Einordnung der Psychologists for Future mit Empfehlungen wie dem "ins Handeln kommen" oder <a href="https://crunchtime2030.de/klimagefuehle-tipps-fuer-den-umgang-mit-angst-lea-dohm-mareike-schulze/" target="_blank">Tipps für den Umgang mit Angst</a>. Das Buch ist auch kostenfrei <a href="https://open.spotify.com/album/4jiOmIlad5pxgOGH1dQCT3" target="_blank" rel="noreferrer noopener">auf Spotify als Hörbuch</a> verfügbar.'
-	},
-	{
-		authors: 'Martin Gaedt',
-		title: '4 Tage Woche. Mehr Gesundheit, Freizeit und Lebensqualität.',
-		rating: '⌛',
-		link: 'https://martingaedt.de/buecher/'
 	}
 ];
 
