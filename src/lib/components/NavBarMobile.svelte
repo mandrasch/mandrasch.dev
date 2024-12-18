@@ -31,7 +31,7 @@
 
 	/* Fork of https://svelte.dev/repl/c94eebb874584f2fb62c0303738b7509?version=3.42.4, thx! */
 	import { fly, scale } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
+	import { quadOut, cubicOut } from 'svelte/easing';
 
 	let isOpen = false;
 
@@ -58,15 +58,21 @@
 </button>
 
 {#if isOpen}
-	<nav transition:fly={{ y: -15 }}>
+	<nav
+		in:fly={{ y: -15, duration: 250, easing: cubicOut }}
+		out:fly={{ y: -15, duration: 200, easing: cubicOut }}
+	>
 		<ul>
 			{#each routes as route, i}
 				<li>
 					<a
 						class={`button ${$page.route.id === route.href ? 'selected' : ''}`}
 						aria-current={$page.route.id === route.href ? 'page' : undefined}
-						href={route.href}>{route.label}</a
+						href={route.href}
+						on:click={toggleMenu}
 					>
+						{route.label}
+					</a>
 				</li>
 			{/each}
 			<li>|</li>
@@ -74,7 +80,7 @@
 				<LanguageSwitch reduced={true} />
 			</li>
 		</ul>
-		<div class="bar" transition:scale={{ duration: 750, easing: quadOut, opacity: 1 }} />
+		<div class="bar" transition:scale={{ duration: 200, easing: quadOut, start: 1.2 }} />
 	</nav>
 {/if}
 
@@ -85,7 +91,11 @@
 	}
 
 	.hamburger {
-		margin-top: 1.5rem;
+		margin-top: 0.5rem;
+		cursor: pointer;
+		color: var(--pico-primary-background);
+		background: none;
+		border: none;
 	}
 
 	.menu {

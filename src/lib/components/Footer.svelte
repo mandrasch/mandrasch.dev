@@ -25,8 +25,7 @@
 
 			<div class="col" style="align-self:end;">
 				<p style="text-align:right;margin-bottom:12px;">
-					Made with
-					<a href="https://github.com/mandrasch/mandrasch.dev">SvelteKit</a>.
+					Made with SvelteKit (<a href="https://github.com/mandrasch/mandrasch.dev">Source</a>).
 				</p>
 				<p style="text-align:right;margin-bottom:12px;">Travelling via Klimaticket Austria.</p>
 				<p style="text-align:right;margin-bottom:12px;">
@@ -48,6 +47,9 @@
 		border-top: 1px solid #999;
 		background-color: var(--pico-primary-background);
 		font-size: 0.9rem;
+
+		container-type: inline-size;
+		container-name: footer;
 	}
 	/* .container-fluid was overriden by #root > footer (id has higher specifity) */
 	:global(#root > #footer.fluid) {
@@ -74,14 +76,24 @@
 		grid-template-columns: 1fr 1fr 1fr;
 		column-gap: 2rem;
 		row-gap: 3rem;
+
+		@container footer (width <= 40rem) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.col-2 {
 		grid-column: span 2;
+		@container footer (width <= 40rem) {
+			grid-column: initial;
+		}
 	}
 
 	.col-full {
 		grid-column: span 3;
+		@container footer (width <= 40rem) {
+			grid-column: initial;
+		}
 	}
 
 	nav {

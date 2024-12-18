@@ -29,18 +29,6 @@
 	</a>
 
 	<a
-		href="https://instagram.com/mandrasch.dev"
-		aria-label="Instagram"
-		target="_blank"
-		rel="noopener noreferrer"
-	>
-		<div class="icon">
-			<Instagram />
-		</div>
-		Instagram
-	</a>
-
-	<a
 		href="https://www.linkedin.com/in/mandrasch/"
 		aria-label="Linkedin"
 		target="_blank"
@@ -81,6 +69,18 @@
 			<DevTo />
 		</div>
 		dev.to
+	</a>
+
+	<a
+		href="https://instagram.com/workwhileclimate"
+		aria-label="Instagram"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		<div class="icon">
+			<Instagram />
+		</div>
+		Instagram
 	</a>
 </div>
 
