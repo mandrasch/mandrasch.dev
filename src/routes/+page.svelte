@@ -131,7 +131,7 @@
 	}
 
 	.intro picture img {
-		max-width: 15rem;
+		/*max-width: 15rem;*/
 		width: 100%;
 		aspect-ratio: 1;
 		height: auto;
