@@ -1,11 +1,16 @@
-<script>
+<script lang="ts">
 	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
 
-	// loaded via .server.ts, markdown content
-	export let data;
+	
+	interface Props {
+		// loaded via .server.ts, markdown content
+		data: any;
+	}
+
+	let { data }: Props = $props();
 
 	// important: make sure it's reactive for lang switcher
-	$: renderedHtmlFromMarkdown = data.mdContent.html;
+	let renderedHtmlFromMarkdown = $derived(data.mdContent.html);
 </script>
 
 <PageHeadSeo titleKey="ClimateJustice" />

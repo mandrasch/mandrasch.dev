@@ -1,5 +1,5 @@
-<script>
-	export let data; // retrieved from server
+<script lang="ts">
+	let { data } = $props();
 </script>
 
 <div class="container-boxed">

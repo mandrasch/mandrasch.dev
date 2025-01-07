@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
 	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
 
-	// loaded via .server.ts
-	export let data;
+	
+	interface Props {
+		// loaded via .server.ts
+		data: any;
+	}
+
+	let { data }: Props = $props();
 
 	// important: make sure it's reactive for lang switcher
-	$: books = data.books ?? [];
-	$: renderedHtmlFromMarkdown = data?.mdContent?.html ?? '';
+	let books = $derived(data.books ?? []);
+	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html ?? '');
 </script>
 
 <PageHeadSeo titleKey="Reading" />

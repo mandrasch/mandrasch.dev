@@ -2,7 +2,11 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import SocialIcons from './SocialIcons.svelte';
 
-	export let currentDateOnServer: String;
+	interface Props {
+		currentDateOnServer: String;
+	}
+
+	let { currentDateOnServer }: Props = $props();
 </script>
 
 <footer data-theme="dark" id="footer" class="fluid">

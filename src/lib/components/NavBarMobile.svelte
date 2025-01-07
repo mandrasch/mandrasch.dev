@@ -33,7 +33,7 @@
 	import { fly, scale } from 'svelte/transition';
 	import { quadOut, cubicOut } from 'svelte/easing';
 
-	let isOpen = false;
+	let isOpen = $state(false);
 
 	function toggleMenu() {
 		isOpen = !isOpen;
@@ -41,7 +41,7 @@
 </script>
 
 <!-- TODO: translate -->
-<button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen}>
+<button class="hamburger" onclick={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
@@ -69,7 +69,7 @@
 						class={`button ${$page.route.id === route.href ? 'selected' : ''}`}
 						aria-current={$page.route.id === route.href ? 'page' : undefined}
 						href={route.href}
-						on:click={toggleMenu}
+						onclick={toggleMenu}
 					>
 						{route.label}
 					</a>
@@ -80,7 +80,7 @@
 				<LanguageSwitch reduced={true} />
 			</li>
 		</ul>
-		<div class="bar" transition:scale={{ duration: 200, easing: quadOut, start: 1.2 }} />
+		<div class="bar" transition:scale={{ duration: 200, easing: quadOut, start: 1.2 }}></div>
 	</nav>
 {/if}
 

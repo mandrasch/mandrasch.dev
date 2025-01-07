@@ -1,12 +1,17 @@
-<script>
+<script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
 
 	import profilePic from '$assets/profile_picture_transparent.png?enhanced';
 
-	// Dynamic markdown loading based on selected language (via +page.server.js)
-	export let data;
+	
+	interface Props {
+		// Dynamic markdown loading based on selected language (via +page.server.js)
+		data: any;
+	}
+
+	let { data }: Props = $props();
 	// important: make sure it's reactive for lang switcher
-	$: renderedHtmlFromMarkdown = data?.mdContent?.html || '';
+	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html || '');
 	// debug received data via:
 	// console.log({ data });
 </script>

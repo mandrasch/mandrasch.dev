@@ -1,7 +1,5 @@
 <script lang="ts">
-	// Default colors for the icons
-	export let primaryComponentColor = 'white';
-	export let hoverComponentColor = 'var(--primary)';
+	
 
 	// Import Skill Icons
 	import DevTo from 'virtual:icons/skill-icons/devto-dark';
@@ -10,6 +8,13 @@
 	import Mastodon from 'virtual:icons/skill-icons/mastodon-light';
 	import Instagram from 'virtual:icons/skill-icons/instagram';
 	import Twitter from 'virtual:icons/skill-icons/twitter';
+	interface Props {
+		// Default colors for the icons
+		primaryComponentColor?: string;
+		hoverComponentColor?: string;
+	}
+
+	let { primaryComponentColor = 'white', hoverComponentColor = 'var(--primary)' }: Props = $props();
 </script>
 
 <div

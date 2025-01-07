@@ -2,9 +2,14 @@
 	import { pageTitleBase } from '$lib/store';
 	import * as m from '$lib/paraglide/messages.js';
 
-	// export let titleKey: keyof typeof m;
-	export let titleKey;
-	export let descriptionKey = '';
+	
+	interface Props {
+		// export let titleKey: keyof typeof m;
+		titleKey: any;
+		descriptionKey?: string;
+	}
+
+	let { titleKey, descriptionKey = '' }: Props = $props();
 
 	// Type guard to check if the key exists in m
 	function isValidKey(key: string, obj: object): key is keyof typeof m {
@@ -12,7 +17,7 @@
 	}
 
 	// Compute the page title with a fallback if the key doesn't exist
-	let pageTitle: string;
+	let pageTitle: string = $state();
 
 	if (isValidKey(titleKey, m)) {
 		pageTitle = `${pageTitleBase} - ${m[titleKey]()}`;
@@ -20,7 +25,7 @@
 		pageTitle = pageTitleBase; // or some default value
 	}
 
-	let pageDescription: string = '';
+	let pageDescription: string = $state('');
 	if (descriptionKey != '' && isValidKey(descriptionKey, m)) {
 		pageDescription = `${m[descriptionKey]()}`;
 	} else {

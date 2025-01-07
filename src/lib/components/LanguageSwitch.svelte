@@ -1,7 +1,6 @@
-<script>
+<script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
 
-	export let reduced = false;
 
 	// Thx to https://github.com/LorisSigrist/paraglide-sveltekit-example
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime';
@@ -9,6 +8,11 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { get } from 'svelte/store';
+	interface Props {
+		reduced?: boolean;
+	}
+
+	let { reduced = false }: Props = $props();
 
 	/**
 	 * @param { import("$lib/paraglide/runtime").AvailableLanguageTag } newLanguage
@@ -36,7 +40,7 @@
 		{#each availableLanguageTags as langTag}
 			<a
 				href="javascript:void(0)"
-				on:click={() => switchToLanguage(langTag)}
+				onclick={() => switchToLanguage(langTag)}
 				class:selected={languageTag() === langTag}
 			>
 				{reducedLabels[langTag]}
@@ -46,7 +50,7 @@
 		{#each availableLanguageTags as langTag}
 			<a
 				href="javascript:void(0)"
-				on:click={() => switchToLanguage(langTag)}
+				onclick={() => switchToLanguage(langTag)}
 				class:selected={languageTag() === langTag}
 			>
 				{labels[langTag]}

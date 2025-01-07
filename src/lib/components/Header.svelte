@@ -5,7 +5,7 @@
 	import NavBarMobile from './NavBarMobile.svelte';
 
 	// TODO: rather use container queries in a cool way?
-	let isMobile = false;
+	let isMobile = $state(false);
 	function checkScreenWidth() {
 		isMobile = window.innerWidth < 640;
 	}

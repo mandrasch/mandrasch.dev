@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
 
-	export let data; // loaded via .server.ts, markdown content
+	let { data } = $props();
 	// important: make sure it's reactive for lang switcher
-	$: renderedHtmlFromMarkdown = data?.mdContent?.html || '';
+	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html || '');
 </script>
 
 <PageHeadSeo titleKey="Projects" />
