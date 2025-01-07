@@ -3,7 +3,6 @@
 
 	import profilePic from '$assets/profile_picture_transparent.png?enhanced';
 
-	
 	interface Props {
 		// Dynamic markdown loading based on selected language (via +page.server.js)
 		data: any;
@@ -76,7 +75,7 @@
 			<span>SSG / SSR</span>
 			<span>Coolify</span>
 			<span>🌱 Green Coding</span>
-			<span>Green Web</span>
+			<span>☀️ Green Web</span>
 			<span>Developer Experience</span>
 			<span>Open Source</span>
 			<span>Climate Justice</span>

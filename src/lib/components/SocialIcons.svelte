@@ -1,6 +1,4 @@
 <script lang="ts">
-	
-
 	// Import Skill Icons
 	import DevTo from 'virtual:icons/skill-icons/devto-dark';
 	import GitHub from 'virtual:icons/skill-icons/github-dark';
@@ -8,6 +6,7 @@
 	import Mastodon from 'virtual:icons/skill-icons/mastodon-light';
 	import Instagram from 'virtual:icons/skill-icons/instagram';
 	import Twitter from 'virtual:icons/skill-icons/twitter';
+
 	interface Props {
 		// Default colors for the icons
 		primaryComponentColor?: string;
@@ -46,15 +45,13 @@
 	</a>
 
 	<a
-		href="https://twitter.com/m_andrasch"
-		aria-label="Twitter"
+		href="https://bsky.app/profile/mandrasch.bsky.social"
+		aria-label="Bluesky"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<div class="icon">
-			<Twitter />
-		</div>
-		Twitter
+		<div class="icon">BS</div>
+		Bluesky
 	</a>
 
 	<a
