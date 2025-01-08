@@ -13,10 +13,85 @@
 		{@html renderedHtmlFromMarkdown}
 	</div>
 
-	<!-- TODO: translate -->
+	<article id="sveltekit">
+		<h3>Svelte and SvelteKit (JavaScript)</h3>
+
+		<ul>
+			<li>
+				<a href="https://austrian-web-dev-companies.pages.dev/"
+					>austrian-web-dev-companies.pages.dev
+				</a>
+				Demo project with the new Svelte v5 ($state), SvelteKit v2 and Simple.css.
+				<img src="/new_gifcities_org.gif" alt="new" />
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/mandrasch.dev">mandrasch/mandrasch.dev</a> - Personal site
+				with multilanguage markdown loading
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/sveltekit-inlang-paraglide-demo"
+					>mandrasch/sveltekit-inlang-paraglide-demo</a
+				> - Simple i18n demo with SvelteKit and @inlang/paraglide-js-adapter-sveltekit
+			</li>
+			<li>
+				<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
+					DDEV unofficial Web UI - frontend experiment
+				</a>
+			</li>
+			<li>
+				<a href="https://tzettel.mandrasch.eu/">tzettel.mandrasch.eu</a> - Daily work sheet (Tageszettel)
+				web app
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/train2lake">mandrasch/train2lake</a> - Demo of SvelteKit
+				and WordPress REST API (Gutenberg)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/sveltekit-headless-wp-rest-demo"
+					>mandrasch/sveltekit-headless-wp-rest-demo</a
+				> - Connect SvelteKit to WordPress REST API (Gutenberg)
+			</li>
+			<li>
+				Guides:
+				<ul>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/svelte-5-share-state-between-components-for-dummies-4gd2"
+							>Svelte 5: Share state between components (for Dummies)
+						</a>
+						<img src="/new_gifcities_org.gif" alt="new" />
+					</li>
+					<li>
+						<a href="https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5"
+							>Deploy SvelteKit with SSR on Coolify (Hetzner VPS)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/host-sveltekit-apps-with-ssr-support-via-ploiio-on-hetzner-cloud-1cpa"
+							>Host SvelteKit apps with SSR-support via ploi.io (on Hetzner Cloud)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/rich-harris-explains-why-sveltekit-pushes-for-server-side-rendering-and-against-spa-5flj"
+							>Rich Harris explains why SvelteKit pushes for Server Side Rendering (and against SPA
+							/ CSR)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/hosting-nodejs-ssr-sveltekit-apps-on-mittwald-spaceserver-1a3g"
+							>Hosting SvelteKit as SSR on mittwald SpaceServer
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</article>
 
 	<article id="craftcms">
-		<h3>Craft CMS</h3>
+		<h3>Craft CMS (PHP / MySQL)</h3>
 
 		<p>
 			Craft CMS is an awesome fit for web agency work, especially with plugins like Sprig and Blitz
@@ -25,7 +100,8 @@
 
 		<ul>
 			<li>
-				<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS demos in your browser, powered by DDEV.
+				<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS
+				demos in your browser, powered by DDEV.
 			</li>
 			<li>
 				<a href="https://github.com/mandrasch/ddev-craftcms-vite">mandrasch/ddev-craftcms-vite</a> -
@@ -66,15 +142,17 @@
 		<h3>DDEV-related</h3>
 
 		<p>
-			DDEV is a swiss army knife for Docker-based PHP development environments, I maintain some tutorials and demo project in my free time.
+			DDEV is a swiss army knife for Docker-based PHP development environments, I maintain some
+			tutorials and demo project in my free time.
 		</p>
 
 		<ul>
-			<li>Prototype work:
+			<li>
+				Prototype work:
 				<ul>
 					<li>
 						<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
-							DDEV unofficial Web UI - frontend experiment 
+							DDEV unofficial Web UI - frontend experiment
 						</a>
 					</li>
 				</ul>
@@ -103,7 +181,8 @@
 				Demos:
 				<ul>
 					<li>
-						<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS demos in your browser, powered by DDEV.
+						<a href="https://craftcms-launchpad.mandrasch.eu/">CraftCMS Launchpad</a> - Interactive CraftCMS
+						demos in your browser, powered by DDEV.
 					</li>
 					<li>
 						<a href="https://github.com/mandrasch/ddev-sveltekit-postgres"
@@ -140,65 +219,6 @@
 		</ul>
 	</article>
 
-	<article id="sveltekit">
-		<h3>Svelte(Kit)</h3>
-
-		<ul>
-			<li>
-				<a href="https://github.com/mandrasch/sveltekit-inlang-paraglide-demo"
-					>mandrasch/sveltekit-inlang-paraglide-demo</a
-				> - Simple i18n demo with SvelteKit and @inlang/paraglide-js-adapter-sveltekit
-			</li>
-			<li>
-				<a href="https://ddev-unofficial-web-ui.mandrasch.eu/">
-					DDEV unofficial Web UI - frontend experiment 
-				</a>
-			</li>
-			<li>
-				<a href="https://tzettel.mandrasch.eu/">tzettel.mandrasch.eu</a> - Daily work sheet (Tageszettel)
-				web app
-			</li>
-			<li>
-				<a href="https://github.com/mandrasch/train2lake">mandrasch/train2lake</a> - Demo of SvelteKit
-				and WordPress REST API (Gutenberg)
-			</li>
-			<li>
-				<a href="https://github.com/mandrasch/sveltekit-headless-wp-rest-demo"
-					>mandrasch/sveltekit-headless-wp-rest-demo</a
-				> - Connect SvelteKit to WordPress REST API (Gutenberg)
-			</li>
-			<li>
-				Guides:
-				<ul>
-					<li>
-						<a href="https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5"
-							>Deploy SvelteKit with SSR on Coolify (Hetzner VPS)
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://dev.to/mandrasch/host-sveltekit-apps-with-ssr-support-via-ploiio-on-hetzner-cloud-1cpa"
-							>Host SvelteKit apps with SSR-support via ploi.io (on Hetzner Cloud)
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://dev.to/mandrasch/rich-harris-explains-why-sveltekit-pushes-for-server-side-rendering-and-against-spa-5flj"
-							>Rich Harris explains why SvelteKit pushes for Server Side Rendering (and against SPA
-							/ CSR)
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://dev.to/mandrasch/hosting-nodejs-ssr-sveltekit-apps-on-mittwald-spaceserver-1a3g"
-							>Hosting SvelteKit as SSR on mittwald SpaceServer
-						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</article>
-
 	<article id="web-animation">
 		<h3 id="web-animation">Web Animation</h3>
 
@@ -220,7 +240,7 @@
 	</article>
 
 	<article id="web-accessibility">
-		<h3 id="">Web Accessibility</h3>
+		<h3>Web Accessibility</h3>
 
 		<p>
 			My dream would be a website called screenreadthis.org - which will give developers instantly
@@ -257,10 +277,13 @@
 		</p>
 	</article>
 
-	<article id="climate-emergency">
-		<h3>Climate Emergency</h3>
-
+	<article id="open-education">
+		<h3>Open Education</h3>
 		<ul>
+			<li>
+				<a href="https://oerhoernchen.de/">OERhörnchen</a> - Search interface for Open Educational Resources
+				(OER)
+			</li>
 			<li><a href="https://aktuelle-erderhitzung.de/">aktuelle-erderhitzung.de</a></li>
 			<li>
 				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/"
@@ -270,19 +293,14 @@
 		</ul>
 	</article>
 
-	<article id="other">
-		<h3 id="other">Other</h3>
-
+	<article id="eleventy">
+		<h3>Eleventy</h3>
 		<ul>
 			<li>
 				<a href="https://github.com/mandrasch/11ty-plain-bootstrap5"
 					>mandrasch/11ty-plain-bootstrap5</a
 				>
 				- Plain template for static site generator Eleventy with Boostrap v5
-			</li>
-			<li>
-				<a href="https://oerhoernchen.de/">OERhörnchen</a> - Search interface for Open Educational Resources
-				(OER)
 			</li>
 		</ul>
 	</article>
