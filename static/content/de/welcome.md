@@ -6,4 +6,4 @@ Ich arbeite als Web-Entwickler, u.a. mit Tools wie <a href="/de/projekte#craftcm
 
 Außerdem interessiere ich mich für Themen wie <a href="/de/green-coding">Green Web</a> und <a href="/de/klimagerechtigkeit">Klimagerechtigkeit</a>
 
-<span style="background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;">#OpenToWork</span>
+<span style="display:none;background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;">#OpenToWork</span>

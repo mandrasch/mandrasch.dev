@@ -23,7 +23,7 @@
 					<a href="/green-coding">Green Coding</a>
 					<a href="/climate-justice">{m.ClimateJustice()}</a>
 					<a href="/absurdity-of-life">{m.AbsurdityOfLife()}</a>
-					<a href="/ssr-test">SSR Test</a>
+					<!-- <a href="/ssr-test">SSR Test</a>-->
 				</nav>
 			</div>
 

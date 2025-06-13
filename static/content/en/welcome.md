@@ -6,4 +6,4 @@ I'm a web developer, working with tools like <a href="/projects#craftcms">Craft 
 
 Next to that I'm interested in topics such as <a href="/green-coding">Green Web</a> and <a href="/climate-justice">Climate Justice</a>.
 
-<span style="background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;">#OpenToWork</span>
+<span style="display:none;background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;">#OpenToWork</span>

@@ -2,7 +2,7 @@
 
 Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine Blogs.
 
-## Web-Development
+## Hauptblogs
 
 <article>
     <a href="https://dev.to/mandrasch" target="_blank">
@@ -23,7 +23,18 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
     </p>
 </article>
 
-<p>Artikel auf anderen Blogs:</p>
+<article>
+    <a href="https://workwhileclimate.at/" target="_blank">
+        <h2>workwhileclimate.at</h2>
+    </a>
+    <p>Kleiner Blog über den persönlichen als auch gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise).</p>
+</article>
+
+---
+
+## Artikel
+
+### Web-Development
 
 <article>
     <a href="https://ddev.com/blog/working-with-vite-in-ddev/" target="_blank" 
@@ -32,14 +43,7 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
     <p>Tutorial über das Arbeiten mit Open Source Software DDEV und dem Bundle-Werkzeug Vite.</p>
 </article>
 
-## Klimakrise
-
-<article>
-    <a href="https://workwhileclimate.at/" target="_blank">
-        <h2>workwhileclimate.at</h2>
-    </a>
-    <p>Kleiner Blog über den persönlichen als auch gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise).</p>
-</article>
+### Klimakrise
 
 <article>
     <a href="https://aktuelle-erderhitzung.de" target="_blank">
@@ -52,10 +56,10 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
     <a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/" target="_blank">
         <h2>Klimakrise Schnelldurchlauf</h2>
     </a>
-    <p>One-Pager über den die Hintergründe der von der Menschheit verursachten Erderhitzung.</p>
+    <p>One-Pager über die Hintergründe der von der Menschheit verursachten Erderhitzung.</p>
 </article>
 
-## Medienpädagogische Artikel
+### Medienpädagogik
 
 <article>
     <a href="https://matthias-andrasch.eu/2017/alles-was-kopiert-werden-kann-wird-kopiert/" target="_blank">
@@ -68,5 +72,5 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
     <a href="https://pb22.uber.space/author/mandrasch/" target="_blank">
     <h2>Blogartikel für pb21.de</h2>
     </a>
-    <p>„#pb21 - Web 2.0 in der politischen Bildung“ war ein Projekt der Bundeszentrale für politische Bildung (bpb), zu welchem ich Blogbeiträge beigesteuert habe - in Zusammenarbeit mit der Agentur J&K – Jöran und Konsorten.</p>
+    <p>„#pb21 - Web 2.0 in der politischen Bildung“ war ein Projekt der Bundeszentrale für politische Bildung (bpb), zu welchem ich Blogbeiträge beigesteuert habe – in Zusammenarbeit mit der Agentur J&K – Jöran und Konsorten.</p>
 </article>
