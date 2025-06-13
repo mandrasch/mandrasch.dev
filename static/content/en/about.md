@@ -12,9 +12,12 @@ Certifications:
     </li>
 </ul>
 
-Last two developer roles:
+Last developer roles:
 
  <ul>
+ <li>anexia, Wien<br>
+    <small>Full Stack Web Developer<br>Nuxt, Strapi CMS, Tailwind, Docker</small>
+    </li>
   <li>allaboutapps, Vienna<br>
  <small>Full Stack Web Developer<br>Craft CMS, PHP, JS, Tailwind, DDEV, DX</small>
  </li>

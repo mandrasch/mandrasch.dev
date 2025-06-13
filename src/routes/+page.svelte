@@ -63,8 +63,10 @@
 			<!-- <span>Full Stack Web Development</span> -->
 			<span>JavaScript</span>
 			<span>Svelte(Kit)</span>
+			<span>Nuxt / Vue</span>
+			<span>Strapi CMS</span>
 			<span>PHP</span>
-			<span>CraftCMS</span>
+			<span>Craft CMS</span>
 			<span>DDEV</span>
 			<span>HTML5</span>
 			<span>CSS3</span>
@@ -82,7 +84,7 @@
 			<span>Social Innovation</span>
 			<span>4 Day Work Week</span>
 			<span>UBI</span>
-			<span><s>Running &amp; Sports</s> Recovery 🤕</span>
+			<span>Running &amp; Sports</span>
 			<span>Mindfulness</span>
 			<span>Mental Health</span>
 			<span>Climate Emotions</span>

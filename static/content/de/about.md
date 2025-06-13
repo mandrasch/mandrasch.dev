@@ -14,14 +14,17 @@ Zertifizierungen:
     </li>
 </ul>
 
-Meine letzten Rollen in Web-Agenturen:
+Meine letzten Developer-Rollen:
 
  <ul>
-  <li>allaboutapps, Wien<br>
- <small>Full Stack Web Developer<br>Craft CMS, PHP, JS, WP, Tailwind, DDEV, DX</small>
- </li>
- <li>gugler* MarkenSinn, St. Pölten<br>
- <small>Full Stack Web Developer<br>Web Accessibility, JS, WordPress / PHP, Ionic Angular, SvelteKit, DDEV, DX</small></li>
+    <li>anexia, Wien<br>
+    <small>Full Stack Web Developer<br>Nuxt, Strapi CMS, Tailwind, Docker</small>
+    </li>
+    <li>allaboutapps, Wien<br>
+    <small>Full Stack Web Developer<br>Craft CMS, PHP, JS, WP, Tailwind, DDEV, DX</small>
+    </li>
+    <li>gugler* MarkenSinn, St. Pölten<br>
+    <small>Full Stack Web Developer<br>Web Accessibility, JS, WordPress / PHP, Ionic Angular, SvelteKit, DDEV, DX</small></li>
  </ul>
 
 <h3>Bildung 🎓</h3>
