@@ -1,0 +1,45 @@
+name: Build and Deploy
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v4
+
+            # we need two build steps because paths.base differs
+            # (GitHub Pages => deploys to subdirectory <user>.github.io/<repo>/)
+
+            # TODO: re-add later (remove `npm ci` from ftp step)
+            # TODO: check https://svelte.dev/docs/kit/adapter-static#GitHub-Pages for latest info
+            #   - name: Install and Build for Github Pages 🔧
+            #     run: |
+            #       npm ci
+            #       npm run build
+            #     env:
+            #       #important: deploy to subdirectory, relative links must be differend
+            #       PATHS_BASE: '/${{ github.event.repository.name }}'
+
+            #   - name: Deploy 🚀
+            #     uses: JamesIves/github-pages-deploy-action@4.1.7
+            #     with:
+            #       branch: gh-pages # The branch the action should deploy to.
+            #       folder: build # The folder the action should deploy.
+
+            - name: Build again for SFTP transfer 🔧
+              run: |
+                  npm ci
+                  npm run build
+              env:
+                  PATHS_BASE: "" # deploy to (sub)domain root
+
+            - name: 📂 Sync files via sftp
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+              with:
+                  local-dir: ./build/
+                  server: ${{ secrets.ftp_host }}
+                  username: ${{ secrets.ftp_user }}
+                  password: ${{ secrets.ftp_password }}
