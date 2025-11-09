@@ -11,6 +11,10 @@
 			label: m.About()
 		},
 		{
+			href: 'https://matthias-andrasch.eu/blog',
+			label: 'Blog'
+		},
+		{
 			href: '/projects', // path name will be translated via src/lib/i18n.js
 			label: m.Projects()
 		},
