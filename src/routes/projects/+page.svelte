@@ -13,6 +13,13 @@
 		{@html renderedHtmlFromMarkdown}
 	</div>
 
+	<article id="karenzwizard">
+		<h3>NEW: Karenz Wizard</h3>
+		<ul>
+			<li><a href="https://karenz-wizard.at/">karenz-wizard.at</a></li>
+		</ul>
+	</article>
+
 	<article id="sveltekit">
 		<h3>Svelte and SvelteKit (JavaScript)</h3>
 
