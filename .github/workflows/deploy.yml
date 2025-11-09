@@ -36,6 +36,9 @@ jobs:
               env:
                   PATHS_BASE: "" # deploy to (sub)domain root
 
+            # For my site, I use a quick hack to let SvelteKit handle all traffic, expect for /blog (handled by a
+            # WordPress site), see https://gist.github.com/mandrasch/46a00c3ba6cd30efd183509f1ebb4f3d.
+            # This deployement here goes directly to /matthias-andrasch.eu/sveltekit
             - name: 📂 Sync files via sftp
               uses: SamKirkland/FTP-Deploy-Action@v4.3.6
               with:
