@@ -1,0 +1,3 @@
+User-agent: *
+https://matthias-andrasch.eu/sitemap.xml
+https://matthias-andrasch.eu/blog/sitemap.xml
