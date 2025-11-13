@@ -200,4 +200,11 @@
 		margin-bottom: 10px;
 		border-radius: 100px;
 	}
+
+	@media (prefers-color-scheme: dark) {
+		.tags > span {
+			background-color: #353a46;
+			color: #f5f6fa;
+		}
+	}
 </style>
