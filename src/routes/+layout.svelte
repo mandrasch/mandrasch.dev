@@ -18,12 +18,6 @@
 <svelte:head>
 	<title>{pageTitleBase}</title>
 
-	<script
-		defer
-		data-domain="mandrasch.dev"
-		src="https://plausible.coolify.mandrasch.dev/js/script.js"
-	></script>
-
 	<link rel="icon" href="/favicon-150x150.jpeg" sizes="32x32" />
 	<link rel="icon" href="/favicon-300x300.jpeg" sizes="192x192" />
 	<link rel="apple-touch-icon" href="/favicon-300x300.jpeg" />
