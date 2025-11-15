@@ -21,7 +21,7 @@ Meine letzten Developer-Rollen:
     <small>Full Stack Web Developer<br>Nuxt/Vue, Strapi CMS, Tailwind, Docker Compose <br>Tätigkeit im Development-Team der Marketingabteilung, u.a. Barrierefreiheits-Optimierung und Weiterentwicklung von <a href="https://www.netcup.com/" target="_blank">netcup.com</a>, einer Tochterfirma von anexia.</small>
     </li>
     <li>allaboutapps & dotsandlines, Wien<br>
-    <small>Full Stack Web Developer<br>Craft CMS, PHP, JavaScript, WordPress, Tailwind, DDEV, DX <br>Betreuung vielfältiger Kund:innen-Projekte im Designagentur-Umfeld</small>
+    <small>Full Stack Web Developer<br>Craft CMS, PHP, JavaScript, WordPress, Tailwind, DDEV, DX <br>Betreuung vielfältiger Kund:innen-Projekte im Designagentur-Umfeld.</small>
     </li>
     <li>gugler* MarkenSinn, St. Pölten<br>
     <small>Full Stack Web Developer<br> JavaScript, WordPress / PHP, Ionic Angular, SvelteKit, DDEV, DX<br>Web Accessibility Testing umd Umsetzung sowie Betreuung von Kund:innen-Projekte in der Kommunikationsagentur, die der nachhaltigen Öko-Druckerei gugler* angehört.</small></li>
