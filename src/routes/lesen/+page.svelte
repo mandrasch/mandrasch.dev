@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
-	
+
 	interface Props {
 		// loaded via .server.ts
 		data: any;
@@ -27,7 +27,7 @@
 					{book.title}
 				</a>
 
-				<div class="rating">{book.rating}</div>
+				<div class="icon">{book.icon}</div>
 
 				<div class="author">{book.authors}</div>
 
@@ -89,7 +89,7 @@
 			font-weight: bold;
 		}
 
-		.grid-book .rating {
+		.grid-book .icon {
 			grid-column: span 2 / span 2;
 			justify-self: end;
 		}
