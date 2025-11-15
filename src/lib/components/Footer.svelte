@@ -18,10 +18,10 @@
 
 			<div class="col" style="text-align:left;">
 				<div style="color:white;text-align:left;padding-bottom:1rem;">Bonus-Seiten</div>
-					<nav>
-						<a href="/green-coding">Green Coding</a>
-						<a href="/klimagerechtigkeit">Klimagerechtigkeit</a>
-					<a href="/absurdity-of-life">Die Absurdität des Lebens</a>
+				<nav>
+					<a href="/green-coding">Green Coding</a>
+					<a href="/klimagerechtigkeit">Klimagerechtigkeit</a>
+					<a href="/absurdität-des-lebens">Die Absurdität des Lebens</a>
 					<!-- <a href="/ssr-test">SSR Test</a>-->
 				</nav>
 			</div>

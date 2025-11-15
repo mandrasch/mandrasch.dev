@@ -2,21 +2,14 @@
 
 Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine Blogs.
 
-## Hauptblogs
+## Meine Blogs
 
 <article>
-    <a href="https://dev.to/mandrasch" target="_blank">
-        <h2>dev.to/mandrasch</h2>
-    </a>
-    <p>Englischsprachige Artikel zu diversen Web-Development-Themen.</p>
-</article>
-
-<article>
-    <a href="https://matthias-andrasch.eu" target="_blank">
-        <h2>matthias-andrasch.eu</h2>
+    <a href="https://matthias-andrasch.eu/blog/" target="_blank">
+        <h2>matthias-andrasch.eu/blog/</h2>
     </a>
     <p>
-        Mein persönlicher Blog zu diversen Themen, spezielle Kategorie: 
+        Mein persönlicher Blog zu diversen Themen, u.a. zum gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise). Bezüglich Coding gibt es eine spezielle Kategorie: 
         <a href="https://matthias-andrasch.eu/cat/green-coding-green-web/">
             Green Coding & Green Web</a
         >.
@@ -24,10 +17,10 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
 </article>
 
 <article>
-    <a href="https://workwhileclimate.at/" target="_blank">
-        <h2>workwhileclimate.at</h2>
+    <a href="https://dev.to/mandrasch" target="_blank">
+        <h2>dev.to/mandrasch</h2>
     </a>
-    <p>Kleiner Blog über den persönlichen als auch gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise).</p>
+    <p>Englischsprachige Artikel zu diversen Web-Development-Themen.</p>
 </article>
 
 ---
