@@ -1,6 +1,4 @@
 <script lang="ts">
-	import * as m from '$lib/paraglide/messages.js';
-
 	import profilePic from '$assets/profile_picture_transparent.png?enhanced';
 
 	interface Props {
@@ -8,17 +6,32 @@
 		data: any;
 	}
 
+	const sections = [
+		{
+			href: '/projekte',
+			title: 'Projekte',
+			description: 'Ich beteilige mich gerne an Open-Source-Communities und erstelle Tutorials.'
+		},
+		{
+			href: '/schreiben',
+			title: 'Schreiben',
+			description: 'In meiner Freizeit betreibe ich einige kleine Blogs zu diversen Themen.'
+		},
+		{
+			href: '/lesen',
+			title: 'Lesen',
+			description: 'Einige Buchempfehlungen, die mich inspiriert haben.'
+		}
+	];
+
 	let { data }: Props = $props();
-	// important: make sure it's reactive for lang switcher
 	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html || '');
-	// debug received data via:
-	// console.log({ data });
 </script>
 
 <svelte:head>
 	<meta
 		name="description"
-		content="Web Developer, interested in Green Web and Climate Justice. Working with tools like Craft CMS, Svelte(Kit) and DDEV."
+		content="Webentwickler, interessiert an Green Web und Klimagerechtigkeit. Arbeitet mit Tools wie Craft CMS, Svelte(Kit) und DDEV."
 	/>
 </svelte:head>
 
@@ -38,23 +51,12 @@
 		</div>
 	</section>
 
-	<!-- TODO: translate sections-->
-	<section>
-		<a href="/projects"><h2>{m.Projects()}</h2></a>
-		<p>{m.ProjectsTeaser()}</p>
-	</section>
-
-	<section>
-		<a href="/writing"><h2>{m.Writing()}</h2></a>
-		<p>
-			{m.WritingTeaser()}
-		</p>
-	</section>
-
-	<section>
-		<a href="/reading"><h2>{m.Reading()}</h2></a>
-		<p>{m.ReadingTeaser()}</p>
-	</section>
+	{#each sections as section}
+		<section>
+			<a href={section.href}><h2>{section.title}</h2></a>
+			<p>{section.description}</p>
+		</section>
+	{/each}
 
 	<section class="featured tags">
 		<!-- TODO: Move to own component -->

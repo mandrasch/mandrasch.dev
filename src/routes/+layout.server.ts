@@ -1,12 +1,7 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = async ({ locals, depends }) => {
-	depends('paraglide:lang');
-	const selectedLanguage = locals.paraglide.lang ?? 'en';
-	let isoString = 'en-US';
-	if (selectedLanguage == 'de') {
-		isoString = 'de-AT';
-	}
+export const load: LayoutServerLoad = async () => {
+	const isoString = 'de-AT';
 
 	return {
 		currentDateOnServer: new Intl.DateTimeFormat(isoString, {

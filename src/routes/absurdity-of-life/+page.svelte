@@ -6,7 +6,7 @@
 	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html);
 </script>
 
-<PageHeadSeo titleKey="AbsurdityOfLife" />
+<PageHeadSeo title="Die Absurdität des Lebens" />
 
 <div class="container-boxed">
 	<div class="prose">

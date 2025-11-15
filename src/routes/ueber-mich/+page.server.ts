@@ -1,12 +1,9 @@
 import type { PageServerLoad } from './$types';
 import { loadMdContent } from '$lib/utils/loadMdContent';
 
-export const load: PageServerLoad = async ({ locals, depends, fetch }) => {
+export const load: PageServerLoad = async ({ fetch }) => {
 	try {
-		depends('paraglide:lang');
-		const selectedLanguage = locals.paraglide.lang ?? 'en';
-
-		const mdContent = await loadMdContent('projects.md', selectedLanguage, fetch);
+		const mdContent = await loadMdContent('about.md', fetch);
 
 		return {
 			...mdContent

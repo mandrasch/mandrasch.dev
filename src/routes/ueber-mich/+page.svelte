@@ -5,10 +5,10 @@
 	import HeroImage from '../../images/innsbruck.jpg?w=1920&webp';
 	import HeroImage_fallback from '../../images/innsbruck.jpg?w=1920&jpg';
 	let { data } = $props();
-	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html ?? ''); // important: make sure it's reactive for lang switcher
+	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html ?? '');
 </script>
 
-<PageHeadSeo titleKey="About" />
+<PageHeadSeo title="Über mich" />
 
 <div class="container-boxed">
 	<div class="prose">

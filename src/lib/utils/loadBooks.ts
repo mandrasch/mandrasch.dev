@@ -2,14 +2,9 @@ import books_en from '$lib/stores/en/books';
 import books_de from '$lib/stores/de/books';
 import type { Book } from '$lib/types';
 
-export const loadBooks = (selectedLanguage: string): { books?: Book[]; error?: string } => {
+export const loadBooks = (language = 'de'): { books?: Book[]; error?: string } => {
 	try {
-		let books: Book[];
-		if (selectedLanguage === 'de') {
-			books = books_de;
-		} else {
-			books = books_en;
-		}
+		const books: Book[] = language === 'de' ? books_de : books_en;
 
 		return { books };
 	} catch (e) {

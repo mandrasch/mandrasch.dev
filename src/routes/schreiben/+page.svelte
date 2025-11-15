@@ -5,7 +5,7 @@
 	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html ?? '');
 </script>
 
-<PageHeadSeo titleKey="Writing" />
+<PageHeadSeo title="Schreiben" />
 
 <div class="container-boxed">
 	<div class="prose writing">

@@ -2,14 +2,12 @@ import { compile } from 'mdsvex';
 
 export const loadMdContent = async (
 	fileName: string,
-	selectedLanguage: string,
-	// // use SvelteKits fetch https://stackoverflow.com/a/74031946
-	fetch: Function
+	// use SvelteKit's fetch https://stackoverflow.com/a/74031946
+	fetchFn: typeof fetch,
+	language = 'de'
 ) => {
 	try {
-		// const post = await import(`/content/${selectedLanguage}/${fileName}`);
-
-		const response = await fetch(`/content/${selectedLanguage}/${fileName}`);
+		const response = await fetchFn(`/content/${language}/${fileName}`);
 		if (!response.ok) {
 			throw new Error('Network response was not ok');
 		}
@@ -23,7 +21,7 @@ export const loadMdContent = async (
 
 		return {
 			mdContent: returnObject,
-			requestedFile: `${selectedLanguage}/${fileName}`
+			requestedFile: `${language}/${fileName}`
 		};
 	} catch (e) {
 		console.error('Load error', { e });
@@ -31,7 +29,7 @@ export const loadMdContent = async (
 			mdContent: {
 				html: 'Failed to load.'
 			},
-			requestedFile: `${selectedLanguage}/${fileName}`
+			requestedFile: `${language}/${fileName}`
 		};
 	}
 };

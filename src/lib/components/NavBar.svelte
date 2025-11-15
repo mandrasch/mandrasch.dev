@@ -1,39 +1,33 @@
 <script>
-	import * as m from '$lib/paraglide/messages.js';
-	import LanguageSwitch from './LanguageSwitch.svelte';
 	import { page } from '$app/stores';
 
-	// TODO: move to store, doube-coded
-	// Route slug translations can be found in i18n.js
-	const routes = [
+		const routes = [
 		{
-			href: '/about', // path name will be translated via src/lib/i18n.js
-			label: m.About()
+			href: '/ueber-mich',
+			label: 'Über mich'
 		},
 		{
 			href: 'https://matthias-andrasch.eu/blog',
 			label: 'Blog'
 		},
 		{
-			href: '/projects', // path name will be translated via src/lib/i18n.js
-			label: m.Projects()
+			href: '/projekte',
+			label: 'Projekte'
 		},
 		{
-			href: '/writing',
-			label: m.Writing()
+			href: '/schreiben',
+			label: 'Schreiben'
 		},
 		{
-			href: '/reading',
-			label: m.Reading()
+			href: '/lesen',
+			label: 'Lesen'
+		},
+		{
+			href: '/en',
+			label: 'English'
 		}
-		/*{
-			href: '/ideas', // TODO: add screenreadthis
-			label: 'Ideas' // TODO: translate
-		},*/
 	];
 </script>
-
-<!-- https://github.com/LorisSigrist/paraglide-sveltekit-example/blob/main/src/lib/ui/Header.svelte -->
 
 <nav>
 	<ul>
@@ -46,10 +40,6 @@
 				>
 			</li>
 		{/each}
-		<li>|</li>
-		<li>
-			<LanguageSwitch reduced={true} />
-		</li>
 	</ul>
 </nav>
 

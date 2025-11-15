@@ -3,10 +3,6 @@
 
 	import { pageTitleBase } from '$lib/store';
 
-	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
-	import { i18n } from '$lib/i18n';
-
-	import GitHubCorner from '$lib/components/GitHubCorner.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -34,13 +30,11 @@
 	<meta name="msapplication-TileImage" content="/favicon-300x300.jpeg" />
 </svelte:head>
 
-<ParaglideJS {i18n}>
-	<Header />
+<Header />
 
-	<main class="container">
-		{@render children?.()}
-	</main>
+<main class="container">
+	{@render children?.()}
+</main>
 
-	<Footer currentDateOnServer={data.currentDateOnServer} />
-	<!-- <GitHubCorner /> -->
-</ParaglideJS>
+<Footer currentDateOnServer={data.currentDateOnServer} />
+<!-- <GitHubCorner /> -->

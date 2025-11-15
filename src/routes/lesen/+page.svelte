@@ -1,7 +1,5 @@
 <script lang="ts">
-	import * as m from '$lib/paraglide/messages.js';
 	import PageHeadSeo from '$lib/components/PageHeadSeo.svelte';
-
 	
 	interface Props {
 		// loaded via .server.ts
@@ -15,7 +13,7 @@
 	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html ?? '');
 </script>
 
-<PageHeadSeo titleKey="Reading" />
+<PageHeadSeo title="Lesen" />
 
 <div class="container-boxed">
 	<div class="prose">

@@ -3,7 +3,7 @@ import { loadMdContent } from '$lib/utils/loadMdContent';
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	try {
-		const mdContent = await loadMdContent('welcome.md', fetch);
+		const mdContent = await loadMdContent('climate-justice.md', fetch);
 
 		return {
 			...mdContent

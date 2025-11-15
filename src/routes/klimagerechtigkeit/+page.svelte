@@ -13,7 +13,7 @@
 	let renderedHtmlFromMarkdown = $derived(data.mdContent.html);
 </script>
 
-<PageHeadSeo titleKey="ClimateJustice" />
+<PageHeadSeo title="Klimagerechtigkeit" />
 
 <div class="container-boxed">
 	<div class="prose">

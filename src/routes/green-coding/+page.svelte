@@ -14,7 +14,7 @@
 	let renderedHtmlFromMarkdown = $derived(data?.mdContent?.html || '');
 </script>
 
-<PageHeadSeo titleKey="GreenCoding" />
+<PageHeadSeo title="Green Coding" />
 
 <div class="container-boxed">
 	<div class="prose">

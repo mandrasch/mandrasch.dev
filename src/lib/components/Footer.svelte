@@ -1,5 +1,4 @@
 <script lang="ts">
-	import * as m from '$lib/paraglide/messages.js';
 	import SocialIcons from './SocialIcons.svelte';
 
 	interface Props {
@@ -13,16 +12,16 @@
 	<div class="container">
 		<div class="grid">
 			<div class="col">
-				<p style="text-align:left;">Let's connect!</p>
+				<p style="text-align:left;">Lass uns vernetzen!</p>
 				<SocialIcons />
 			</div>
 
 			<div class="col" style="text-align:left;">
-				<div style="color:white;text-align:left;padding-bottom:1rem;">Bonus Pages</div>
-				<nav>
-					<a href="/green-coding">Green Coding</a>
-					<a href="/climate-justice">{m.ClimateJustice()}</a>
-					<a href="/absurdity-of-life">{m.AbsurdityOfLife()}</a>
+				<div style="color:white;text-align:left;padding-bottom:1rem;">Bonus-Seiten</div>
+					<nav>
+						<a href="/green-coding">Green Coding</a>
+						<a href="/klimagerechtigkeit">Klimagerechtigkeit</a>
+					<a href="/absurdity-of-life">Die Absurdität des Lebens</a>
 					<!-- <a href="/ssr-test">SSR Test</a>-->
 				</nav>
 			</div>
@@ -33,12 +32,12 @@
 				</p>
 				<p style="text-align:right;margin-bottom:12px;">Travelling via Klimaticket Austria.</p>
 				<p style="text-align:right;margin-bottom:12px;">
-					<a href="https://matthias-andrasch.eu/impressum-datenschutz/">{m.ImprintAndPrivacy()}</a>
+					<a href="https://matthias-andrasch.eu/impressum-datenschutz/">Impressum & Datenschutz</a>
 				</p>
 			</div>
 
 			<div class="col-full timestamp">
-				{m.ThisPageWasGeneratedOn()}
+				Diese Seite wurde generiert am
 				{currentDateOnServer}.
 			</div>
 		</div>
