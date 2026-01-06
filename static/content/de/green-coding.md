@@ -16,8 +16,18 @@ Definition Sustainable Software:
 
 Via "Where Is The Green In The Mindset? Improving Awareness For Green Coding In The Software Development Process" - Verena Majuntke, https://www.eco-compute.io/talk/where-is-the-green-mindset/
 
+**Meine Blogartikel**
+
+- https://matthias-andrasch.eu/blog/cat/green-coding-green-web/
+
+**Online-Communities**
+
+- https://climateaction.tech/ Slack - check #local-germany, #local-austria & co
+- https://community.eco-compute.io/
+
 **More Resources**
 
 - https://www.programmier.bar/podcast/deep-dive-148-green-coding-mit-arne-tarara
 - https://sustainablewebdesign.org/
 - https://matthias-andrasch.eu/2023/der-weg-zu-einem-klimaneutralen-internet/
+- and many more ..
