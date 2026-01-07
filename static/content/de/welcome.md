@@ -2,12 +2,17 @@
 
 Hi, mein Name ist Matthias. 👋
 
-Seit 2020 ist mein Lebensmittelpunkt im schönen Wien, zugezogen aus Deutschland.
+Seit fünf Jahren lebe ich im schönen Wien, zugezogen aus Deutschland.
 
-Ich arbeite aktuell als Web-Entwickler, u.a. mit Software wie Nuxt, <a href="/projekte#craftcms">Craft CMS</a> oder <a href="/projekte#sveltekit">Svelte(Kit)</a>. Spezialisiert bin auf Full Stack (JS / PHP) und Barrierefreiheit. Ich interessiere mich aber ebenso für Testing, UX, Open Source & Co. Am liebsten würde ich mit Code-Projekten bzw. meiner Arbeit zu mehr Sozialer Gerechtigkeit und Klimaschutz beitragen. 🪴
+Meine Brötchen verdiene ich derzeit als Web-Entwickler – u.a. mit Nuxt, [Craft CMS](/projekte#craftcms) und [Svelte(Kit)](/projekte#sveltekit). Mein Schwerpunkt liegt auf der Full-Stack-Entwicklung (TypeScript / PHP) sowie Barrierefreiheit. Außerdem habe ich Interesse an Testing, UX, Open Source & weiteren Themen.
 
-In meiner Freizeit betreibe ich Side Projects wie den Elternzeit-Planer <a href="https://karenz-wizard.at">Karenz Wizard</a>.
+Langfristig wäre es mein Traum, mit Code-Projekten bzw. meiner hauptberuflichen Arbeit  
+ zu mehr sozialer Gerechtigkeit und Klimaschutz beitragen zu können. 🪴
 
-Außerdem blogge ich zu Themen wie <a href="/green-coding">Green Web</a>, <a href="/klimagerechtigkeit">Klimagerechtigkeit</a>. Die Realität ist natürlich leider, dass es nun primär um Klima(krise)-Anpassungen geht. Ich versuche die Welt aktuell u.a. mit der Brille von Albert Camus' Absurdismus konstruktiv zu begreifen.
+In meiner Freizeit betreibe ich Side Projects wie den [Karenz Wizard](https://karenz-wizard.at).
+
+Eine weitere Leidenschaft von mir ist das [Bloggen](/schreiben) über Themen wie Arbeit & Klimakrise. Die Realität ist ja, dass es nun vor allem um Klimafolgen-Anpassung & Solidarität gehen wird.
+
+Zudem versuche ich, die Welt durch die Brille von Albert Camus’ [Absurdismus](/absurdität-des-lebens/) und weiteren Autor:innen konstruktiv zu erschließen. 👁️
 
 <span style="background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;margin-bottom:100px;">#OpenToWork - 20h/Woche ab Herbst 2026</span>
