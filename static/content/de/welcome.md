@@ -15,4 +15,4 @@ Eine weitere Leidenschaft von mir ist das [Bloggen](/schreiben) über Themen wie
 
 Zudem versuche ich, die Welt durch die Brille von Albert Camus’ [Absurdismus](/absurdität-des-lebens/) und weiteren Autor:innen konstruktiv zu erschließen. 👁️
 
-<span style="background-color:#2E7B13; color:white; border-radius:25px;padding:10px 12px;font-size:0.8rem;margin-bottom:100px;">#OpenToWork - 20h/Woche ab Herbst 2026</span>
+Let's connect!
