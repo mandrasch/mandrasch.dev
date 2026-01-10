@@ -69,6 +69,7 @@
 		<div class="tags">
 			<!-- <span>Full Stack Web Development</span> -->
 			<span>JavaScript</span>
+			<span>TypeScript</span>
 			<span>Svelte(Kit)</span>
 			<span>Nuxt / Vue</span>
 			<span>Strapi CMS</span>
