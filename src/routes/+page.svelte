@@ -46,7 +46,7 @@
 			<div
 				style="background-color:#2E7B13; color:white; padding:8px 10px;font-size:0.7rem;margin-bottom:10px;margin-top:10px; text-align:center"
 			>
-				#OpenToWork - 20h/Wo ab Herbst 2026
+				#OpenToWork - 20h/Wo. ab Herbst 2026
 			</div>
 			<!-- TODO: implement later :) <button class="button">Remix </button>-->
 		</div>
