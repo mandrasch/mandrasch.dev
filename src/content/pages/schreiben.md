@@ -7,14 +7,14 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
 ## Meine Blogs
 
 <article>
-    <a href="https://blog.matthias-andrasch.eu/" target="_blank">
-        <h2>blog.matthias-andrasch.eu/</h2>
+    <a href="https://matthias-andrasch.eu/blog/" target="_blank">
+        <h2>matthias-andrasch.eu/blog</h2>
     </a>
     <p>
-        Mein persönlicher Blog zu diversen Themen, u.a. zum gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise). Bezüglich Coding gibt es eine spezielle Kategorie: 
+        Mein persönlicher Blog zu diversen Themen, u.a. zum gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise). <!-- Bezüglich Coding gibt es eine spezielle Kategorie: 
         <a href="https://matthias-andrasch.eu/cat/green-coding-green-web/">
             Green Coding & Green Web</a
-        >.
+        >.-->
     </p>
 </article>
 
