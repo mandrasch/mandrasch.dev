@@ -3,5 +3,7 @@ RewriteEngine On
 
 # ------------------------------------
 # 1) Old URLs: /YYYY/slug → /blog/YYYY/slug
+#    This is when I had my blog on matthias-andrasch.eu,
+#    and posts were at matthias-andrasch.eu/YYYY/<slug>/
 # ------------------------------------
 RewriteRule ^([0-9]{4})/(.*)$ /blog/$1/$2 [R=301,L]
