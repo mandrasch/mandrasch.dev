@@ -1,0 +1,329 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+const entry = await getEntry('pages', 'projekte');
+
+if (!entry) {
+  throw new Error('Could not find projekte page');
+}
+
+const { Content } = await render(entry);
+const { title } = entry.data;
+
+const metadata = {
+  title: title,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+      {title}
+    </h1>
+    <div class="mx-auto prose dark:prose-invert max-w-4xl">
+      <Content />
+
+      <article id="karenzwizard" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">NEW: Karenz Wizard</h3>
+		<ul class="list-disc pl-5">
+			<li><a href="https://karenz-wizard.at/" class="text-primary hover:underline">karenz-wizard.at</a></li>
+		</ul>
+	</article>
+
+	<article id="sveltekit" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">Svelte and SvelteKit (JavaScript)</h3>
+
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://austrian-web-dev-companies.pages.dev/" class="text-primary hover:underline"
+					>austrian-web-dev-companies.pages.dev
+				</a>
+				Demo project with the new Svelte v5 ($state), SvelteKit v2 and Simple.css.
+				<img src="/new_gifcities_org.gif" alt="new" class="inline h-4" />
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/mandrasch.dev" class="text-primary hover:underline">mandrasch/mandrasch.dev</a> - Personal site
+				with multilanguage markdown loading
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/sveltekit-inlang-paraglide-demo" class="text-primary hover:underline"
+					>mandrasch/sveltekit-inlang-paraglide-demo</a
+				> - Simple i18n demo with SvelteKit and @inlang/paraglide-js-adapter-sveltekit
+			</li>
+			<li>
+				<a href="https://ddev-unofficial-web-ui.mandrasch.eu/" class="text-primary hover:underline">
+					DDEV unofficial Web UI - frontend experiment
+				</a>
+			</li>
+			<li>
+				<a href="https://tzettel.mandrasch.eu/" class="text-primary hover:underline">tzettel.mandrasch.eu</a> - Daily work sheet (Tageszettel)
+				web app
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/train2lake" class="text-primary hover:underline">mandrasch/train2lake</a> - Demo of SvelteKit
+				and WordPress REST API (Gutenberg)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/sveltekit-headless-wp-rest-demo" class="text-primary hover:underline"
+					>mandrasch/sveltekit-headless-wp-rest-demo</a
+				> - Connect SvelteKit to WordPress REST API (Gutenberg)
+			</li>
+			<li>
+				Guides:
+				<ul class="list-circle pl-5 mt-2 space-y-1">
+					<li>
+						<a
+							href="https://dev.to/mandrasch/svelte-5-share-state-between-components-for-dummies-4gd2" class="text-primary hover:underline"
+							>Svelte 5: Share state between components (for Dummies)
+						</a>
+						<img src="/new_gifcities_org.gif" alt="new" class="inline h-4" />
+					</li>
+					<li>
+						<a href="https://dev.to/mandrasch/deploy-sveltekit-with-ssr-on-coolify-hetzner-vps-24c5" class="text-primary hover:underline"
+							>Deploy SvelteKit with SSR on Coolify (Hetzner VPS)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/host-sveltekit-apps-with-ssr-support-via-ploiio-on-hetzner-cloud-1cpa" class="text-primary hover:underline"
+							>Host SvelteKit apps with SSR-support via ploi.io (on Hetzner Cloud)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/rich-harris-explains-why-sveltekit-pushes-for-server-side-rendering-and-against-spa-5flj" class="text-primary hover:underline"
+							>Rich Harris explains why SvelteKit pushes for Server Side Rendering (and against SPA
+							/ CSR)
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/hosting-nodejs-ssr-sveltekit-apps-on-mittwald-spaceserver-1a3g" class="text-primary hover:underline"
+							>Hosting SvelteKit as SSR on mittwald SpaceServer
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</article>
+
+	<article id="craftcms" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">Craft CMS (PHP / MySQL)</h3>
+
+		<p class="mb-4">
+			Craft CMS is an awesome fit for web agency work, especially with plugins like Sprig and Blitz
+			Cache.
+		</p>
+
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://craftcms-launchpad.mandrasch.eu/" class="text-primary hover:underline">CraftCMS Launchpad</a> - Interactive CraftCMS
+				demos in your browser, powered by DDEV.
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/ddev-craftcms-vite" class="text-primary hover:underline">mandrasch/ddev-craftcms-vite</a> -
+				Demo repository for Vite usage with DDEV
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/craftcms-sprig-green-coding-jobs-demo" class="text-primary hover:underline"
+					>mandrasch/craftcms-sprig-green-coding-jobs-demo</a
+				> - Demo project of my first steps with Sprig, an htmx-powered plugin for Craft CMS
+			</li>
+
+			<li>
+				Guides:
+				<ul class="list-circle pl-5 mt-2 space-y-1">
+					<li>
+						<a
+							href="https://dev.to/mandrasch/install-craftcms-via-ploiio-on-hetzner-cloud-including-ddev-57f8" class="text-primary hover:underline"
+							>Deploy CraftCMS via ploi.io on Hetzner cloud (the fast way)</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://dev.to/mandrasch/install-craft-cms-v5-alpha-with-one-command-via-ddev-4ne5" class="text-primary hover:underline"
+							>Install Craft CMS v5 with one command via DDEV</a
+						>
+					</li>
+					<li>
+						<a href="https://dev.to/mandrasch/open-craftcms-in-github-codespaces-via-ddev-21he" class="text-primary hover:underline"
+							>Develop with CraftCMS + Vite + DDEV in Codespaces (experimental)</a
+						>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</article>
+
+	<article id="ddev" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">DDEV-related</h3>
+
+		<p class="mb-4">
+			DDEV is a swiss army knife for Docker-based PHP development environments, I maintain some
+			tutorials and demo project in my free time.
+		</p>
+
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				Prototype work:
+				<ul class="list-circle pl-5 mt-2 space-y-1">
+					<li>
+						<a href="https://ddev-unofficial-web-ui.mandrasch.eu/" class="text-primary hover:underline">
+							DDEV unofficial Web UI - frontend experiment
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Guides:
+				<ul class="list-circle pl-5 mt-2 space-y-1">
+					<li>
+						<a href="https://ddev.com/blog/working-with-vite-in-ddev/" class="text-primary hover:underline"
+							>Working with Vite in DDEV - an introduction</a
+						> (ddev.com)
+					</li>
+					<li>
+						Personal notebook: <a href="https://my-ddev-lab.mandrasch.eu/" class="text-primary hover:underline"
+							>my-ddev-lab.mandrasch.eu</a
+						>
+					</li>
+					<li>
+						<a href="https://dev.to/mandrasch/install-laravel-with-vite-support-in-ddev-docker-4lmh" class="text-primary hover:underline"
+							>Install Laravel with Vite support in DDEV (Docker)</a
+						>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Demos:
+				<ul class="list-circle pl-5 mt-2 space-y-1">
+					<li>
+						<a href="https://craftcms-launchpad.mandrasch.eu/" class="text-primary hover:underline">CraftCMS Launchpad</a> - Interactive CraftCMS
+						demos in your browser, powered by DDEV.
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-sveltekit-postgres" class="text-primary hover:underline"
+							>mandrasch/ddev-sveltekit-postgres</a
+						> - Dockerized SvelteKit with PostgreSQL
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-laravel-vite" class="text-primary hover:underline">
+							mandrasch/ddev-laravel-vite</a
+						> - Laravel with DDEV, including support for Vite
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-laravel-breeze-vite" class="text-primary hover:underline"
+							>mandrasch/ddev-laravel-breeze-vite</a
+						> - Demo for Laravel Breeze StarterKit
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-wp-acf-blocks-svelte" class="text-primary hover:underline"
+							>mandrasch/ddev-wp-acf-blocks-svelte</a
+						> - WP ACF Blocks meets Svelte
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-pull-wp-scripts" class="text-primary hover:underline">
+							mandrasch/ddev-pull-wp-scripts</a
+						> - Pull scripts to sync WordPress to DDEV
+					</li>
+					<li>
+						<a href="https://github.com/mandrasch/ddev-typo3-vite-svelte" class="text-primary hover:underline">
+							mandrasch/ddev-typo3-vite-svelte</a
+						> - Svelte meets TYPO3 + Vite in DDEV
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</article>
+
+	<article id="web-animation" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 id="web-animation" class="text-2xl font-bold mb-4">Web Animation</h3>
+
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://github.com/mandrasch/rive-vite-demo" class="text-primary hover:underline">mandrasch/rive-vite-demo</a> - Demo for
+				usage of Rive animations in Vite projects
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/spline-selfhosted" class="text-primary hover:underline">mandrasch/spline-selfhosted</a> - Demo
+				of selfhosting of Spline 3D scene (exports)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/astro-landing-page-spline-viewer-demo" class="text-primary hover:underline"
+					>mandrasch/astro-landing-page-spline-viewer-demo</a
+				> - Astro meets Spline Viewer
+			</li>
+		</ul>
+	</article>
+
+	<article id="web-accessibility" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">Web Accessibility</h3>
+
+		<p class="mb-4">
+			My dream would be a website called screenreadthis.org - which will give developers instantly
+			the screenreader output of websites - without learning keyboard shortcuts for real
+			screenreaders first (which is a major blocker for testing imho). Unfortunately I didn't find a
+			quick way to remote control real screenreaders (yet). Only managed some to implement some
+			experiments:
+		</p>
+
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://github.com/mandrasch/screenreadthis" class="text-primary hover:underline">mandrasch/screenreadthis</a> - prototype
+				with Puppeteers accessibility snapshot (experimental)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/not-a-real-screenreader" class="text-primary hover:underline"
+					>mandrasch/not-a-real-screenreader</a
+				> - electron (experimental)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/screenreader-remote-control?tab=readme-ov-file" class="text-primary hover:underline"
+					>mandrasch/screenreader-remote-control</a
+				> - electron, control laptop via second device (experimental)
+			</li>
+			<li>
+				<a href="https://github.com/mandrasch/pa11y-pipeline-dashboard" class="text-primary hover:underline"
+					>mandrasch/pa11y-pipeline-dashboard</a
+				>
+			</li>
+		</ul>
+
+		<p class="mt-4">
+			See also <a href="https://assistivlabs.com/" class="text-primary hover:underline">assistivlabs.com</a> for remote screenreader testing.
+		</p>
+	</article>
+
+	<article id="open-education" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">Open Education</h3>
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://oerhoernchen.de/" class="text-primary hover:underline">OERhörnchen</a> - Search interface for Open Educational Resources
+				(OER)
+			</li>
+			<li><a href="https://aktuelle-erderhitzung.de/" class="text-primary hover:underline">aktuelle-erderhitzung.de</a></li>
+			<li>
+				<a href="https://klimakrise-schnelldurchlauf.mandrasch.eu/" class="text-primary hover:underline"
+					>klimakrise-schnelldurchlauf.mandrasch.eu</a
+				>
+			</li>
+		</ul>
+	</article>
+
+	<article id="eleventy" class="mb-10 p-8 border border-gray-200 dark:border-gray-700 rounded-lg">
+		<h3 class="text-2xl font-bold mb-4">Eleventy</h3>
+		<ul class="list-disc pl-5 space-y-2">
+			<li>
+				<a href="https://github.com/mandrasch/11ty-plain-bootstrap5" class="text-primary hover:underline"
+					>mandrasch/11ty-plain-bootstrap5</a
+				>
+				- Plain template for static site generator Eleventy with Boostrap v5
+			</li>
+		</ul>
+	</article>
+
+    </div>
+  </section>
+</Layout>

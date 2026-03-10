@@ -1,0 +1,238 @@
+---
+interface Props {
+  provider: 'youtube' | 'twitter' | 'mastodon' | 'vimeo' | 'other';
+  embedUrl: string;
+  title?: string;
+  directUrl?: string;
+}
+
+const { provider, embedUrl, title = 'Embedded content', directUrl } = Astro.props;
+
+const providerNames: Record<string, string> = {
+  youtube: 'YouTube',
+  twitter: 'Twitter/X',
+  mastodon: 'Mastodon',
+  vimeo: 'Vimeo',
+  other: 'diesem Dienst',
+};
+
+const providerName = providerNames[provider] || providerNames.other;
+const storageKey = `embed-consent-${provider}`;
+---
+
+<div class="privacy-embed" data-provider={provider} data-embed-url={embedUrl} data-storage-key={storageKey}>
+  <div class="privacy-overlay">
+    <div class="privacy-content">
+      <div class="privacy-icon">
+        {provider === 'youtube' && (
+          <svg class="w-16 h-16 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        )}
+        {provider !== 'youtube' && (
+          <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+        )}
+      </div>
+      
+      <h3 class="privacy-title">Inhalt von {providerName}</h3>
+      
+      <p class="privacy-description">
+        Dieser Inhalt wird von {providerName} bereitgestellt. Beim Laden werden Daten an {providerName} übertragen.
+      </p>
+      
+      <div class="privacy-actions">
+        <button class="privacy-load-btn" data-action="load-once">
+          Inhalt laden
+        </button>
+        
+        <!-- <label class="privacy-checkbox">
+          <input type="checkbox" class="privacy-always-checkbox" />
+          <span>Inhalt von {providerName} immer anzeigen</span>
+        </label> -->
+      </div>
+      
+      {directUrl && (
+        <a href={directUrl} target="_blank" rel="noopener noreferrer" class="privacy-direct-link">
+          Direkt auf {providerName} öffnen →
+        </a>
+      )}
+    </div>
+  </div>
+  
+  <div class="privacy-embed-container" style="display: none;"></div>
+</div>
+
+<script>
+  class PrivacyEmbed {
+    constructor(element: HTMLElement) {
+      this.element = element;
+      this.provider = element.dataset.provider!;
+      this.embedUrl = element.dataset.embedUrl!;
+      this.storageKey = element.dataset.storageKey!;
+      
+      this.overlay = element.querySelector('.privacy-overlay') as HTMLElement;
+      this.container = element.querySelector('.privacy-embed-container') as HTMLElement;
+      this.loadBtn = element.querySelector('.privacy-load-btn') as HTMLButtonElement;
+      this.init();
+    }
+    
+    element: HTMLElement;
+    provider: string;
+    embedUrl: string;
+    storageKey: string;
+    overlay: HTMLElement;
+    container: HTMLElement;
+    loadBtn: HTMLButtonElement;
+    
+    init() {
+      // Check if user has already consented
+      const consent = localStorage.getItem(this.storageKey);
+      if (consent === 'always') {
+        this.loadEmbed();
+        return;
+      }
+      
+      // Set up event listeners
+      this.loadBtn.addEventListener('click', () => this.handleLoad());
+    }
+    
+    handleLoad() {
+      this.loadEmbed();
+    }
+    
+    loadEmbed() {
+      // Hide overlay
+      this.overlay.style.display = 'none';
+      
+      // Show container
+      this.container.style.display = 'block';
+      
+      // Create iframe
+      const iframe = document.createElement('iframe');
+      iframe.src = this.embedUrl;
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.minHeight = '400px';
+      
+      // YouTube shorts need different aspect ratio
+      if (this.provider === 'youtube' && this.embedUrl.includes('/shorts/')) {
+        iframe.style.aspectRatio = '9/16';
+        iframe.style.maxWidth = '500px';
+        iframe.style.margin = '0 auto';
+      } else {
+        iframe.style.aspectRatio = '16/9';
+      }
+      
+      this.container.appendChild(iframe);
+    }
+  }
+  
+  // Initialize all privacy embeds
+  document.addEventListener('DOMContentLoaded', () => {
+    const embeds = document.querySelectorAll('.privacy-embed');
+    embeds.forEach((embed) => new PrivacyEmbed(embed as HTMLElement));
+  });
+</script>
+
+<style>
+  .privacy-embed {
+    margin: 2rem 0;
+  }
+  
+  .privacy-overlay {
+    background: var(--bg-card, #f9fafb);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  :global(.dark) .privacy-overlay {
+    background: var(--bg-card, #1f2937);
+    border-color: var(--border, #374151);
+  }
+  
+  .privacy-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .privacy-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .privacy-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--aw-color-text-heading);
+  }
+  
+  .privacy-description {
+    color: var(--aw-color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .privacy-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .privacy-load-btn {
+    background: var(--accent, #2563eb);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .privacy-load-btn:hover {
+    background: var(--accent-dark, #1d4ed8);
+    transform: translateY(-1px);
+  }
+  
+  .privacy-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--aw-color-text-muted);
+  }
+  
+  .privacy-checkbox input {
+    cursor: pointer;
+  }
+  
+  .privacy-direct-link {
+    display: inline-block;
+    color: var(--accent, #2563eb);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+  }
+  
+  .privacy-direct-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  .privacy-embed-container {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+</style>

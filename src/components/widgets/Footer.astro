@@ -1,0 +1,105 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+import { getHomePermalink } from '~/utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+export interface Props {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
+  socialLinks: Array<Link>;
+  footNote?: string;
+  theme?: string;
+}
+
+const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+---
+
+<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-[var(--border)] not-prose']}>
+  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div
+    class="relative max-w-4xl mx-auto px-4 sm:px-6 dark:text-slate-300"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 items-start">
+      <!-- Connect Section -->
+      <div class="footer-connect">
+        <h4 class="font-mono text-xs uppercase tracking-widest text-muted mb-4">// Let's connect</h4>
+        {
+          socialLinks?.length ? (
+            <div class="flex flex-wrap gap-3">
+              {socialLinks.map(({ ariaLabel, href, text, icon }) => (
+                <a
+                  class="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-[var(--border)] rounded-[10px] text-sm text-secondary hover:text-accent hover:border-accent hover:-translate-y-0.5 transition-all bg-[var(--bg-card)] no-underline"
+                  aria-label={ariaLabel}
+                  href={href}
+                >
+                  {icon && <Icon name={icon} class="w-4 h-4" />}
+                  <Fragment set:html={text} />
+                </a>
+              ))}
+            </div>
+          ) : (
+            ''
+          )
+        }
+      </div>
+
+      <!-- Bonus Pages -->
+      <div class="footer-bonus md:text-right">
+        {
+          links.map(({ title, links }) => (
+            <div>
+              <div class="font-mono text-xs uppercase tracking-widest text-muted mb-4">{title}</div>
+              {links && Array.isArray(links) && links.length > 0 && (
+                <ul class="flex flex-col gap-1">
+                  {links.map(({ text, href, ariaLabel }) => (
+                    <li>
+                      <a
+                        class="text-secondary hover:text-accent transition-colors text-sm"
+                        href={href}
+                        aria-label={ariaLabel}
+                      >
+                        <Fragment set:html={text} />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-[var(--border)] py-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted gap-2">
+      <div class="flex gap-4">
+        <span>Made with <a href="https://astro.build" class="hover:text-accent transition-colors">Astro</a> & Svelte · <a href="https://github.com/mandrasch/matthias-andrasch.eu" class="hover:text-accent transition-colors">Source</a></span>
+        <span class="hidden md:inline">·</span>
+        <span>Travelling via Klimaticket 🚞</span>
+      </div>
+      <div>
+        {
+          secondaryLinks.map(({ text, href }, index) => (
+            <a
+              class="text-muted hover:text-accent transition-colors"
+              href={href}
+              set:html={text}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>

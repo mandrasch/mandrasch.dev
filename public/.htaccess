@@ -1,0 +1,7 @@
+Options -Indexes
+RewriteEngine On
+
+# ------------------------------------
+# 1) Old URLs: /YYYY/slug → /blog/YYYY/slug
+# ------------------------------------
+RewriteRule ^([0-9]{4})/(.*)$ /blog/$1/$2 [R=301,L]

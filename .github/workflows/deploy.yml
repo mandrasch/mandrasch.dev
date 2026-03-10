@@ -10,39 +10,15 @@ jobs:
             - name: Checkout 🛎️
               uses: actions/checkout@v4
 
-            # we need two build steps because paths.base differs
-            # (GitHub Pages => deploys to subdirectory <user>.github.io/<repo>/)
-
-            # TODO: re-add later (remove `npm ci` from ftp step)
-            # TODO: check https://svelte.dev/docs/kit/adapter-static#GitHub-Pages for latest info
-            #   - name: Install and Build for Github Pages 🔧
-            #     run: |
-            #       npm ci
-            #       npm run build
-            #     env:
-            #       #important: deploy to subdirectory, relative links must be differend
-            #       PATHS_BASE: '/${{ github.event.repository.name }}'
-
-            #   - name: Deploy 🚀
-            #     uses: JamesIves/github-pages-deploy-action@4.1.7
-            #     with:
-            #       branch: gh-pages # The branch the action should deploy to.
-            #       folder: build # The folder the action should deploy.
-
-            - name: Build again for SFTP transfer 🔧
+            - name: Install and Build 🔧
               run: |
                   npm ci
                   npm run build
-              env:
-                  PATHS_BASE: "" # deploy to (sub)domain root
 
-            # For my site, I use a quick hack to let SvelteKit handle all traffic, expect for /blog (handled by a
-            # WordPress site), see https://gist.github.com/mandrasch/46a00c3ba6cd30efd183509f1ebb4f3d.
-            # This deployement here goes directly to /matthias-andrasch.eu/sveltekit
             - name: 📂 Sync files via sftp
               uses: SamKirkland/FTP-Deploy-Action@v4.3.6
               with:
-                  local-dir: ./build/
+                  local-dir: ./dist/
                   server: ${{ secrets.ftp_host }}
                   username: ${{ secrets.ftp_user }}
                   password: ${{ secrets.ftp_password }}

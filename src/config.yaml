@@ -1,0 +1,33 @@
+site:
+  name: 'Matthias Andrasch'
+  site: 'https://matthias-andrasch.eu'
+  base: '/'
+  trailingSlash: false
+  googleSiteVerificationId: false
+
+metadata:
+  title:
+    default: 'Matthias Andrasch – Web Developer & Hobby Blogger'
+    template: '%s — Matthias Andrasch'
+  description: 'Persönliche Website von Matthias Andrasch. Full-Stack Web-Entwickler aus Wien. Svelte, Nuxt, Craft CMS, Open Source.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 'Matthias Andrasch'
+    type: website
+    images:
+      - url: '~/assets/images/hero-image.png'
+        width: 1200
+        height: 628
+
+i18n:
+  language: de
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false  # Disable for now, external blog is used
+
+ui:
+  theme: 'system'  # Keep dark/light mode toggle

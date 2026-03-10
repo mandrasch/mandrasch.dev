@@ -1,0 +1,72 @@
+---
+import '@fontsource/dm-serif-display';
+import '@fontsource/outfit';
+import '@fontsource/jetbrains-mono';
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: 'Outfit', system-ui, sans-serif;
+    --aw-font-serif: 'DM Serif Display', Georgia, serif;
+    --aw-font-heading: 'DM Serif Display', Georgia, serif;
+    --aw-font-mono: 'JetBrains Mono', monospace;
+
+    /* Light Theme - Based on Prototype */
+    --aw-color-primary: #1A1A18;       /* text-primary */
+    --aw-color-secondary: #5C5C57;     /* text-secondary */
+    --aw-color-accent: #2D6A4F;        /* accent-green */
+
+    --aw-color-text-heading: #1A1A18;  /* text-primary */
+    --aw-color-text-default: #1A1A18;  /* text-primary */
+    --aw-color-text-muted: #8A8A84;    /* text-muted */
+    
+    --aw-color-bg-page: #FAFAF7;       /* bg-primary */
+
+    /* Custom Design Tokens */
+    --bg-secondary: #F0EFE9;
+    --bg-card: #FFFFFF;
+    --accent-green: #2D6A4F;
+    --accent-green-light: #40916C;
+    --accent-green-glow: #52B78833;
+    --accent-warm: #D4A373;
+    --border: #E0DFD8;
+    --radius: 16px;
+
+    ::selection {
+      background-color: var(--accent-green-glow);
+      color: var(--accent-green);
+    }
+  }
+
+  .dark {
+    /* Dark Theme - Based on Prototype */
+    --aw-font-sans: 'Outfit', system-ui, sans-serif;
+    --aw-font-serif: 'DM Serif Display', Georgia, serif;
+    --aw-font-heading: 'DM Serif Display', Georgia, serif;
+    --aw-font-mono: 'JetBrains Mono', monospace;
+
+    --aw-color-primary: #EDEDEA;       /* text-primary */
+    --aw-color-secondary: #A8A8A2;     /* text-secondary */
+    --aw-color-accent: #52B788;        /* accent-green */
+
+    --aw-color-text-heading: #EDEDEA;  /* text-primary */
+    --aw-color-text-default: #EDEDEA;  /* text-primary */
+    --aw-color-text-muted: #6E6E68;    /* text-muted */
+    
+    --aw-color-bg-page: #141413;       /* bg-primary */
+
+    /* Custom Design Tokens */
+    --bg-secondary: #1E1E1C;
+    --bg-card: #242422;
+    --accent-green: #52B788;
+    --accent-green-light: #74C69D;
+    --accent-green-glow: #52B78822;
+    --accent-warm: #D4A373;
+    --border: #2E2E2B;
+
+    ::selection {
+      background-color: var(--accent-green-glow);
+      color: var(--accent-green);
+    }
+  }
+</style>

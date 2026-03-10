@@ -1,0 +1,40 @@
+---
+const tags = [
+  { text: "Svelte(Kit)", highlight: true },
+  { text: "TypeScript", highlight: true },
+  { text: "JavaScript", highlight: false },
+  { text: "Nuxt / Vue", highlight: false },
+  { text: "PHP", highlight: false },
+  { text: "Craft CMS", highlight: false },
+  { text: "DDEV", highlight: false },
+  { text: "HTML5", highlight: false },
+  { text: "CSS3", highlight: false },
+  { text: "Web Accessibility", highlight: false },
+  { text: "WordPress", highlight: false },
+  { text: "Tailwind", highlight: false },
+  { text: "Vite", highlight: false },
+  { text: "SSG / SSR", highlight: false },
+  { text: "Coolify", highlight: false },
+  { text: "🌱 Green Coding", highlight: true },
+  { text: "☀️ Green Web", highlight: false },
+  { text: "Developer Experience", highlight: false },
+  { text: "Open Source", highlight: false },
+  { text: "Climate Justice", highlight: true },
+  { text: "Social Innovation", highlight: false },
+  { text: "4 Day Work Week", highlight: false },
+  { text: "UBI", highlight: false },
+  { text: "Mindfulness", highlight: false },
+  { text: "Mental Health", highlight: false },
+  { text: "🏠 Vienna", highlight: true },
+  { text: "🚞 Klimaticket", highlight: true }
+];
+---
+<div class="flex flex-wrap gap-2">
+  {
+    tags.map((tag) => (
+      <span class={`tag ${tag.highlight ? 'highlight' : ''}`}>
+        {tag.text}
+      </span>
+    ))
+  }
+</div>

@@ -1,0 +1,11 @@
+---
+title: "Good to have you here!"
+---
+
+Hi, my name is Matthias. 👋
+
+I'm a web developer, working with software like Nuxt, Strapi, <a href="/projekte#craftcms">Craft CMS</a>, <a href="/projekte#sveltekit">Svelte(Kit)</a> and <a href="/projekte#ddev">DDEV</a>.
+
+Next to that I'm interested in topics such as <a href="/green-coding">Green Web</a> and <a href="/klimagerechtigkeit">Climate Justice</a>.
+
+<span style="display:inline-block;background-color:#2E7B13; color:white; border-radius:25px;padding:4px 12px;font-size:0.8rem;">#OpenToWork</span>

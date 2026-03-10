@@ -1,2 +1,0 @@
-# Note to myself:
-# .htaccess file is in one subdirectory above (we mixed SvelteKit & WordPress)

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mandrasch.dev – Design Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #FAFAF7;
+    --bg-secondary: #F0EFE9;
+    --bg-card: #FFFFFF;
+    --text-primary: #1A1A18;
+    --text-secondary: #5C5C57;
+    --text-muted: #8A8A84;
+    --accent-green: #2D6A4F;
+    --accent-green-light: #40916C;
+    --accent-green-glow: #52B78833;
+    --accent-warm: #D4A373;
+    --accent-warm-light: #E9C46A22;
+    --border: #E0DFD8;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #141413;
+    --bg-secondary: #1E1E1C;
+    --bg-card: #242422;
+    --text-primary: #EDEDEA;
+    --text-secondary: #A8A8A2;
+    --text-muted: #6E6E68;
+    --accent-green: #52B788;
+    --accent-green-light: #74C69D;
+    --accent-green-glow: #52B78822;
+    --accent-warm: #D4A373;
+    --accent-warm-light: #E9C46A15;
+    --border: #2E2E2B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-weight: 400;
+    transition: background 0.4s, color 0.4s;
+    overflow-x: hidden;
+  }
+
+  /* ═══ Grain overlay ═══ */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* ═══ Navigation ═══ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg-primary) 85%, transparent);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-green);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--text-muted); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 400;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--accent-green);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+  }
+
+  /* ═══ Hero ═══ */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+  }
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--accent-green);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    line-height: 1.8;
+  }
+  .hero-intro a {
+    color: var(--accent-green);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-green-glow);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .hero-intro a:hover { text-decoration-color: var(--accent-green); }
+
+  .hero-photo {
+    position: relative;
+  }
+  .hero-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    background: var(--bg-secondary);
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: var(--accent-green-glow);
+    border: 1px solid var(--accent-green);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent-green);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+  }
+  .status-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ═══ Section Cards ═══ */
+  .section-cards {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-warm));
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-green);
+    box-shadow: 0 12px 40px -12px rgba(45, 106, 79, 0.12);
+  }
+  .card:hover::before { opacity: 1; }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: all 0.3s;
+  }
+  .card:hover .card-arrow {
+    color: var(--accent-green);
+    transform: translateX(4px);
+  }
+
+  /* ═══ Tag Cloud ═══ */
+  .tagcloud-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+  }
+  .tagcloud-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.2rem;
+  }
+  .tagcloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+  .tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    transition: all 0.25s;
+    cursor: default;
+    white-space: nowrap;
+  }
+  .tag:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: var(--accent-green-glow);
+  }
+  .tag.highlight {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: var(--accent-green-glow);
+  }
+
+  /* ═══ Footer ═══ */
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-connect h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    transition: all 0.25s;
+    background: var(--bg-card);
+  }
+  .social-link:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    transform: translateY(-2px);
+  }
+
+  .footer-bonus {
+    text-align: right;
+  }
+  .footer-bonus h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .footer-bonus a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+  }
+  .footer-bonus a:hover { color: var(--accent-green); }
+
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .footer-bottom a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-bottom a:hover { color: var(--accent-green); }
+
+  /* ═══ Divider ═══ */
+  .section-divider {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .section-divider hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ═══ Design Notes Panel ═══ */
+  .design-notes {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .design-notes h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+  }
+  .design-notes ul {
+    list-style: none;
+    padding: 0;
+  }
+  .design-notes li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .design-notes li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+  }
+
+  /* ═══ Responsive ═══ */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .hero-photo { order: -1; justify-self: center; }
+    .hero-intro { max-width: 100%; }
+    .section-cards { grid-template-columns: 1fr; padding: 1rem 1.5rem 3rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.8rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bonus { text-align: left; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .status-badge { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="/" class="nav-logo">mandrasch<span>.dev</span></a>
+  <ul class="nav-links">
+    <li><a href="/ueber-mich">Über mich</a></li>
+    <li><a href="https://matthias-andrasch.eu/blog" target="_blank">Blog ↗</a></li>
+    <li><a href="/projekte">Projekte</a></li>
+    <li><a href="/schreiben">Schreiben</a></li>
+    <li><a href="/lesen">Lesen</a></li>
+    <li><a href="/en">EN</a></li>
+    <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="status-badge">#OpenToWork · 20h/Wo. ab Herbst 2026</div>
+    <h1>Matthias Andrasch,<br><em>Web Developer</em><br>& Hobby Blogger</h1>
+    <p class="hero-subtitle">Full-Stack · Wien · Open Source</p>
+    <p class="hero-intro">
+      Hi, mein Name ist Matthias. 👋 Seit fünf Jahren lebe ich im schönen Wien, zugezogen aus Deutschland. Meine Brötchen verdiene ich als Web-Entwickler – u.a. mit Nuxt, <a href="/projekte#craftcms">Craft CMS</a> und <a href="/projekte#sveltekit">Svelte(Kit)</a>. Mein Schwerpunkt liegt auf Full-Stack-Entwicklung und Barrierefreiheit.
+    </p>
+  </div>
+  <div class="hero-photo">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect fill='%23E0DFD8' width='180' height='180' rx='90'/%3E%3Ctext x='90' y='100' text-anchor='middle' fill='%238A8A84' font-size='48'%3E👨‍💻%3C/text%3E%3C/svg%3E" alt="Matthias Andrasch" />
+  </div>
+</section>
+
+<!-- ═══ CARDS ═══ -->
+<section class="section-cards">
+  <a href="/projekte" class="card">
+    <span class="card-icon">🛠</span>
+    <h3>Projekte</h3>
+    <p>Open-Source-Communities, Tutorials und Side Projects wie der Karenz Wizard.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a href="/schreiben" class="card">
+    <span class="card-icon">✍️</span>
+    <h3>Schreiben</h3>
+    <p>Blogs zu Arbeit, Klimakrise, und wie wir die Zukunft konstruktiv gestalten können.</p>
+    <span class="card-arrow">→</span>
+  </a>
+  <a href="/lesen" class="card">
+    <span class="card-icon">📚</span>
+    <h3>Lesen</h3>
+    <p>Buchempfehlungen die mich inspiriert haben – von Camus bis Climate Fiction.</p>
+    <span class="card-arrow">→</span>
+  </a>
+</section>
+
+<!-- ═══ TAGCLOUD ═══ -->
+<section class="tagcloud-section">
+  <div class="tagcloud-label">// Themen & Skills</div>
+  <div class="tagcloud">
+    <span class="tag highlight">Svelte(Kit)</span>
+    <span class="tag highlight">TypeScript</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Nuxt / Vue</span>
+    <span class="tag">PHP</span>
+    <span class="tag">Craft CMS</span>
+    <span class="tag">DDEV</span>
+    <span class="tag">HTML5</span>
+    <span class="tag">CSS3</span>
+    <span class="tag">Web Accessibility</span>
+    <span class="tag">WordPress</span>
+    <span class="tag">Tailwind</span>
+    <span class="tag">Vite</span>
+    <span class="tag">SSG / SSR</span>
+    <span class="tag">Coolify</span>
+    <span class="tag highlight">🌱 Green Coding</span>
+    <span class="tag">☀️ Green Web</span>
+    <span class="tag">Developer Experience</span>
+    <span class="tag">Open Source</span>
+    <span class="tag highlight">Climate Justice</span>
+    <span class="tag">Social Innovation</span>
+    <span class="tag">4 Day Work Week</span>
+    <span class="tag">UBI</span>
+    <span class="tag">Mindfulness</span>
+    <span class="tag">Mental Health</span>
+    <span class="tag">🏠 Vienna</span>
+    <span class="tag">🚞 Klimaticket</span>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-connect">
+      <h4>// Let's connect</h4>
+      <div class="social-links">
+        <a href="https://github.com/mandrasch" class="social-link">⌨ GitHub</a>
+        <a href="https://www.linkedin.com/in/mandrasch/" class="social-link">💼 LinkedIn</a>
+        <a href="https://bsky.app/profile/mandrasch.bsky.social" class="social-link">🦋 Bluesky</a>
+        <a href="https://social.tchncs.de/@mandrasch" class="social-link">🐘 Mastodon</a>
+        <a href="https://dev.to/mandrasch" class="social-link">👩‍💻 dev.to</a>
+        <a href="https://instagram.com/workwhileclimate" class="social-link">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bonus">
+      <h4>// Bonus-Seiten</h4>
+      <a href="/green-coding">Green Coding</a>
+      <a href="/klimagerechtigkeit">Klimagerechtigkeit</a>
+      <a href="/absurditaet-des-lebens">Die Absurdität des Lebens</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Made with <a href="https://astro.build">Astro</a> & Svelte · <a href="https://github.com/mandrasch/mandrasch.dev">Source</a></span>
+    <span>Travelling via Klimaticket 🚞</span>
+    <a href="https://matthias-andrasch.eu/impressum-datenschutz/">Impressum & Datenschutz</a>
+  </div>
+</footer>
+
+<!-- ═══ DESIGN NOTES ═══ -->
+<section class="design-notes">
+  <h3>🎨 Design-Entscheidungen (diese Section nicht ins Endprodukt)</h3>
+  <ul>
+    <li><strong>Fonts:</strong> DM Serif Display (Display/Headlines – warm, editorial) + Outfit (Body – modern, clean, nicht langweilig) + JetBrains Mono (Code/Labels – developer identity)</li>
+    <li><strong>Farben:</strong> Grün-Akzent (#2D6A4F → #52B788) statt AstroWind-Lila. Passt zu Green Coding & Climate-Thematik. Warme Beige-Töne statt kaltem Grau.</li>
+    <li><strong>Layout:</strong> Schmaler (900px max) statt AstroWind's breite Sections. Fühlt sich persönlicher an, wie ein Brief.</li>
+    <li><strong>Nav:</strong> Monospace-Logo "mandrasch.dev" statt großer Brand-Header. Dev-Identität.</li>
+    <li><strong>Cards:</strong> Dezent mit Hover-Gradient-Linie oben. Nicht die üblichen AstroWind-Mega-Cards mit Icons.</li>
+    <li><strong>Tagcloud:</strong> Pill-Badges statt Standard-Tags. Highlights für Schwerpunkte.</li>
+    <li><strong>Grain-Overlay:</strong> Subtile Papier-Textur über der ganzen Seite. Gibt Wärme.</li>
+    <li><strong>Dark Mode:</strong> Klick auf ☀/🌙 Toggle – dunkle Töne mit warmem Grün.</li>
+    <li><strong>Was NICHT von AstroWind bleibt:</strong> Kein Hero-Hintergrundbild, keine blauen Gradient-Buttons, kein Call-to-Action-zentriertes Design, keine "Feature Grid"-Optik.</li>
+  </ul>
+</section>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme');
+    btn.textContent = '☀';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = '🌙';
+  }
+}
+</script>
+
+</body>
+</html>

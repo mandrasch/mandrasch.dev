@@ -1,0 +1,118 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getAllPosts, getFeaturedImage, formatDate, stripHtml } from '~/utils/wordpress';
+
+export async function getStaticPaths() {
+  const allPosts = await getAllPosts();
+  const postsPerPage = 10;
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+  
+  return Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: i === 0 ? undefined : String(i + 1) },
+    props: {
+      posts: allPosts.slice(i * postsPerPage, (i + 1) * postsPerPage),
+      currentPage: i + 1,
+      totalPages,
+    },
+  }));
+}
+
+const { posts, currentPage, totalPages } = Astro.props;
+
+const metadata = {
+  title: currentPage === 1 ? 'Blog' : `Blog - Seite ${currentPage}`,
+  description: 'Persönlicher Blog von Matthias Andrasch über Web-Entwicklung, Klimakrise und gesellschaftliche Themen.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+      Blog
+    </h1>
+    
+    <div class="space-y-12">
+      {posts.map((post) => {
+        const featuredImage = getFeaturedImage(post);
+        const excerpt = stripHtml(post.excerpt.rendered);
+        const year = new Date(post.date).getFullYear();
+        const postHref = `/blog/${year}/${post.slug}`;
+
+        return (
+          <article class="border-b border-gray-200 dark:border-gray-700 pb-8">
+            {featuredImage && (
+              <a href={postHref}>
+                <img
+                  src={featuredImage.url}
+                  alt={featuredImage.alt}
+                  class="w-full h-auto rounded-lg mb-4 hover:opacity-90 transition-opacity"
+                  loading="lazy"
+                />
+              </a>
+            )}
+
+            <div class="text-sm text-muted mb-2">
+              {formatDate(post.date)}
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-bold mb-3">
+              <a
+                href={postHref}
+                class="hover:text-accent transition-colors"
+                set:html={post.title.rendered}
+              />
+            </h2>
+
+            <div class="text-secondary mb-4 leading-relaxed">
+              {excerpt}
+            </div>
+
+            <a
+              href={postHref}
+              class="text-accent hover:underline font-medium"
+            >
+              Weiterlesen →
+            </a>
+          </article>
+        );
+      })}
+    </div>
+    
+    {/* Pagination */}
+    {totalPages > 1 && (
+      <nav class="flex justify-center gap-2 mt-12" aria-label="Pagination">
+        {currentPage > 1 && (
+          <a
+            href={currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`}
+            class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            ← Vorherige
+          </a>
+        )}
+        
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <a
+            href={page === 1 ? '/blog' : `/blog/${page}`}
+            class={`px-4 py-2 border rounded transition-colors ${
+              page === currentPage
+                ? 'bg-accent text-white border-accent'
+                : 'border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800'
+            }`}
+            aria-current={page === currentPage ? 'page' : undefined}
+          >
+            {page}
+          </a>
+        ))}
+        
+        {currentPage < totalPages && (
+          <a
+            href={`/blog/${currentPage + 1}`}
+            class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            Nächste →
+          </a>
+        )}
+      </nav>
+    )}
+  </section>
+</Layout>

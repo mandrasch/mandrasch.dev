@@ -1,0 +1,112 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getAllPosts, getPostBySlug, getFeaturedImage, formatDate, processContentWithPrivacy } from '~/utils/wordpress';
+import PrivacyEmbed from '~/components/blog/PrivacyEmbed.astro';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => {
+    const year = new Date(post.date).getFullYear().toString();
+    return {
+      params: { year, slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const featuredImage = getFeaturedImage(post);
+
+// Process content to extract and replace embeds with privacy-friendly components
+const { content: processedContent, embeds } = processContentWithPrivacy(post.content.rendered);
+
+const metadata = {
+  title: post.title.rendered,
+  description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+  // Skip OG images to avoid remote dimension fetching issues during build
+};
+---
+
+<Layout metadata={metadata}>
+  <article class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    {/* Back to blog link */}
+    <div class="mb-8">
+      <a
+        href="/blog"
+        class="text-accent hover:underline inline-flex items-center gap-2"
+      >
+        ← Zurück zum Blog
+      </a>
+    </div>
+
+    {/* Post header */}
+    <header class="mb-8">
+      <div class="text-sm text-muted mb-4">
+        {formatDate(post.date)}
+      </div>
+
+      <h1
+        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-6 font-heading"
+        set:html={post.title.rendered}
+      />
+
+      {featuredImage && (
+        <img
+          src={featuredImage.url}
+          alt={featuredImage.alt}
+          class="w-full h-auto rounded-lg shadow-lg mb-8"
+          width={featuredImage.width}
+          height={featuredImage.height}
+        />
+      )}
+    </header>
+
+    {/* Post content */}
+    <div
+      class="prose dark:prose-invert max-w-none
+        prose-headings:font-heading
+        prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+        prose-img:rounded-lg prose-img:shadow-lg
+        prose-pre:bg-gray-100 dark:prose-pre:bg-gray-800
+        prose-code:text-accent prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+    >
+      {processedContent.split(/<!-- PRIVACY_EMBED_(\d+) -->/).map((part, index) => {
+        // Odd indices are embed markers (the captured group)
+        if (index % 2 === 1) {
+          const embedIndex = parseInt(part);
+          const embed = embeds[embedIndex];
+          if (embed) {
+            return (
+              <PrivacyEmbed
+                provider={embed.type}
+                embedUrl={embed.url}
+                title={embed.title}
+                directUrl={embed.directUrl}
+              />
+            );
+          }
+        }
+        // Even indices are regular content
+        return <Fragment set:html={part} />;
+      })}
+    </div>
+
+    {/* Post footer */}
+    <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <div class="flex justify-between items-center">
+        <a
+          href="/blog"
+          class="text-accent hover:underline inline-flex items-center gap-2"
+        >
+          ← Alle Beiträge
+        </a>
+      </div>
+    </footer>
+  </article>
+</Layout>

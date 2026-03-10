@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+const entry = await getEntry('pages', 'schreiben');
+
+if (!entry) {
+  throw new Error('Could not find schreiben page');
+}
+
+const { Content } = await render(entry);
+const { title } = entry.data;
+
+const metadata = {
+  title: title,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+      {title}
+    </h1>
+    <div class="mx-auto prose dark:prose-invert max-w-4xl">
+      <Content />
+    </div>
+  </section>
+</Layout>

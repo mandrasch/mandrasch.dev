@@ -1,0 +1,59 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
+import { render } from 'astro:content';
+import books from '~/data/books';
+
+const entry = await getEntry('pages', 'lesen');
+
+if (!entry) {
+  throw new Error('Could not find lesen page');
+}
+
+const { Content } = await render(entry);
+const { title } = entry.data;
+
+const metadata = {
+  title: title,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+      {title}
+    </h1>
+    <div class="mx-auto prose dark:prose-invert max-w-4xl mb-12">
+      <Content />
+    </div>
+
+    <!-- Book Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {books.map((book) => (
+        <article class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow" id={book.id}>
+          <div class="flex items-start justify-between mb-2">
+            <div class="text-4xl" aria-hidden="true">{book.icon}</div>
+          </div>
+          <h3 class="text-lg font-bold mb-2">
+            <a href={book.link} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+              {book.title}
+            </a>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{book.authors}</p>
+          {book.learning && (
+            <div class="text-sm bg-gray-50 dark:bg-gray-800 p-3 rounded-md">
+              <span class="font-semibold block mb-1">Learnings:</span>
+              <div set:html={book.learning} />
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-8 text-xs text-center text-muted">
+		Page Layout inspired by <a href="https://stefanzweifel.dev/reading/" target="_blank" class="hover:underline"
+			>https://stefanzweifel.dev/reading/</a
+		>
+	</p>
+  </section>
+</Layout>
