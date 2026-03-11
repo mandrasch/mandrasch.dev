@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -31,7 +31,7 @@ export const footerData = {
     { ariaLabel: 'Bluesky', icon: 'tabler:brand-bluesky', href: 'https://bsky.app/profile/mandrasch.bsky.social' },
     { ariaLabel: 'Mastodon', icon: 'tabler:brand-mastodon', href: 'https://social.tchncs.de/@mandrasch' },
     { ariaLabel: 'dev.to', icon: 'tabler:code', href: 'https://dev.to/mandrasch' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/workwhileclimate' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/matthias.andrasch/' },
   ],
   footNote: `
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://matthias-andrasch.eu"> Matthias Andrasch</a> · All rights reserved.
