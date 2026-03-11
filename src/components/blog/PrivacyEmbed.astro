@@ -132,11 +132,19 @@ const storageKey = `embed-consent-${provider}`;
     }
   }
   
-  // Initialize all privacy embeds
-  document.addEventListener('DOMContentLoaded', () => {
-    const embeds = document.querySelectorAll('.privacy-embed');
-    embeds.forEach((embed) => new PrivacyEmbed(embed as HTMLElement));
-  });
+  // Initialize all privacy embeds that haven't been set up yet.
+  // Uses a data attribute to guard against double-init (the script runs once
+  // immediately as a deferred module AND again on astro:page-load).
+  function initPrivacyEmbeds() {
+    const embeds = document.querySelectorAll<HTMLElement>('.privacy-embed:not([data-initialized])');
+    embeds.forEach((embed) => {
+      embed.dataset.initialized = 'true';
+      new PrivacyEmbed(embed);
+    });
+  }
+
+  // astro:page-load fires on first load and after every View Transitions navigation
+  document.addEventListener('astro:page-load', initPrivacyEmbeds);
 </script>
 
 <style>

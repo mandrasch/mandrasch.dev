@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
-      "WebFetch(domain:blog.matthias-andrasch.eu)"
+      "WebFetch(domain:blog.matthias-andrasch.eu)",
+      "Bash(curl:*)"
     ]
   }
 }
