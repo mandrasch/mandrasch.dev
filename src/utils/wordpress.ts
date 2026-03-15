@@ -38,6 +38,14 @@ export interface WordPressPost {
   };
 }
 
+export interface WordPressCategory {
+  id: number;
+  count: number;
+  name: string;
+  slug: string;
+  description: string;
+}
+
 export interface WordPressFeaturedImage {
   url: string;
   alt: string;
@@ -84,6 +92,36 @@ export async function getPostBySlug(slug: string): Promise<WordPressPost | null>
 }
 
 /**
+ * Fetch all categories from WordPress REST API
+ */
+export async function getAllCategories(): Promise<WordPressCategory[]> {
+  try {
+    const response = await fetch(`${WP_API_BASE}/categories?per_page=100`);
+
+    if (!response.ok) {
+      throw new Error(`WordPress API error: ${response.status}`);
+    }
+
+    const categories: WordPressCategory[] = await response.json();
+    // Filter out "Uncategorized" (id=1) and categories with no posts
+    // Decode HTML entities in category names
+    return categories
+      .filter((cat) => cat.slug !== 'uncategorized' && cat.count > 0)
+      .map((cat) => ({ ...cat, name: decodeHtmlEntities(cat.name) }));
+  } catch (error) {
+    console.error('Error fetching WordPress categories:', error);
+    return [];
+  }
+}
+
+/**
+ * Get the category name for a post (first category)
+ */
+export function getPostCategoryId(post: WordPressPost): number | null {
+  return post.categories?.[0] ?? null;
+}
+
+/**
  * Extract featured image from post data
  */
 export function getFeaturedImage(post: WordPressPost): WordPressFeaturedImage | null {
@@ -116,6 +154,22 @@ export function formatDate(dateString: string): string {
     month: 'long',
     day: 'numeric',
   }).format(date);
+}
+
+/**
+ * Decode HTML entities in a string
+ */
+export function decodeHtmlEntities(text: string): string {
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8220;/g, '\u201C')
+    .replace(/&#8221;/g, '\u201D')
+    .replace(/&hellip;/g, '\u2026')
+    .replace(/&nbsp;/g, ' ');
 }
 
 /**

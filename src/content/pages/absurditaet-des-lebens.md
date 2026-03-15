@@ -12,4 +12,4 @@ Warum sind wir eigentlich auf diesem Planeten? Christian Uhle versucht, dieser F
 >
 > Albert Camus
 
-Mehr dazu: https://workwhileclimate.at/sinn-des-lebens/
+Mehr dazu: https://matthias-andrasch.eu/blog/2024/sinn-des-lebens/

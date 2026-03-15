@@ -1,23 +1,32 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { getAllPosts, getFeaturedImage, formatDate, stripHtml } from '~/utils/wordpress';
+import { getAllPosts, getAllCategories, getFeaturedImage, formatDate, stripHtml } from '~/utils/wordpress';
+import type { WordPressCategory } from '~/utils/wordpress';
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPosts();
+  const [allPosts, allCategories] = await Promise.all([getAllPosts(), getAllCategories()]);
   const postsPerPage = 12;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
-  
+
+  // Build category lookup map
+  const categoryMap: Record<number, WordPressCategory> = {};
+  for (const cat of allCategories) {
+    categoryMap[cat.id] = cat;
+  }
+
   return Array.from({ length: totalPages }, (_, i) => ({
     params: { page: i === 0 ? undefined : String(i + 1) },
     props: {
       posts: allPosts.slice(i * postsPerPage, (i + 1) * postsPerPage),
       currentPage: i + 1,
       totalPages,
+      categoryMap,
+      allCategories,
     },
   }));
 }
 
-const { posts, currentPage, totalPages } = Astro.props;
+const { posts, currentPage, totalPages, categoryMap, allCategories } = Astro.props;
 
 const metadata = {
   title: currentPage === 1 ? 'Blog' : `Blog - Seite ${currentPage}`,
@@ -27,10 +36,31 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-normal mb-8 font-heading">
-      Blog
-    </h1>
-    
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-normal font-heading">
+        Blog
+      </h1>
+
+      {allCategories.length > 0 && (
+        <div>
+          <select
+            id="category-filter"
+            class="px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 cursor-pointer"
+          >
+            <option value="">Kategorie wählen…</option>
+            {allCategories.map((cat) => (
+              <option value={`/blog/kategorie/${cat.slug}`}>{cat.name}</option>
+            ))}
+          </select>
+          <script is:inline>
+            document.getElementById('category-filter').addEventListener('change', function() {
+              if (this.value) window.location.href = this.value;
+            });
+          </script>
+        </div>
+      )}
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => {
         const featuredImage = getFeaturedImage(post);
@@ -52,8 +82,19 @@ const metadata = {
             )}
 
             <div class="p-5 flex flex-col flex-1">
-              <div class="text-sm text-muted mb-2">
-                {formatDate(post.date)}
+              <div class="text-sm text-muted mb-2 flex items-center gap-2">
+                <span>{formatDate(post.date)}</span>
+                {post.categories?.[0] && categoryMap[post.categories[0]] && (
+                  <>
+                    <span>·</span>
+                    <a
+                      href={`/blog/kategorie/${categoryMap[post.categories[0]].slug}`}
+                      class="hover:text-accent transition-colors"
+                    >
+                      {categoryMap[post.categories[0]].name}
+                    </a>
+                  </>
+                )}
               </div>
 
               <h2 class="text-lg font-bold mb-3 tracking-normal">

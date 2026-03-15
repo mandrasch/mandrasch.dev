@@ -7,3 +7,8 @@ RewriteEngine On
 #    and posts were at matthias-andrasch.eu/YYYY/<slug>/
 # ------------------------------------
 RewriteRule ^([0-9]{4})/(.*)$ /blog/$1/$2 [R=301,L]
+
+# ------------------------------------
+# 2) Old category URLs: /blog/cat/slug → /blog/kategorie/slug
+# ------------------------------------
+RewriteRule ^blog/cat/(.*)$ /blog/kategorie/$1 [R=301,L]

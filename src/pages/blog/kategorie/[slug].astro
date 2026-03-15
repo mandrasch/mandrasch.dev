@@ -1,0 +1,93 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getAllPosts, getAllCategories, getFeaturedImage, formatDate, stripHtml } from '~/utils/wordpress';
+
+export async function getStaticPaths() {
+  const [allPosts, allCategories] = await Promise.all([getAllPosts(), getAllCategories()]);
+
+  return allCategories.map((category) => ({
+    params: { slug: category.slug },
+    props: {
+      category,
+      posts: allPosts.filter((post) => post.categories.includes(category.id)),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+
+const metadata = {
+  title: `Kategorie: ${category.name}`,
+  description: `Alle Blogbeiträge in der Kategorie "${category.name}".`,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+    <div class="mb-8">
+      <a
+        href="/blog"
+        class="text-accent hover:underline inline-flex items-center gap-2 text-sm"
+      >
+        ← Alle Beiträge
+      </a>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-normal mb-8 font-heading">
+      Kategorie: {category.name}
+    </h1>
+
+    {posts.length === 0 ? (
+      <p class="text-muted">Keine Beiträge in dieser Kategorie.</p>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => {
+          const featuredImage = getFeaturedImage(post);
+          const excerpt = stripHtml(post.excerpt.rendered);
+          const year = new Date(post.date).getFullYear();
+          const postHref = `/blog/${year}/${post.slug}`;
+
+          return (
+            <article class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+              {featuredImage && (
+                <a href={postHref}>
+                  <img
+                    src={featuredImage.url}
+                    alt={featuredImage.alt}
+                    class="w-full h-48 object-cover hover:opacity-90 transition-opacity"
+                    loading="lazy"
+                  />
+                </a>
+              )}
+
+              <div class="p-5 flex flex-col flex-1">
+                <div class="text-sm text-muted mb-2">
+                  {formatDate(post.date)}
+                </div>
+
+                <h2 class="text-lg font-bold mb-3 tracking-normal">
+                  <a
+                    href={postHref}
+                    class="hover:text-accent transition-colors"
+                    set:html={post.title.rendered}
+                  />
+                </h2>
+
+                <div class="text-sm text-secondary mb-4 leading-relaxed line-clamp-3 flex-1">
+                  {excerpt}
+                </div>
+
+                <a
+                  href={postHref}
+                  class="text-accent hover:underline font-medium text-sm"
+                >
+                  Weiterlesen →
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </section>
+</Layout>

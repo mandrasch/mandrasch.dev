@@ -1,21 +1,27 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { getAllPosts, getPostBySlug, getFeaturedImage, formatDate, processContentWithPrivacy } from '~/utils/wordpress';
+import { getAllPosts, getAllCategories, getPostBySlug, getFeaturedImage, formatDate, processContentWithPrivacy } from '~/utils/wordpress';
+import type { WordPressCategory } from '~/utils/wordpress';
 import PrivacyEmbed from '~/components/blog/PrivacyEmbed.astro';
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts();
+  const [posts, allCategories] = await Promise.all([getAllPosts(), getAllCategories()]);
+
+  const categoryMap: Record<number, WordPressCategory> = {};
+  for (const cat of allCategories) {
+    categoryMap[cat.id] = cat;
+  }
 
   return posts.map((post) => {
     const year = new Date(post.date).getFullYear().toString();
     return {
       params: { year, slug: post.slug },
-      props: { post },
+      props: { post, categoryMap },
     };
   });
 }
 
-const { post } = Astro.props;
+const { post, categoryMap } = Astro.props;
 
 if (!post) {
   return Astro.redirect('/404');
@@ -47,8 +53,17 @@ const metadata = {
 
     {/* Post header */}
     <header class="mb-8">
-      <div class="text-sm text-muted mb-4">
-        {formatDate(post.date)}
+      <div class="text-sm text-muted mb-4 flex items-center gap-2">
+        <span>{formatDate(post.date)}</span>
+        {post.categories?.[0] && categoryMap[post.categories[0]] && (
+          <>
+            <span>·</span>
+            <span>Kategorie: <a
+              href={`/blog/kategorie/${categoryMap[post.categories[0]].slug}`}
+              class="hover:text-accent transition-colors"
+            >{categoryMap[post.categories[0]].name}</a></span>
+          </>
+        )}
       </div>
 
       <h1
