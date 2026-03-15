@@ -5,9 +5,11 @@ RewriteEngine On
 # Cache control: short cache for HTML, long for hashed assets
 # ------------------------------------
 <IfModule mod_headers.c>
-  # HTML: cache for 1 hour, revalidate after
+  # HTML: no cache, always fetch fresh
   <FilesMatch "\.html$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
   </FilesMatch>
 
   # Hashed assets (JS, CSS, images): cache for 1 year
