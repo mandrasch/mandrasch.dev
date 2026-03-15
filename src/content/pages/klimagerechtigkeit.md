@@ -25,4 +25,4 @@ Der Klimanotstand (wie auch das Artensterben) ist auch eine Herausforderung für
 - [Luisa Neubauer - Cut the Bullshit](https://www.youtube.com/watch?v=3RRJSx7_sbA)
 - [Maja Göpel - Wer wollen wir gewesen sein?](https://www.youtube.com/watch?v=sV6S3LWhIdA)
 
-Ich versuche, auch ein wenig über diese Themen zu bloggen auf [workwhileclimate.at](https://workwhileclimate.at/).
+Ich versuche, auch ein wenig über diese Themen zu [bloggen](/blog).

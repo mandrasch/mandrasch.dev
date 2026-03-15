@@ -2,6 +2,21 @@ Options -Indexes
 RewriteEngine On
 
 # ------------------------------------
+# Cache control: short cache for HTML, long for hashed assets
+# ------------------------------------
+<IfModule mod_headers.c>
+  # HTML: cache for 1 hour, revalidate after
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+
+  # Hashed assets (JS, CSS, images): cache for 1 year
+  <FilesMatch "\.(js|css|woff2?|png|jpe?g|webp|avif|svg|gif|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ------------------------------------
 # 1) Old URLs: /YYYY/slug → /blog/YYYY/slug
 #    This is when I had my blog on matthias-andrasch.eu,
 #    and posts were at matthias-andrasch.eu/YYYY/<slug>/
