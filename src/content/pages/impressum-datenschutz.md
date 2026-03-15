@@ -12,7 +12,6 @@ Dies ist mein privater Weblog. Dieses Impressum und die Datenschutzerklärung gi
 *   https://oerhoernchen.de
 *   https://\*.oerhoernchen.de
 *   https//\*.mandrasch.dev
-*   https://aktuelle-erderhitzung.de
 
 sowie meine Social Media Auftritte als auch Experimente mittels GitHub Pages (mandrasch.github.io/\*), Vercel, etc.:
 

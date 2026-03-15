@@ -41,9 +41,10 @@ Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine B
 ### Klimakrise
 
 <article>
-    <a href="https://aktuelle-erderhitzung.de" target="_blank">
+<!-- TODO: fix: 
+    <a href="https://aktuelle-erderhitzung.matthias-andrasch.eu" target="_blank">
         <h2>aktuelle-erderhitzung.de</h2>
-    </a>
+    </a>-->
     <p>One-Pager über den aktuellen Stand der Erderhitzung.</p>
 </article>
 
