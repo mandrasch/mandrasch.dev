@@ -7,7 +7,6 @@ export const headerData = {
     { text: 'Projekte', href: getPermalink('/projekte') },
     { text: 'Schreiben', href: getPermalink('/schreiben') },
     { text: 'Lesen', href: getPermalink('/lesen') },
-    { text: 'English', href: getPermalink('/en') },
   ],
 };
 

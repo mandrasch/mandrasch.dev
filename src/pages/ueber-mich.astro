@@ -4,6 +4,7 @@ import { getEntry } from 'astro:content';
 import { render } from 'astro:content';
 import Image from '~/components/common/Image.astro';
 import innsbruckImg from '~/assets/images/innsbruck.jpg';
+import profileImg from '~/assets/images/profile_picture_transparent.png';
 
 const entry = await getEntry('pages', 'ueber-mich');
 
@@ -21,9 +22,18 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-      {title}
-    </h1>
+    <div class="flex items-center gap-6 mb-8">
+      <Image
+        src={profileImg}
+        alt="Matthias Andrasch"
+        class="w-[120px] h-[120px] rounded-full object-cover border-[3px] border-[var(--border)] bg-[var(--bg-secondary)] shrink-0"
+        width={120}
+        height={120}
+      />
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-normal font-heading">
+        {title}
+      </h1>
+    </div>
     <div class="mx-auto prose dark:prose-invert max-w-4xl">
       <Content />
       

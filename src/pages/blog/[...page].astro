@@ -4,7 +4,7 @@ import { getAllPosts, getFeaturedImage, formatDate, stripHtml } from '~/utils/wo
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts();
-  const postsPerPage = 10;
+  const postsPerPage = 12;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
   
   return Array.from({ length: totalPages }, (_, i) => ({
@@ -26,12 +26,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-normal mb-8 font-heading">
       Blog
     </h1>
     
-    <div class="space-y-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => {
         const featuredImage = getFeaturedImage(post);
         const excerpt = stripHtml(post.excerpt.rendered);
@@ -39,40 +39,42 @@ const metadata = {
         const postHref = `/blog/${year}/${post.slug}`;
 
         return (
-          <article class="border-b border-gray-200 dark:border-gray-700 pb-8">
+          <article class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
             {featuredImage && (
               <a href={postHref}>
                 <img
                   src={featuredImage.url}
                   alt={featuredImage.alt}
-                  class="w-full h-auto rounded-lg mb-4 hover:opacity-90 transition-opacity"
+                  class="w-full h-48 object-cover hover:opacity-90 transition-opacity"
                   loading="lazy"
                 />
               </a>
             )}
 
-            <div class="text-sm text-muted mb-2">
-              {formatDate(post.date)}
-            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="text-sm text-muted mb-2">
+                {formatDate(post.date)}
+              </div>
 
-            <h2 class="text-2xl md:text-3xl font-bold mb-3">
+              <h2 class="text-lg font-bold mb-3 tracking-normal">
+                <a
+                  href={postHref}
+                  class="hover:text-accent transition-colors"
+                  set:html={post.title.rendered}
+                />
+              </h2>
+
+              <div class="text-sm text-secondary mb-4 leading-relaxed line-clamp-3 flex-1">
+                {excerpt}
+              </div>
+
               <a
                 href={postHref}
-                class="hover:text-accent transition-colors"
-                set:html={post.title.rendered}
-              />
-            </h2>
-
-            <div class="text-secondary mb-4 leading-relaxed">
-              {excerpt}
+                class="text-accent hover:underline font-medium text-sm"
+              >
+                Weiterlesen →
+              </a>
             </div>
-
-            <a
-              href={postHref}
-              class="text-accent hover:underline font-medium"
-            >
-              Weiterlesen →
-            </a>
           </article>
         );
       })}
