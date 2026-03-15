@@ -50,6 +50,8 @@ Meine Freude am Programmieren habe ich schon als Teenager entdeckt, u.a. mit ein
 
 Anschließend entschied ich mich für ein Studium im Bereich Medienpädagogik (Sozialwissenschaften), um meinen Horizont zu erweitern. Der Medienbildungs-Bachelor führte mich nach Magdeburg. Nach dem Master-Abschluss arbeitete ich in Köln als wissenschaftlicher Mitarbeiter in Hochschulprojekten, u.a. zu Themen wie Open Educational Resources (OER) und Digitaler Inklusion. Ein persönlicher Antrieb ist stets das Thema Soziale Gerechtigkeit für mich.
 
+Während des Studiums setze ich einige Webseiten-Projekte in einer kleinen 2-Personen-Agentur in Magdeburg um.
+
 Seit dem Jahr 2020 arbeite ich wieder hauptberuflich als Web-Entwickler. Vielen Dank an die Agentur gugler\* MarkenSinn, die mir den Wiedereinstieg mit speziellem Fokus auf Barrierefreiheit und Sustainable Web Design in Österreich ermöglichte.
 
 Ich freue mich, dass ich auch als Web-Entwickler Themen wie Digitale Inklusion - durch Barrierefreiheit im Web - oder das Thema Klimaschutz - durch Green Coding und Sustainable Web Design - vorantreiben kann.
