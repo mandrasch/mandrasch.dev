@@ -16,7 +16,7 @@ jobs:
                   npm run build
 
             - name: 📂 Deploy via rsync (DRY RUN)
-              uses: Burnett01/rsync-deployments@7.0.2
+              uses: burnett01/rsync-deployments@v8
               with:
                   switches: -avzr --delete --dry-run
                   path: dist/
