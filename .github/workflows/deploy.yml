@@ -15,13 +15,12 @@ jobs:
                   npm ci
                   npm run build
 
-            - name: 📂 Sync files via sftp
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+            - name: 📂 Deploy via rsync (DRY RUN)
+              uses: Burnett01/rsync-deployments@7.0.2
               with:
-                  local-dir: ./dist/
-                  server: ${{ secrets.ftp_host }}
-                  username: ${{ secrets.ftp_user }}
-                  password: ${{ secrets.ftp_password }}
-                  protocol: 'ftps'
-                  timeout: 60000
-                  dangerous-clean-slate: false
+                  switches: -avzr --delete --dry-run
+                  path: dist/
+                  remote_path: /web/matthias-andrasch.eu/
+                  remote_host: ${{ secrets.RSYNC_HOST }}
+                  remote_user: ${{ secrets.RSYNC_USER }}
+                  remote_key: ${{ secrets.RSYNC_SSH_KEY }}
