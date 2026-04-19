@@ -35,16 +35,17 @@ const { content: processedContent, embeds } = processContentWithPrivacy(post.con
 const metadata = {
   title: post.title.rendered,
   description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
-  openGraph: featuredImage ? {
-    images: [
-      {
-        url: featuredImage.url,
-        width: featuredImage.width,
-        height: featuredImage.height,
-        alt: featuredImage.alt,
-      },
-    ],
-  } : undefined,
+  ...(featuredImage && {
+    openGraph: {
+      images: [
+        {
+          url: featuredImage.url,
+          width: featuredImage.width,
+          height: featuredImage.height,
+        },
+      ],
+    },
+  }),
 };
 ---
 
