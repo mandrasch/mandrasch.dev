@@ -15,10 +15,10 @@ jobs:
                   npm ci
                   npm run build
 
-            - name: 📂 Deploy via rsync (DRY RUN)
+            - name: 📂 Deploy via rsync
               uses: burnett01/rsync-deployments@v8
               with:
-                  switches: -avzr --delete --dry-run
+                  switches: -avzr --delete
                   path: dist/
                   remote_path: /web/matthias-andrasch.eu/
                   remote_host: ${{ secrets.RSYNC_HOST }}
