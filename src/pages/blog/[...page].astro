@@ -31,6 +31,15 @@ const { posts, currentPage, totalPages, categoryMap, allCategories } = Astro.pro
 const metadata = {
   title: currentPage === 1 ? 'Blog' : `Blog - Seite ${currentPage}`,
   description: 'Persönlicher Blog von Matthias Andrasch über Web-Entwicklung, Klimakrise und gesellschaftliche Themen.',
+  openGraph: currentPage === 1 && posts.length > 0 ? {
+    images: [
+      {
+        url: getFeaturedImage(posts[0])?.url || '',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  } : undefined,
 };
 ---
 

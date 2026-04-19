@@ -19,6 +19,15 @@ const { category, posts } = Astro.props;
 const metadata = {
   title: `Kategorie: ${category.name}`,
   description: `Alle Blogbeiträge in der Kategorie "${category.name}".`,
+  openGraph: posts.length > 0 ? {
+    images: [
+      {
+        url: getFeaturedImage(posts[0])?.url || '',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  } : undefined,
 };
 ---
 
