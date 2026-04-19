@@ -82,6 +82,18 @@ export const adaptOpenGraphImages = async (
           isUnpicCompatible(resolvedImage)
         ) {
           _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
+        } else if (
+          typeof resolvedImage === 'string' &&
+          (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://'))
+        ) {
+          // External image without a recognized CDN (e.g. WordPress).
+          // Pass it through as-is; og:image is consumed remotely by crawlers,
+          // and the author-provided width/height are authoritative.
+          return {
+            url: resolvedImage,
+            width: image.width,
+            height: image.height,
+          };
         } else if (resolvedImage) {
           const dimensions =
             typeof resolvedImage !== 'string' && resolvedImage?.width <= defaultWidth
