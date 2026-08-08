@@ -230,11 +230,17 @@ export function decodeHtmlEntities(text: string): string {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#8217;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&#0?39;/g, "'")
+    .replace(/&#8216;/g, '\u2018')
+    .replace(/&#8217;/g, '\u2019')
     .replace(/&#8220;/g, '\u201C')
     .replace(/&#8221;/g, '\u201D')
+    .replace(/&#8211;/g, '\u2013')
+    .replace(/&#8212;/g, '\u2014')
     .replace(/&hellip;/g, '\u2026')
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#(\d+);/g, (_match, code: string) => String.fromCharCode(parseInt(code, 10)));
 }
 
 /**
