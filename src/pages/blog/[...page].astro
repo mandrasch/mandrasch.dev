@@ -132,7 +132,7 @@ const metadata = {
     
     {/* Pagination */}
     {totalPages > 1 && (
-      <nav class="flex justify-center gap-2 mt-12" aria-label="Pagination">
+      <nav class="flex flex-wrap justify-center gap-2 mt-12" aria-label="Pagination">
         {currentPage > 1 && (
           <a
             href={currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`}
@@ -145,7 +145,7 @@ const metadata = {
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <a
             href={page === 1 ? '/blog' : `/blog/${page}`}
-            class={`px-4 py-2 border rounded transition-colors ${
+            class={`hidden sm:inline-flex px-4 py-2 border rounded transition-colors ${
               page === currentPage
                 ? 'bg-accent text-white border-accent'
                 : 'border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800'

@@ -1,0 +1,86 @@
+---
+import {
+  getAllPosts,
+  getAllCategories,
+  getFeaturedImage,
+  formatDate,
+  stripHtml,
+  decodeHtmlEntities,
+} from '~/utils/wordpress';
+import type { WordPressCategory } from '~/utils/wordpress';
+
+let posts: Awaited<ReturnType<typeof getAllPosts>> = [];
+let categoryMap: Record<number, WordPressCategory> = {};
+
+try {
+  const [allPosts, allCategories] = await Promise.all([getAllPosts(), getAllCategories()]);
+  posts = allPosts.slice(0, 6);
+
+  for (const cat of allCategories) {
+    categoryMap[cat.id] = cat;
+  }
+} catch (error) {
+  console.warn('LatestPosts: WordPress fetch failed, hiding section.', error);
+  posts = [];
+}
+---
+
+{posts.length > 0 && (
+  <section class="max-w-[900px] mx-auto px-8 pb-20">
+    <div class="font-mono text-xs uppercase tracking-widest text-muted mb-8">// Neues aus dem Blog</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {posts.map((post) => {
+        const featuredImage = getFeaturedImage(post);
+        const excerpt = stripHtml(post.excerpt.rendered);
+        const year = new Date(post.date).getFullYear();
+        const postHref = `/blog/${year}/${post.slug}`;
+        const category = post.categories?.[0] ? categoryMap[post.categories[0]] : undefined;
+
+        return (
+          <article
+            class="blog-card bg-[var(--bg-card)] border border-[var(--border)] rounded-[var(--radius)] overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-green)] hover:shadow-lg hover:shadow-[rgba(45,106,79,0.12)]"
+          >
+            <a href={postHref} class="block" tabindex={featuredImage ? '-1' : undefined} aria-hidden={featuredImage ? 'true' : undefined}>
+              {featuredImage && (
+                <img
+                  src={featuredImage.url}
+                  alt={featuredImage.alt}
+                  class="w-full h-40 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+            </a>
+
+            <div class="p-6 flex flex-col flex-1">
+              <div class="text-xs text-muted mb-3 flex items-center gap-2">
+                <span>{formatDate(post.date)}</span>
+                {category && (
+                  <>
+                    <span>·</span>
+                    <span class="text-[var(--accent-green)]">{category.name}</span>
+                  </>
+                )}
+              </div>
+
+              <h3 class="font-heading text-xl leading-snug mb-3">
+                <a href={postHref} class="hover:text-[var(--accent-green)] transition-colors">
+                  {decodeHtmlEntities(stripHtml(post.title.rendered))}
+                </a>
+              </h3>
+
+              <p class="text-sm text-secondary leading-relaxed line-clamp-3 flex-1">{excerpt}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="text-right mt-8">
+      <a href="/blog" class="text-sm font-medium text-[var(--accent-green)] hover:underline">
+        Alle Beiträge →
+      </a>
+    </div>
+  </section>
+)}
