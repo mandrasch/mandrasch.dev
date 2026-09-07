@@ -1,11 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import TagCloud from '~/components/custom/TagCloud.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
 import Image from '~/components/common/Image.astro';
 import profileImg from '~/assets/images/profile_picture_transparent.png';
 
 const metadata = {
-  title: 'Matthias Andrasch – Web Developer & Hobby Blogger',
+  title: 'Matthias Andrasch – Web Developer & Blogger',
   ignoreTitleTemplate: true,
 };
 ---
@@ -15,11 +16,11 @@ const metadata = {
   <!-- ═══ HERO ═══ -->
   <section class="hero-section">
     <div class="hero-text">
-      <div class="status-badge">#OpenForWork · 20h/Wo. ab Herbst 2026 (angestellt)</div>
+      <div class="status-badge">#OpenForWork · 20h/Wo. ab Winter 2026 (angestellt)</div>
       <h1 class="font-heading text-4xl md:text-6xl leading-[1.1] mb-2 text-[var(--aw-color-text-heading)]">
-        Matthias Andrasch,<br><em class="italic text-accent">Web Developer<br>& Hobby Blogger</em>
-      </h1>
-      <p class="text-xl text-secondary font-light mb-8">Full-Stack · Wien · Open Source</p>
+        Matthias Andrasch<!-- <br><em class="italic text-accent">Web Developer & Blogger</em> -->
+      </h1>      
+      <p class="text-xl font-light mb-6 text-accent">Web Developer · Blogger · Wien</p>
       <p class="text-lg text-secondary leading-relaxed max-w-[540px]">
         Hi! 👋 Seit fünf Jahren lebe ich im schönen Wien, zugezogen aus Deutschland. Meine Brötchen bzw. Semmeln verdiene ich aktuell als Web-Entwickler – u.a. mit Nuxt, Craft CMS und Svelte(Kit). Mein Schwerpunkt liegt auf Full-Stack-Entwicklung und Barrierefreiheit, mehr Erfahrungen würde ich u.a. gern im Bereich Testing, UX und Green Coding sammeln. Privat beschäftige ich mich mit Sinn- und Gerechtigkeitsfragen. Die Welt ein Stück besser hinterlassen wäre zauberhaft - hierfür fehlt mir noch der passende Hebel.
       </p>
@@ -35,6 +36,9 @@ const metadata = {
       />
     </div>
   </section>
+
+  <!-- ═══ LATEST BLOG POSTS ═══ -->
+  <LatestPosts />
 
   <!-- ═══ CARDS ═══ -->
   <section class="section-cards">
