@@ -221,3 +221,9 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* Keep secondary info in prose readable (the <small> descriptions on /ueber-mich) */
+.prose small {
+  font-size: 1em;
+  color: var(--aw-color-text-muted);
+}
