@@ -132,19 +132,47 @@ async function fetchWithRetry(url: string): Promise<Response> {
  * Fetch all posts from WordPress REST API
  */
 export async function getAllPosts(): Promise<WordPressPost[]> {
-  const response = await fetchWithRetry(`${WP_API_BASE}/posts?per_page=100&_embed`);
+  const perPage = 100;
 
-  if (!response.ok) {
-    throw new Error(`WordPress API error: ${response.status}`);
+  const firstResponse = await fetchWithRetry(`${WP_API_BASE}/posts?per_page=${perPage}&page=1&_embed`);
+
+  if (!firstResponse.ok) {
+    throw new Error(`WordPress API error: ${firstResponse.status}`);
   }
 
-  const posts = await response.json();
+  const totalPages = parseInt(firstResponse.headers.get('x-wp-totalpages') || '1', 10);
+  const totalPosts = parseInt(firstResponse.headers.get('x-wp-total') || '0', 10);
 
-  if (!Array.isArray(posts) || posts.length === 0) {
+  const firstPagePosts = await firstResponse.json();
+
+  if (!Array.isArray(firstPagePosts) || firstPagePosts.length === 0) {
     throw new Error('WordPress API returned 0 posts — aborting build to prevent broken deploy.');
   }
 
-  return posts;
+  if (totalPages <= 1) {
+    return firstPagePosts;
+  }
+
+  const remainingResponses = await Promise.all(
+    Array.from({ length: totalPages - 1 }, (_, i) => i + 2).map((page) =>
+      fetchWithRetry(`${WP_API_BASE}/posts?per_page=${perPage}&page=${page}&_embed`)
+    )
+  );
+
+  const remainingPages = await Promise.all(
+    remainingResponses.map(async (response) => {
+      if (!response.ok) {
+        throw new Error(`WordPress API error: ${response.status}`);
+      }
+      return (await response.json()) as WordPressPost[];
+    })
+  );
+
+  const allPosts = [firstPagePosts, ...remainingPages].flat();
+
+  console.log(`WordPress: fetched ${allPosts.length} of ${totalPosts} posts across ${totalPages} pages`);
+
+  return allPosts;
 }
 
 /**
