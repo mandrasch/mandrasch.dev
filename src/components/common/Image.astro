@@ -1,61 +1,26 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { findImage } from '~/utils/images';
-import {
-  getImagesOptimized,
-  astroAssetsOptimizer,
-  unpicOptimizer,
-  isUnpicCompatible,
-  type ImageProps,
-} from '~/utils/images-optimization';
+import { Image as AstroImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
-type Props = ImageProps;
-type ImageType = {
-  src: string;
-  attributes: HTMLAttributes<'img'>;
-};
-
-const props = Astro.props;
-
-if (props.alt === undefined || props.alt === null) {
-  throw new Error();
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  decoding?: 'async' | 'sync' | 'auto';
 }
 
-if (typeof props.width === 'string') {
-  props.width = parseInt(props.width);
-}
-
-if (typeof props.height === 'string') {
-  props.height = parseInt(props.height);
-}
-
-if (!props.loading) {
-  props.loading = 'lazy';
-}
-
-if (!props.decoding) {
-  props.decoding = 'async';
-}
-
-const _image = await findImage(props.src);
-
-let image: ImageType | undefined = undefined;
-
-if (
-  typeof _image === 'string' &&
-  (_image.startsWith('http://') || _image.startsWith('https://')) &&
-  isUnpicCompatible(_image)
-) {
-  image = await getImagesOptimized(_image, props, unpicOptimizer);
-} else if (_image) {
-  image = await getImagesOptimized(_image, props, astroAssetsOptimizer);
-}
+const { src, alt, width, height, class: className, loading, decoding } = Astro.props;
 ---
 
-{
-  !image ? (
-    <Fragment />
-  ) : (
-    <img src={image.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...image.attributes} />
-  )
-}
+<AstroImage
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  decoding={decoding}
+/>

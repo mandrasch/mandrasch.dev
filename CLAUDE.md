@@ -7,7 +7,7 @@ Port the personal website [mandrasch.dev](https://mandrasch.dev) from SvelteKit 
 ### Source Repository
 - **Repo:** https://github.com/mandrasch/mandrasch.dev
 - **Stack:** SvelteKit, PicoCSS, mdsvex (Markdown), paraglide-js (i18n), adapter-node
-- **Hosting:** Self-hosted via Coolify on Hetzner VPS
+- **Hosting:** Deployed via GitHub Actions to a regular static web host
 - **Languages:** German (primary), English (/en)
 
 ### Target Repository
@@ -179,10 +179,9 @@ footerData: {
 6. Test responsive design
 
 ### Phase 6: Deployment (Day 4)
-1. Configure for Coolify/Hetzner deployment (Astro supports adapter-node or static)
-2. If static: `npm run build` → deploy `dist/` folder
-3. If SSR needed: Install `@astrojs/node` adapter
-4. Update DNS if needed
+1. Build the static site: `npm run build` → generates `dist/` folder
+2. Deploy via GitHub Actions: upload the `dist/` folder to the static web host
+3. No Node.js runtime needed in production (fully static)
 
 ---
 
@@ -259,7 +258,7 @@ footerData: {
 ### Current Setup (Source)
 
 Static build (`output: 'static'`) — simplest, fastest, cheapest
-  - `npm run build` → serve `dist/` folder via nginx/Coolify
+  - `npm run build` → deploy `dist/` folder to the static web host via GitHub Actions
   - No Node.js runtime needed in production
 
 ---

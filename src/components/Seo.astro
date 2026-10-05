@@ -1,0 +1,64 @@
+---
+import { getImage } from 'astro:assets';
+import { SITE, METADATA, I18N } from '~/config';
+import type { MetaData } from '~/types';
+import ogImage from '~/assets/images/hero-image.png';
+
+const {
+  title,
+  ignoreTitleTemplate = false,
+  canonical,
+  robots = {},
+  description,
+  openGraph = {},
+  twitter = {},
+} = Astro.props as MetaData;
+
+const titleDefault = METADATA.title.default;
+const titleTemplate = METADATA.title.template;
+const pageTitle = title ? (ignoreTitleTemplate ? title : titleTemplate.replace('%s', title)) : titleDefault;
+
+const descriptionMeta = description ?? METADATA.description;
+
+const ogSiteName = openGraph.siteName ?? METADATA.openGraph.site_name;
+const ogType = openGraph.type ?? METADATA.openGraph.type;
+const ogLocale = openGraph.locale ?? I18N.language;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.site).href;
+
+const robotsIndex = robots.index ?? METADATA.robots.index;
+const robotsFollow = robots.follow ?? METADATA.robots.follow;
+
+const optimizedOgImage = await getImage({ src: ogImage, width: 1200, height: 628, format: 'png' });
+const defaultOgImages = [
+  { url: new URL(optimizedOgImage.src, SITE.site).href, width: 1200, height: 628 },
+];
+const ogImages = openGraph.images?.length ? openGraph.images : defaultOgImages;
+
+const twitterCard = twitter.cardType ?? (ogImages.length ? 'summary_large_image' : 'summary');
+---
+
+<title>{pageTitle}</title>
+<meta name="description" content={descriptionMeta} />
+<meta name="robots" content={`${robotsIndex ? 'index' : 'noindex'}, ${robotsFollow ? 'follow' : 'nofollow'}`} />
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:site_name" content={ogSiteName} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={descriptionMeta} />
+<meta property="og:locale" content={ogLocale} />
+{
+  ogImages.map((image) => (
+    <Fragment>
+      <meta property="og:image" content={image.url} />
+      {image.width && <meta property="og:image:width" content={String(image.width)} />}
+      {image.height && <meta property="og:image:height" content={String(image.height)} />}
+    </Fragment>
+  ))
+}
+
+<meta name="twitter:card" content={twitterCard} />
+{twitter.handle && <meta name="twitter:creator" content={twitter.handle} />}
+{twitter.site && <meta name="twitter:site" content={twitter.site} />}

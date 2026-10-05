@@ -1,26 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
-  .bg-page {
-    background-color: var(--aw-color-bg-page);
-  }
-  .bg-dark {
-    background-color: var(--aw-color-bg-page-dark);
-  }
-  .bg-light {
-    background-color: var(--aw-color-bg-page);
-  }
-  .text-page {
-    color: var(--aw-color-text-page);
-  }
-  .text-muted {
-    color: var(--aw-color-text-muted);
-  }
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: var(--aw-color-primary);
+  --color-secondary: var(--aw-color-secondary);
+  --color-accent: var(--aw-color-accent);
+  --color-default: var(--aw-color-text-default);
+  --color-muted: var(--aw-color-text-muted);
+  --color-heading: var(--aw-color-text-heading);
+
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@utility bg-page {
+  background-color: var(--aw-color-bg-page);
+}
+@utility bg-dark {
+  background-color: var(--aw-color-bg-page-dark);
+}
+@utility bg-light {
+  background-color: var(--aw-color-bg-page);
 }
 
 @layer base {
+  :root {
+    --aw-font-sans: 'Outfit', system-ui, sans-serif;
+    --aw-font-serif: 'DM Serif Display', Georgia, serif;
+    --aw-font-heading: 'DM Serif Display', Georgia, serif;
+    --aw-font-mono: 'JetBrains Mono', monospace;
+
+    /* Light Theme */
+    --aw-color-primary: #1a1a18;
+    --aw-color-secondary: #525250;
+    --aw-color-accent: #2d6a4f;
+
+    --aw-color-text-heading: #1a1a18;
+    --aw-color-text-default: #1a1a18;
+    --aw-color-text-muted: #767672;
+
+    --aw-color-bg-page: #fafaf7;
+
+    /* Custom Design Tokens */
+    --bg-secondary: #f0efe9;
+    --bg-card: #ffffff;
+    --accent-green: #2d6a4f;
+    --accent-green-light: #40916c;
+    --accent-green-glow: #52b78833;
+    --accent-warm: #d4a373;
+    --border: #e0dfd8;
+    --radius: 16px;
+
+    ::selection {
+      background-color: var(--accent-green-glow);
+      color: var(--accent-green);
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Outfit', system-ui, sans-serif;
+    --aw-font-serif: 'DM Serif Display', Georgia, serif;
+    --aw-font-heading: 'DM Serif Display', Georgia, serif;
+    --aw-font-mono: 'JetBrains Mono', monospace;
+
+    /* Dark Theme */
+    --aw-color-primary: #ededea;
+    --aw-color-secondary: #a8a8a2;
+    --aw-color-accent: #52b788;
+
+    --aw-color-text-heading: #ededea;
+    --aw-color-text-default: #ededea;
+    --aw-color-text-muted: #949490;
+
+    --aw-color-bg-page: #141413;
+
+    /* Custom Design Tokens */
+    --bg-secondary: #1e1e1c;
+    --bg-card: #242422;
+    --accent-green: #52b788;
+    --accent-green-light: #74c69d;
+    --accent-green-glow: #52b78822;
+    --accent-warm: #d4a373;
+    --border: #2e2e2b;
+
+    ::selection {
+      background-color: var(--accent-green-glow);
+      color: var(--accent-green);
+    }
+  }
+
   body {
     @apply transition-colors duration-500 ease-in-out overflow-x-hidden;
   }
@@ -37,19 +110,7 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
-  }
-
-  .btn-primary {
-    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
-  }
-
-  .btn-secondary {
-    @apply btn;
-  }
-
-  .btn-tertiary {
-    @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-default leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
   }
 
   .nav-link {
@@ -67,7 +128,7 @@
   .hero-section {
     @apply max-w-[900px] mx-auto px-8 pt-24 pb-16 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start text-center md:text-left;
   }
-  
+
   .status-badge {
     @apply inline-flex items-center gap-2 px-4 py-1.5 bg-[var(--accent-green-glow)] border border-[var(--accent-green)] rounded-full text-xs font-medium text-[var(--accent-green)] mb-6 font-mono justify-center md:justify-start;
   }
@@ -107,13 +168,13 @@
   .tag {
     @apply inline-block px-3.5 py-1.5 rounded-full text-xs border border-[var(--border)] text-secondary bg-[var(--bg-card)] transition-all duration-200 cursor-default whitespace-nowrap;
   }
-  .tag:hover, .tag.highlight {
+  .tag:hover,
+  .tag.highlight {
     @apply border-[var(--accent-green)] text-[var(--accent-green)] bg-[var(--accent-green-glow)];
   }
 }
 
 #header.scroll > div:first-child {
-  /* Prototype: background: color-mix(in srgb, var(--bg-primary) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); */
   background-color: color-mix(in srgb, var(--aw-color-bg-page) 85%, transparent);
   @apply backdrop-blur-md border-b border-[var(--border)];
 }
@@ -122,9 +183,6 @@
   background-color: color-mix(in srgb, var(--aw-color-bg-page) 85%, transparent);
   @apply backdrop-blur-md border-b border-[var(--border)];
 }
-/* #header.scroll > div:last-child {
-  @apply py-3;
-} */
 
 #header.expanded nav {
   position: fixed;
@@ -160,8 +218,12 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-/* To deprecated */
-
 .dd *:first-child {
   margin-top: 0;
+}
+
+/* Keep secondary info in prose readable (the <small> descriptions on /ueber-mich) */
+.prose small {
+  font-size: 1em;
+  color: var(--aw-color-text-muted);
 }
