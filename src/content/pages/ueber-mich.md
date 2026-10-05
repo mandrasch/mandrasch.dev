@@ -6,7 +6,7 @@ title: "Über mich"
 
 <!-- I'm currently located in the wonderful city of Vienna, happy to travel via Klimaticket through Austria. Moved from Cologne, Germany to Vienna in 2020.-->
 
-<h3>Bildung 🎓</h3>
+<h3>Bildungsabschlüsse 🎓</h3>
 
 <ul style="margin-top:2.5rem;">
     <li>

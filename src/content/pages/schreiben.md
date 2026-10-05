@@ -2,7 +2,7 @@
 title: "Schreiben"
 ---
 
-Bloggen ist eines meiner Hobbys. In meiner Freizeit betreibe ich einige kleine Blogs.
+Bloggen - und Wissen und Erfahrungen teilen - ist eines meiner Hobbys. 
 
 ## Meine Blogs
 

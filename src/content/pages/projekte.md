@@ -3,5 +3,5 @@ title: "Projekte"
 ---
 
 <p style="text-align:center;margin-bottom:2rem">
-    Sharing is caring!
+    Projekte, an denen ich in meiner Freizeit arbeite.
 </p>

@@ -18,9 +18,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+    id: 'karenzwizard',
+    title: 'Karenz Wizard - für mehr Väterbeteiligung!',
+    links: [{ label: 'karenz-wizard.at', href: 'https://karenz-wizard.at/', note:'Hilfe zur Selbsthilfe für Väter, die nicht nur zwei Monate in Karenz gehen möchten. Mit interaktivem Planer für das einkommensabhängige Kinderbetreuungsgeld, Schritt für Schritt Anleitung, Infos zu #EqualCare / "Halbe Halbe" und mehr.' }],
+  },
   {
     id: 'quick-ddev-previews',
-    title: 'NEW: Quick DDEV Previews',
+    title: 'Quick DDEV Previews',
     links: [
       {
         label: 'github.com/mandrasch/quick-ddev-previews',
@@ -28,11 +33,6 @@ export const projects: Project[] = [
         note: 'a selfhosted service for quickly deploying DDEV project previews',
       },
     ],
-  },
-  {
-    id: 'karenzwizard',
-    title: 'NEW: Karenz Wizard - für mehr Väterbeteiligung!',
-    links: [{ label: 'karenz-wizard.at', href: 'https://karenz-wizard.at/' }],
   },
   {
     id: 'sveltekit',
