@@ -75,4 +75,32 @@ import { UI } from '~/config';
     },
     { passive: true }
   );
+
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const initTheme = () => {
+    if (defaultTheme && defaultTheme.endsWith(':only')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+      return;
+    }
+    if (localStorage.theme === 'dark') {
+      applyTheme('dark');
+    } else if (localStorage.theme === 'light') {
+      applyTheme('light');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+
+  // ClientRouter resets the <html> class on navigation, dropping the `.dark` class.
+  // Re-apply the persisted theme after each view-transition swap.
+  document.addEventListener('astro:after-swap', initTheme);
 </script>
