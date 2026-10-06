@@ -227,3 +227,28 @@
   font-size: 1em;
   color: var(--aw-color-text-muted);
 }
+
+/* ═══ View Transitions (ClientRouter) ═══ */
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+::view-transition-old(root) {
+  animation: vt-fade-out 0.2s ease-in-out both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.2s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
