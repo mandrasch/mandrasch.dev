@@ -326,7 +326,7 @@ export function getFeaturedImage(post: WordPressPost): WordPressFeaturedImage | 
 
   return {
     url: media.source_url,
-    alt: media.alt_text || post.title.rendered,
+    alt: decodeHtmlEntities(media.alt_text || post.title.rendered.replace(/<[^>]*>/g, '')),
     width: media.media_details.width,
     height: media.media_details.height,
   };
@@ -347,7 +347,9 @@ export function formatDate(dateString: string): string {
 /**
  * Decode HTML entities in a string
  */
-export function decodeHtmlEntities(text: string): string {
+export function decodeHtmlEntities(text: string | null | undefined): string {
+  if (!text) return '';
+
   return text
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -369,7 +371,9 @@ export function decodeHtmlEntities(text: string): string {
 /**
  * Strip HTML tags from string (for excerpts)
  */
-export function stripHtml(html: string): string {
+export function stripHtml(html: string | null | undefined): string {
+  if (!html) return '';
+
   return html
     .replace(/<[^>]*>/g, '')
     .replace(/&nbsp;/g, ' ')
