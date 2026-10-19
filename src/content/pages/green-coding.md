@@ -20,7 +20,7 @@ Via "Where Is The Green In The Mindset? Improving Awareness For Green Coding In 
 
 **Meine Blogartikel**
 
-- <a href="/blog/kategorie/green-coding-green-web">/blog/kategorie/green-coding-green-web</a>
+- <a href="/blog/kategorie/green-coding-green-web/">/blog/kategorie/green-coding-green-web</a>
 
 **Online-Communities**
 

@@ -19,12 +19,13 @@ export const SITE = {
   name: 'Matthias Andrasch',
   site: 'https://matthias-andrasch.eu',
   base: '/',
-  trailingSlash: false,
+  trailingSlash: true,
   googleSiteVerificationId: false,
 } as const;
 
 export const I18N = {
   language: 'de',
+  locale: 'de_DE',
   textDirection: 'ltr',
 } as const;
 
@@ -58,11 +59,11 @@ export const UI = {
 
 export const headerData = {
   links: [
-    { text: 'Über mich', href: '/ueber-mich' },
-    { text: 'Blog', href: '/blog' },
-    { text: 'Projekte', href: '/projekte' },
-    { text: 'Schreiben', href: '/schreiben' },
-    { text: 'Lesen', href: '/lesen' },
+    { text: 'Über mich', href: '/ueber-mich/' },
+    { text: 'Blog', href: '/blog/' },
+    { text: 'Projekte', href: '/projekte/' },
+    { text: 'Schreiben', href: '/schreiben/' },
+    { text: 'Lesen', href: '/lesen/' },
   ],
 } satisfies { links: Link[] };
 
@@ -71,9 +72,9 @@ export const footerData = {
     {
       title: '// Bonus-Seiten',
       links: [
-        { text: 'Green Coding', href: '/green-coding' },
-        { text: 'Klimagerechtigkeit', href: '/klimagerechtigkeit' },
-        { text: 'Die Absurdität des Lebens', href: '/absurditaet-des-lebens' },
+        { text: 'Green Coding', href: '/green-coding/' },
+        { text: 'Klimagerechtigkeit', href: '/klimagerechtigkeit/' },
+        { text: 'Die Absurdität des Lebens', href: '/absurditaet-des-lebens/' },
       ],
     },
   ],

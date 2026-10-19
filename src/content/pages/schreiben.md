@@ -12,7 +12,7 @@ Bloggen - und Wissen und Erfahrungen teilen - ist eines meiner Hobbys.
     </a>
     <p>
         Mein persönlicher Blog zu diversen Themen, u.a. zum gesellschaftlichen Umgang mit der fortschreitenden Klimakrise (sowie weiteren Krisen wie der Biodiversitätskrise). <!-- Bezüglich Coding gibt es eine spezielle Kategorie: 
-        <a href="https://matthias-andrasch.eu/cat/green-coding-green-web/">
+        <a href="/blog/kategorie/green-coding-green-web/">
             Green Coding & Green Web</a
         >.-->
     </p>
