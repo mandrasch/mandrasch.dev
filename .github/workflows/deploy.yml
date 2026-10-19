@@ -12,6 +12,8 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Install and Build 🔧
+              env:
+                  WP_SITE_PASSWORD: ${{ secrets.WP_SITE_PASSWORD }}
               run: |
                   npm ci
                   npm run build

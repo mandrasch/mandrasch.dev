@@ -34,6 +34,20 @@ src/
   config.ts        site metadata + navigation
 ```
 
+## Environment variables
+
+The blog content is fetched from a password-protected WordPress REST API
+(`Simple Password Protect`). For local builds, copy `.env.example` to `.env`
+and set:
+
+| Variable | Purpose |
+| --- | --- |
+| `WP_SITE_PASSWORD` | Password from Settings → Password Protect. The build logs in once and reuses the resulting `wp_password_protect_auth` cookie. |
+| `WP_API_BASE` | Optional WordPress REST API base URL override (e.g. for local testing). |
+
+`.env` is gitignored. In GitHub Actions, add `WP_SITE_PASSWORD` as a repository
+secret; `.github/workflows/deploy.yml` passes it to `npm run build`.
+
 ## Deployment
 
 Static site deployed via GitHub Actions (`.github/workflows/deploy.yml`): `npm run build` → rsync the `dist/` folder to the web host. No Node.js runtime needed in production.

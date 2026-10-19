@@ -1,5 +1,10 @@
 // WordPress API Configuration
-const WP_API_BASE = 'https://blog.matthias-andrasch.eu/wp-json/wp/v2';
+// Astro/Vite loads server-side variables (including .env files) into
+// import.meta.env; process.env would not pick up local .env values.
+const WP_API_BASE = import.meta.env.WP_API_BASE ?? 'https://blog.matthias-andrasch.eu/wp-json/wp/v2';
+const WP_SITE_URL = import.meta.env.WP_SITE_URL ?? new URL(WP_API_BASE).origin;
+const WP_SITE_PASSWORD = import.meta.env.WP_SITE_PASSWORD ?? '';
+const SPWDPROT_COOKIE_NAME = 'wp_password_protect_auth';
 
 // Types
 export interface WordPressPost {
@@ -86,18 +91,108 @@ class WordPressHttpError extends Error {
   status: number;
 
   constructor(status: number) {
-    super(`WordPress API error: ${status}`);
+    const hint =
+      status === 401
+        ? ' — the blog is password protected. Set WP_SITE_PASSWORD (Simple Password Protect password) so the build can authenticate.'
+        : '';
+    super(`WordPress API error: ${status}${hint}`);
     this.name = 'WordPressHttpError';
     this.status = status;
   }
 }
 
+let authCookiePromise: Promise<string | null> | null = null;
+
+function getSetCookieHeaders(headers: Headers): string[] {
+  const getSetCookie = (headers as Headers & { getSetCookie?: () => string[] }).getSetCookie;
+
+  if (typeof getSetCookie === 'function') {
+    return getSetCookie.call(headers);
+  }
+
+  const cookie = headers.get('set-cookie');
+  return cookie ? [cookie] : [];
+}
+
+/**
+ * Authenticate against the Simple Password Protect plugin.
+ *
+ * The plugin closes the REST API for visitors without a valid
+ * wp_password_protect_auth cookie. When WP_SITE_PASSWORD is set, submit the
+ * same form a browser would and reuse the resulting cookie for this build.
+ */
+async function resolveWpAuthCookie(): Promise<string | null> {
+  if (!WP_SITE_PASSWORD) {
+    return null;
+  }
+
+  try {
+    const loginUrl = `${WP_SITE_URL}/`;
+    const formResponse = await fetch(loginUrl, { redirect: 'manual' });
+    const html = await formResponse.text();
+    const nonce = html.match(/name="spwdprot_nonce"[^>]*value="([^"]+)"/)?.[1];
+
+    if (!nonce) {
+      console.warn(
+        'WordPress: WP_SITE_PASSWORD is set, but no Simple Password Protect form was found. The REST API may stay closed.'
+      );
+      return null;
+    }
+
+    const body = new URLSearchParams({
+      spwdprot_password: WP_SITE_PASSWORD,
+      spwdprot_nonce: nonce,
+      redirect_url: loginUrl,
+    });
+
+    const loginResponse = await fetch(loginUrl, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    });
+
+    const authCookie = getSetCookieHeaders(loginResponse.headers)
+      .map((value) => value.split(';', 1)[0])
+      .find((value) => value.startsWith(`${SPWDPROT_COOKIE_NAME}=`));
+
+    if (!authCookie) {
+      console.warn(
+        'WordPress: the Simple Password Protect login did not return an auth cookie. Check WP_SITE_PASSWORD.'
+      );
+      return null;
+    }
+
+    console.log('WordPress: authenticated with WP_SITE_PASSWORD for this build.');
+    return authCookie;
+  } catch (error) {
+    console.warn('WordPress: failed to authenticate with WP_SITE_PASSWORD.', error);
+    return null;
+  }
+}
+
+function getWpAuthCookie(): Promise<string | null> {
+  if (!authCookiePromise) {
+    authCookiePromise = resolveWpAuthCookie();
+  }
+
+  return authCookiePromise;
+}
+
 async function fetchWithRetry(url: string): Promise<Response> {
   let lastError: unknown;
+  const authCookie = await getWpAuthCookie();
 
   for (let attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        headers: authCookie ? { Cookie: authCookie } : undefined,
+      });
+
+      // Authentication problems are not retryable; surface a useful message.
+      if (response.status === 401 || response.status === 403) {
+        throw new WordPressHttpError(response.status);
+      }
 
       // Retry server errors and rate limiting, fail fast on other HTTP errors
       if (response.status === 429 || response.status >= 500) {
