@@ -7,20 +7,17 @@ import { UI } from '~/config';
     const header = document.getElementById('header');
     const nav = document.querySelector('#header nav');
     const toggle = document.querySelector('[data-aw-toggle-menu]');
-    const actions = document.querySelector('#header > div > div:last-child');
 
     if (open) {
       toggle?.classList.add('expanded');
       document.body.classList.add('overflow-hidden');
       header?.classList.add('h-screen', 'expanded', 'bg-page');
       nav?.classList.remove('hidden');
-      actions?.classList.remove('hidden');
     } else {
       toggle?.classList.remove('expanded');
       document.body.classList.remove('overflow-hidden');
       header?.classList.remove('h-screen', 'expanded', 'bg-page');
       nav?.classList.add('hidden');
-      actions?.classList.add('hidden');
     }
   };
 

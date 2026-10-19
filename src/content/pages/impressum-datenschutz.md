@@ -1,8 +1,6 @@
 ---
 title: "Impressum & Datenschutz"
 ---
-Impressum & Datenschutz
-=======================
 
 Dies ist mein privater Weblog. Dieses Impressum und die Datenschutzerklärung gilt zudem für folgende Web-Auftritte:
 
@@ -31,7 +29,7 @@ Kontakt: matthias-andrasch-kontakt@mailbox.org
 
 **Urheberrecht – Bloginhalte**
 
-![](https://matthias-andrasch.eu/blog/wp-content/uploads/2019/01/cc-zero-badge.png)
+![CC0 – Creative Commons Zero](/images/cc-zero-badge.png)
 
 Alle eigenen Beiträge (Text) sind freigegeben unter [CC0 (Creative Commons Zero)](https://creativecommons.org/publicdomain/zero/1.0/deed.de). Ausgenommen sind anders gekennzeichnete Inhalte und eingebundene Medieninhalte. Im Zweifel gerne einfach kurz nachfragen. Mehr zur CC0-Freigabe: [Die Schönheit des offenen Teilens (Manifest)](https://www.youtube.com/watch?v=ZHcV27nwlw8).
 

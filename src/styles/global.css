@@ -42,7 +42,7 @@
 
     --aw-color-text-heading: #1a1a18;
     --aw-color-text-default: #1a1a18;
-    --aw-color-text-muted: #767672;
+    --aw-color-text-muted: #70706c;
 
     --aw-color-bg-page: #fafaf7;
 
@@ -189,7 +189,7 @@
   top: 70px;
   left: 0;
   right: 0;
-  bottom: 70px !important;
+  bottom: 0;
   padding: 0 5px;
 }
 
@@ -226,4 +226,29 @@
 .prose small {
   font-size: 1em;
   color: var(--aw-color-text-muted);
+}
+
+/* ═══ View Transitions (ClientRouter) ═══ */
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+::view-transition-old(root) {
+  animation: vt-fade-out 0.2s ease-in-out both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.2s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

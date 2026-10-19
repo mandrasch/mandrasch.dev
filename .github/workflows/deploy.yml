@@ -12,9 +12,17 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Install and Build 🔧
+              env:
+                  WP_SITE_PASSWORD: ${{ secrets.WP_SITE_PASSWORD }}
               run: |
                   npm ci
                   npm run build
+
+            - name: Install Playwright browser
+              run: npx playwright install --with-deps chromium
+
+            - name: Accessibility check (axe)
+              run: node scripts/a11y.mjs
 
             - name: 📂 Deploy via rsync
               uses: burnett01/rsync-deployments@v8
