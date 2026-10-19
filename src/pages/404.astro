@@ -1,22 +1,27 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 
-const title = `Error 404`;
+const metadata = {
+  title: 'Seite nicht gefunden',
+  description: 'Die angeforderte Seite wurde nicht gefunden. Zurück zur Startseite von Matthias Andrasch.',
+  robots: { index: false, follow: true },
+};
 ---
 
-<Layout metadata={{ title }}>
+<Layout metadata={metadata}>
   <section class="flex items-center h-full p-16">
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
+        <p class="mb-8 font-bold text-9xl">
+          <span class="sr-only">Fehler</span>
           <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
         </p>
-        <a rel="noopener noreferrer" href="/" class="btn ml-4">Back to homepage</a>
+        <h1 class="text-3xl font-semibold md:text-3xl">Seite nicht gefunden</h1>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+          Die angeforderte Seite existiert nicht oder wurde verschoben. Auf der Startseite findest du sicher etwas
+          Spannendes.
+        </p>
+        <a rel="noopener noreferrer" href="/" class="btn ml-4">Zur Startseite</a>
       </div>
     </div>
   </section>

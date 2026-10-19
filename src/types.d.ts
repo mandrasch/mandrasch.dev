@@ -6,6 +6,8 @@ export interface MetaData {
   description?: string;
   openGraph?: MetaDataOpenGraph;
   twitter?: MetaDataTwitter;
+  /** Optional schema.org JSON-LD object(s) for this page. */
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 export interface MetaDataRobots {
