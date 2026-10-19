@@ -11,6 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: 'static',
+  trailingSlash: 'always',
 
   site: 'https://matthias-andrasch.eu',
 

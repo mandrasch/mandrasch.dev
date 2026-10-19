@@ -28,18 +28,39 @@ export async function getStaticPaths() {
 
 const { posts, currentPage, totalPages, categoryMap, allCategories } = Astro.props;
 
+const ogImage = currentPage === 1 && posts.length > 0 ? getFeaturedImage(posts[0]) : null;
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? 'https://matthias-andrasch.eu';
+
 const metadata = {
   title: currentPage === 1 ? 'Blog' : `Blog - Seite ${currentPage}`,
-  description: 'Persönlicher Blog von Matthias Andrasch über Web-Entwicklung, Klimakrise und gesellschaftliche Themen.',
-  openGraph: currentPage === 1 && posts.length > 0 ? {
-    images: [
+  description:
+    currentPage === 1
+      ? 'Persönlicher Blog von Matthias Andrasch über Web-Entwicklung, Klimakrise und gesellschaftliche Themen.'
+      : `Blog-Archiv Seite ${currentPage} von Matthias Andrasch: Beiträge zu Web-Entwicklung, Klimakrise, Arbeit und Gesellschaft.`,
+  openGraph: ogImage
+    ? {
+        images: [
+          {
+            url: ogImage.url,
+            width: ogImage.width,
+            height: ogImage.height,
+          },
+        ],
+      }
+    : undefined,
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${siteUrl}/` },
       {
-        url: getFeaturedImage(posts[0])?.url || '',
-        width: 1200,
-        height: 630,
+        '@type': 'ListItem',
+        position: currentPage === 1 ? 2 : 3,
+        name: currentPage === 1 ? 'Blog' : `Seite ${currentPage}`,
+        item: Astro.url.href,
       },
     ],
-  } : undefined,
+  },
 };
 ---
 
@@ -59,7 +80,7 @@ const metadata = {
           >
             <option value="">Kategorie wählen…</option>
             {allCategories.map((cat) => (
-              <option value={`/blog/kategorie/${cat.slug}`}>{cat.name}</option>
+              <option value={`/blog/kategorie/${cat.slug}/`}>{cat.name}</option>
             ))}
           </select>
           <script is:inline>
@@ -74,9 +95,9 @@ const metadata = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => {
         const featuredImage = getFeaturedImage(post);
-        const excerpt = stripHtml(post.excerpt.rendered);
+        const excerpt = stripHtml(post.excerpt?.rendered);
         const year = new Date(post.date).getFullYear();
-        const postHref = `/blog/${year}/${post.slug}`;
+        const postHref = `/blog/${year}/${post.slug}/`;
 
         return (
           <article class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
@@ -98,7 +119,7 @@ const metadata = {
                   <>
                     <span>·</span>
                     <a
-                      href={`/blog/kategorie/${categoryMap[post.categories[0]].slug}`}
+                      href={`/blog/kategorie/${categoryMap[post.categories[0]].slug}/`}
                       class="hover:text-accent transition-colors"
                     >
                       {categoryMap[post.categories[0]].name}
@@ -136,7 +157,7 @@ const metadata = {
       <nav class="flex flex-wrap justify-center gap-2 mt-12" aria-label="Pagination">
         {currentPage > 1 && (
           <a
-            href={currentPage === 2 ? '/blog' : `/blog/${currentPage - 1}`}
+            href={currentPage === 2 ? '/blog/' : `/blog/${currentPage - 1}/`}
             class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             ← Vorherige
@@ -145,7 +166,7 @@ const metadata = {
         
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <a
-            href={page === 1 ? '/blog' : `/blog/${page}`}
+            href={page === 1 ? '/blog/' : `/blog/${page}/`}
             class={`hidden sm:inline-flex px-4 py-2 border rounded transition-colors ${
               page === currentPage
                 ? 'bg-accent text-white border-accent'
@@ -159,7 +180,7 @@ const metadata = {
         
         {currentPage < totalPages && (
           <a
-            href={`/blog/${currentPage + 1}`}
+            href={`/blog/${currentPage + 1}/`}
             class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             Nächste →

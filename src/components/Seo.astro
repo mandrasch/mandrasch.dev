@@ -1,6 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
-import { SITE, METADATA, I18N } from '~/config';
+import { SITE, METADATA, I18N, footerData } from '~/config';
 import type { MetaData } from '~/types';
 import ogImage from '~/assets/images/hero-image.png';
 
@@ -12,6 +12,7 @@ const {
   description,
   openGraph = {},
   twitter = {},
+  jsonLd,
 } = Astro.props as MetaData;
 
 const titleDefault = METADATA.title.default;
@@ -22,7 +23,7 @@ const descriptionMeta = description ?? METADATA.description;
 
 const ogSiteName = openGraph.siteName ?? METADATA.openGraph.site_name;
 const ogType = openGraph.type ?? METADATA.openGraph.type;
-const ogLocale = openGraph.locale ?? I18N.language;
+const ogLocale = openGraph.locale ?? I18N.locale;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.site).href;
 
@@ -36,6 +37,37 @@ const defaultOgImages = [
 const ogImages = openGraph.images?.length ? openGraph.images : defaultOgImages;
 
 const twitterCard = twitter.cardType ?? (ogImages.length ? 'summary_large_image' : 'summary');
+
+const siteUrl = SITE.site.replace(/\/$/, '');
+const websiteId = `${siteUrl}/#website`;
+const personId = `${siteUrl}/#person`;
+
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      url: `${siteUrl}/`,
+      name: SITE.name,
+      description: METADATA.description,
+      inLanguage: I18N.language,
+      publisher: { '@id': personId },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: SITE.name,
+      url: `${siteUrl}/`,
+      image: new URL(optimizedOgImage.src, SITE.site).href,
+      jobTitle: 'Web Developer',
+      sameAs: footerData.socialLinks.map(({ href }) => href),
+    },
+  ],
+};
+
+const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const structuredData = [siteJsonLd, ...pageJsonLd];
 ---
 
 <title>{pageTitle}</title>
@@ -55,10 +87,16 @@ const twitterCard = twitter.cardType ?? (ogImages.length ? 'summary_large_image'
       <meta property="og:image" content={image.url} />
       {image.width && <meta property="og:image:width" content={String(image.width)} />}
       {image.height && <meta property="og:image:height" content={String(image.height)} />}
+      <meta property="og:image:alt" content={pageTitle} />
     </Fragment>
   ))
 }
 
 <meta name="twitter:card" content={twitterCard} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={descriptionMeta} />
+{ogImages[0] && <meta name="twitter:image" content={ogImages[0].url} />}
 {twitter.handle && <meta name="twitter:creator" content={twitter.handle} />}
 {twitter.site && <meta name="twitter:site" content={twitter.site} />}
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

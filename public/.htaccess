@@ -2,6 +2,35 @@ Options -Indexes
 RewriteEngine On
 
 # ------------------------------------
+# Canonical host: www → non-www
+# ------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.matthias-andrasch\.eu$ [NC]
+RewriteRule ^(.*)$ https://matthias-andrasch.eu/$1 [R=301,L]
+
+# ------------------------------------
+# Canonical URLs: strip explicit index.html
+# ------------------------------------
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.+)/index\.html[\s?] [NC]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L]
+
+# ------------------------------------
+# Custom 404 page
+# ------------------------------------
+ErrorDocument 404 /404.html
+
+# ------------------------------------
+# Compression for text-based responses
+# ------------------------------------
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml
+  </IfModule>
+</IfModule>
+
+# ------------------------------------
 # Cache control: short cache for HTML, long for hashed assets
 # ------------------------------------
 <IfModule mod_headers.c>
@@ -29,6 +58,9 @@ RewriteRule ^([0-9]{4})/(.*)$ /blog/$1/$2 [R=301,L]
 # 2) Old category URLs: /blog/cat/slug → /blog/kategorie/slug
 # ------------------------------------
 RewriteRule ^blog/cat/(.*)$ /blog/kategorie/$1 [R=301,L]
+
+# Old category URLs without the /blog prefix: /cat/slug → /blog/kategorie/slug
+RewriteRule ^cat/(.*)$ /blog/kategorie/$1 [R=301,L]
 
 # ------------------------------------
 # 3) Old Impressum URL: /blog/impressum-datenschutz/ → /impressum-datenschutz/

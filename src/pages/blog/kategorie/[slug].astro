@@ -16,18 +16,35 @@ export async function getStaticPaths() {
 
 const { category, posts } = Astro.props;
 
+const ogImage = posts.length > 0 ? getFeaturedImage(posts[0]) : null;
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? 'https://matthias-andrasch.eu';
+
 const metadata = {
   title: `Kategorie: ${category.name}`,
-  description: `Alle Blogbeiträge in der Kategorie "${category.name}".`,
-  openGraph: posts.length > 0 ? {
-    images: [
-      {
-        url: getFeaturedImage(posts[0])?.url || '',
-        width: 1200,
-        height: 630,
-      },
+  description:
+    posts.length === 1
+      ? `Der Blogbeitrag von Matthias Andrasch in der Kategorie „${category.name}“.`
+      : `Alle ${posts.length} Blogbeiträge von Matthias Andrasch in der Kategorie „${category.name}“.`,
+  openGraph: ogImage
+    ? {
+        images: [
+          {
+            url: ogImage.url,
+            width: ogImage.width,
+            height: ogImage.height,
+          },
+        ],
+      }
+    : undefined,
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` },
+      { '@type': 'ListItem', position: 3, name: `Kategorie: ${category.name}`, item: Astro.url.href },
     ],
-  } : undefined,
+  },
 };
 ---
 
@@ -35,7 +52,7 @@ const metadata = {
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
     <div class="mb-8">
       <a
-        href="/blog"
+        href="/blog/"
         class="text-accent hover:underline inline-flex items-center gap-2 text-sm"
       >
         ← Alle Beiträge
@@ -52,9 +69,9 @@ const metadata = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => {
           const featuredImage = getFeaturedImage(post);
-          const excerpt = stripHtml(post.excerpt.rendered);
+          const excerpt = stripHtml(post.excerpt?.rendered);
           const year = new Date(post.date).getFullYear();
-          const postHref = `/blog/${year}/${post.slug}`;
+          const postHref = `/blog/${year}/${post.slug}/`;
 
           return (
             <article class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-md transition-shadow flex flex-col">
