@@ -44,7 +44,7 @@ export const METADATA = {
     type: 'website',
     images: [
       {
-        url: '~/assets/images/hero-image.png',
+        url: '~/assets/images/innsbruck.jpg',
         width: 1200,
         height: 628,
       },

@@ -2,7 +2,7 @@
 import { getImage } from 'astro:assets';
 import { SITE, METADATA, I18N } from '~/config';
 import type { MetaData } from '~/types';
-import ogImage from '~/assets/images/hero-image.png';
+import ogImage from '~/assets/images/innsbruck.jpg';
 
 const {
   title,
@@ -29,7 +29,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.site).href;
 const robotsIndex = robots.index ?? METADATA.robots.index;
 const robotsFollow = robots.follow ?? METADATA.robots.follow;
 
-const optimizedOgImage = await getImage({ src: ogImage, width: 1200, height: 628, format: 'png' });
+const optimizedOgImage = await getImage({ src: ogImage, width: 1200, height: 628, format: 'webp' });
 const defaultOgImages = [
   { url: new URL(optimizedOgImage.src, SITE.site).href, width: 1200, height: 628 },
 ];
