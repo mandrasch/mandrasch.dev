@@ -8,6 +8,7 @@ Personal website of Matthias Andrasch — Vienna-based web developer and hobby b
 - Fully static build (`output: 'static'`)
 - Blog posts are fetched at build time from the WordPress REST API (`src/utils/wordpress.ts`)
 - German content with a small set of hand-written pages
+- Node.js 26 (see `.nvmrc`) — `nvm use` or, with [n](https://github.com/tj/n), `n auto`
 
 ## Commands
 
