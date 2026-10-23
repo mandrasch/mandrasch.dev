@@ -18,6 +18,7 @@ Personal website of Matthias Andrasch — Vienna-based web developer and hobby b
 | `npm run build`   | Build production site to `./dist/` |
 | `npm run preview` | Preview the production build       |
 | `npm run check`   | Type-check the project             |
+| `npm run a11y`    | Run axe accessibility checks on `./dist/` (requires a prior build and `npx playwright install chromium`) |
 
 ## Structure
 
@@ -51,3 +52,15 @@ secret; `.github/workflows/deploy.yml` passes it to `npm run build`.
 ## Deployment
 
 Static site deployed via GitHub Actions (`.github/workflows/deploy.yml`): `npm run build` → rsync the `dist/` folder to the web host. No Node.js runtime needed in production.
+
+## Accessibility checks
+
+`npm run a11y` runs [axe](https://github.com/dequelabs/axe-core) against every route in `scripts/a11y.mjs`, in both light and dark mode. It starts `astro preview` itself, so build first:
+
+```bash
+npm run build
+npx playwright install chromium   # once, locally
+npm run a11y
+```
+
+The check is **not** part of the deploy pipeline (Chromium install would slow every deploy). Instead it runs on demand via the **Accessibility check** workflow (`.github/workflows/a11y.yml`): *Actions → Accessibility check → Run workflow*. Playwright browsers are cached by `package-lock.json` hash.

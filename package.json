@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "a11y": "npm run build && node scripts/a11y.mjs"
+    "a11y": "node scripts/a11y.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

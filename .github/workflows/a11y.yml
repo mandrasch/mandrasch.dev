@@ -1,0 +1,37 @@
+name: Accessibility check
+
+on:
+    workflow_dispatch:
+
+jobs:
+    a11y:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v4
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build site
+              env:
+                  WP_SITE_PASSWORD: ${{ secrets.WP_SITE_PASSWORD }}
+              run: npm run build
+
+            - name: Cache Playwright browsers
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/ms-playwright
+                  key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+            - name: Install Playwright browser
+              run: npx playwright install --with-deps chromium
+
+            - name: Accessibility check (axe)
+              run: npm run a11y
